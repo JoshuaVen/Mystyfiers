@@ -1,3 +1,5 @@
+import Items.java;
+
 class Room {
     int roomNumber;
     int numOfItemsForRoom;
