@@ -1,5 +1,3 @@
-import Item.java;
-
 class Room {
     int roomNumber;
     private Item[] items;
