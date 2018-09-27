@@ -16,7 +16,7 @@ class Room {
         return dummy;
     }
 
-    private void addItem(String name, String desc) {
+    private void addItem(String name, String desc) throws ArrayIndexOutOfBoundsException {
         Item newItem = new Item(name, desc);
 		for (int i = 0; i < items.length; i++) {
             if (items[i].name.equals(extracted().name) && items[i].description.equals(extracted().description)) {
@@ -37,6 +37,8 @@ class Room {
      // test in the class
      private void test() {
         addItem("LADDLE", "Rusted but still in good quality!");
+        addItem("Key", "Small key that opens a cabinet in the Sala");
+        addItem("Plastic Bottle", "Half full and contains dirty water");
         viewItems();
     }
 
