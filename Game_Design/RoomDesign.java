@@ -1,10 +1,10 @@
 class RoomDesign {
-	int noOfRooms; // no of Rooms/Level in the game
+	static int noOfRooms; // no of Rooms/Level in the game
 	public Room[] roomDes; // array of Rooms/Levels in the game
 	
 	// constructor for creating rooms
 	RoomDesign(int totalRooms) {
-		this.noOfRooms = totalRooms;
+		RoomDesign.noOfRooms = totalRooms;
 		this.roomDes = new Room[noOfRooms];
 		for (int i = 0; i < noOfRooms; i++) {
 			roomDes[i] = dummyRoom();
@@ -31,11 +31,14 @@ class RoomDesign {
 	// create the rooms for the game and add it to the room arrays
 	protected void createRooms() {
 		Room room1 = new Room(1);
-		room1.addItem("Small key", "For a padlock");
-		room1.addItem("Paper", "Note");
-		room1.addItem("Book", "Hard-bound Harry Potter book 1");
-		room1.addItem("Plastic Bottle", "Half full and contains dirty water");
-		room1.addItem("Key", "Small key that opens a cabinet in the Sala");
+		room1.addItem("Bookshelf", "Books of different genres are placed in it. Some letters are more clear than the others");
+		room1.addItem("Small Table", "Old, mini table.");
+		room1.addItem("Two withered plants", "The two, same kind, but withered plants can be found by the corner");
+		room1.addItem("Bag", "Bit of dusty but useful bag for carrying things");
+		room1.addItem("Chair", "A tattered and almost destroyed chair");
+		room1.addItem("Wooden Table", "Old but sturdy table that has written notes on top of it");
+		room1.addItem("Painting", "Dull and colorless painting of a plant hanged in a durable thread in a wall");
+		room1.addItem("Vault", "Locked vault that can be opened using with a letter combinations");
 		addRoom(room1);
 	}
 }

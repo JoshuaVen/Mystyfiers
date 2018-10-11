@@ -1,10 +1,10 @@
 public class Room {
 	int roomNumber;
-	private Item[] items;
+	protected Item[] items;
 	    
 	public Room(int roomNumber) {
 		this.roomNumber = roomNumber;
-		int MAXNumofItems = 5;
+		int MAXNumofItems = 10;
 		this.items = new Item[MAXNumofItems];
 	    Item dummyItem = extracted();
 	    for (int i = 0; i < items.length; i++) {
@@ -12,7 +12,7 @@ public class Room {
 	    }
 	}
 
-	public Item extracted() {
+	protected Item extracted() {
 	    Item dummy= new Item("", "");
 	    return dummy;
 	}

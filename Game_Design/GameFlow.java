@@ -3,15 +3,19 @@ import java.util.Scanner;
 // a class that contains the choices and how the game progresses
 public class GameFlow {
 	RoomDesign rooms;
+	PuzzleDesign puzzles;
+	int current;
 
 	GameFlow() {
 		this.rooms = new RoomDesign(5);
-		System.out.println("You have been kidnapped and locked to a room!");
+		this.puzzles = new PuzzleDesign(rooms);
+		this.current = 0;
 		choices();
 	}
 
 	private void choices() {
-		for (int i = 0; i < 1; i++) {
+		for (int i = current; rooms.roomDes[i].roomNumber != -1; i++) {
+			puzzles.puzzDes[i].viewScript();
 			Scanner in = new Scanner(System.in);
 			System.out.print("> ");
 			String command = in.nextLine();
@@ -48,6 +52,7 @@ public class GameFlow {
 				break;		
 			}
 			in.close();
+			this.current = current + 1;
 		}
 	}
 
