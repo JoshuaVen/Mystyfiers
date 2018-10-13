@@ -45,7 +45,8 @@ public class PuzzleDesign {
 		puzz1.addScript("You have been kidnapped!!!!");
 		puzz1.addScript("You are locked inside a room with things around...");
 		puzz1.addScript("There will a series of rooms that you need to get out in order to win this game!");
-		puzz1.addScript("Take a look around the room by entering \"look\"");
+	//	puzz1.addScript("Take a look around the room by entering \"look\"");
+		puzz1.addScript("[Don't know how to get started? Type \"help\" and then hit enter.]");
 		addPuzzle(puzz1);	
 	}
 	

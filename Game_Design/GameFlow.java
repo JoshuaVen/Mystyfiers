@@ -27,6 +27,7 @@ public class GameFlow {
 				break;
 			case "examine":
 				System.out.println("There's a note on the table saying 'You must escape the room or else...'");
+				choices();
 				break;
 			case "inventory":
 				System.out.println("You have: ");
@@ -34,12 +35,25 @@ public class GameFlow {
 				break;
 			case "get":
 				System.out.println("You have gotten the object");
+				choices();
 				break;
 			case "read":
 				System.out.println("You are reading...");
+				choices();
+				break;
+			case "open":
+				System.out.println("You opened...");
+				choices();
 				break;
 			case "help":
-				System.out.println("Help Basic Commands are look, examine, inventory, get, read...");
+				//More details to be added in the following sprint/s
+				
+				//System.out.println("Need help? \n\nTopics you can get help on are: ");
+				//System.out.println("\"help basics\": Commands you can do for the story to progress.");
+				//System.out.println("\"help system\": Saving, quitting, and other system commands.");
+				//System.out.println("\"help strategy\": Figuring out what to do, when you're stuck."\n);
+				//System.out.println("Type \"help hint\" for a single hint on what to try next.");
+				System.out.println("Help: Basic Commands are look, examine, inventory, get, read, open, and help.");
 				choices();
 				break;
 			case "":
@@ -57,6 +71,6 @@ public class GameFlow {
 	}
 
 	public static void main(String[] args) {
-		new GameFlow();
+		new GameFlow();	
 	}
 }
