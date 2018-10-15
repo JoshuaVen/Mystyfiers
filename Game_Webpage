@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial scale=1">
+		<meta name="keywords" content="HTML,CSS,XML, JavaAcript">
+	<style type=”text/css”>
+.menutitle{
+cursor:pointer;
+margin-bottom: 5px;
+background-color:#ECECFF;
+color:#000000;
+width:140px;
+padding:2px;
+text-align:center;
+font-weight:bold;
+/*/*/border:1px solid #000000;/* */
+}.submenu{
+margin-bottom: 0.5em;
+}
+</style><script type=”text/javascript”>/***********************************************
+* Switch Menu script- by Martial B of http://getElementById.com/
+* Modified by Dynamic Drive for format & NS4/IE4 compatibility
+* Visit http://www.dynamicdrive.com/ for full source code
+***********************************************/var persistmenu=”yes” //”yes” or “no”. Make sure each SPAN content contains an incrementing ID starting at 1 (id=”sub1″, id=”sub2″, etc)
+
+var persisttype=”sitewide” //enter “sitewide” for menu to persist across site, “local” for this page onlyif (document.getElementById){ //DynamicDrive.com change
+document.write(‘<style type=”text/css”>n’)
+document.write(‘.submenu{display: none;}n’)
+document.write(‘</style>n’)
+}function SwitchMenu(obj){
+	if(document.getElementById){
+		var el = document.getElementById(obj);
+		var ar = document.getElementById(“masterdiv”).getElementsByTagName(“span”); 
+		if(el.style.display != “block”){ 
+	for (var i=0; i<ar.length; i++){
+		if (ar[i].className==”submenu”) 
+		ar[i].style.display = “none”;
+	}
+		el.style.display = “block”;
+	}else{
+		el.style.display = “none”;
+	}
+}
+}
+function get_cookie(Name) {
+	var search = Name + “=”
+	var returnvalue = “”;
+	if (document.cookie.length > 0) {
+		offset = document.cookie.indexOf(search)
+	if (offset != -1) {
+		offset += search.length
+		end = document.cookie.indexOf(“;”, offset);
+	if (end == -1) end = document.cookie.length;
+		returnvalue=unescape(document.cookie.substring(offset, end))
+	}
+	}
+return returnvalue;
+	}function onloadfunction(){
+	if (persistmenu==”yes”){
+		var cookiename=(persisttype==”sitewide”)? “switchmenu” : window.location.pathname
+		var cookievalue=get_cookie(cookiename)
+	if (cookievalue!=””)
+		document.getElementById(cookievalue).style.display=”block”
+	}
+	}function savemenustate(){
+	var inc=1, blockid=””
+	while (document.getElementById(“sub”+inc)){
+	if (document.getElementById(“sub”+inc).style.display==”block”){
+	blockid=”sub”+inc
+	break
+	}
+inc++
+}
+var cookiename=(persisttype==”sitewide”)? “switchmenu” : window.location.pathname
+var cookievalue=(persisttype==”sitewide”)? blockid+”;path=/” : blockid
+document.cookie=cookiename+”=”+cookievalue
+}if (window.addEventListener)
+window.addEventListener(“load”, onloadfunction, false)
+else if (window.attachEvent)
+window.attachEvent(“onload”, onloadfunction)
+else if (document.getElementById)
+window.onload=onloadfunctionif (persistmenu==”yes” && document.getElementById)
+window.onunload=savemenustate</script>
+	</head>
+	<title> Escape the Room</title> 
+	<body background="b.jpg">
+	<h1><center><strong><font size="+8"><span style="background-color: #rrggbb"> <marquee behavior="alternate" bgcolor="B22222">
+	ESCAPE THE ROOM GAME: TEXT EDITION </marquee> </span></font></strong></center> </h1> 	
+	<hr>
+	<hr>
+	<h2><font size="+4"> <center><font color="Blue"> About the Game</center></font></h1>
+	
+	<p1> <center><font size="+3" color="Black"><span style="background-color: #B22222"> <i>ESCAPE THE ROOM GAME:TEXT EDITION</i> is a text-based game in which the user must escape the room using only the objects available inside the room.
+		Some objects may require the user to solve some puzzles before it can be picked up. </span></font></center> </p1> 
+	
+	<!– Keep all menus within masterdiv–>
+	<hr>
+	<hr>
+	
+<div id=”masterdiv”><div onclick=”SwitchMenu(‘sub1’)”></div>
+<span id=”sub1″>
+ <a href=”file:///C:/Users/Erika%20Shayne%20V.%20Jain/Desktop/index.html”><center>Game Story</center></a><br>
+ <a href=”file:///C:/Users/Erika%20Shayne%20V.%20Jain/Desktop/index.html”><center>Game Commands</center></a><br>
+ <a href=”file:///C:/Users/Erika%20Shayne%20V.%20Jain/Desktop/index.html”><center>How-To-Play</center></a><br>
+ <a href=”file:///C:/Users/Erika%20Shayne%20V.%20Jain/Desktop/index.html”><center>Game Devs</center></a><br>
+
+	</body>
+</html>
