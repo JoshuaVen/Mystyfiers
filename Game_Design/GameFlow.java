@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 // a class that contains the choices and how the game progresses
 public class GameFlow {
 	RoomDesign rooms;
@@ -15,7 +14,7 @@ public class GameFlow {
 
 	private void choices() {
 		for (int i = current; rooms.roomDes[i].roomNumber != -1; i++) {
-			puzzles.puzzDes[i].viewScript();
+			System.out.println(puzzles.puzzDes[i].viewScript());
 			Scanner in = new Scanner(System.in);
 			System.out.print("> ");
 			String command = in.nextLine();
