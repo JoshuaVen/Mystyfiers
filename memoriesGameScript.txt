@@ -1,0 +1,159 @@
+Script1:
+Hi. Is anyone here? 
+How do I even use this thing 
+Can anyone hear me? 
+
+Script2:
+Wow this thing works! And I feared that no one could hear me 
+I found a strange device that connected me with you here 
+I...I...hmmm... I don't know who I am, I don't know where I am. And I don't remember how I got here 
+I came around half an hour ago. I have a terrible headache, and everything is blurred 
+It seems to me that I'm in a patient's room - there are lots of medical devices, an IV, and blue walls 
+Strange, the door is locked 
+There is also a mirror hanging opposite to the bed, and I have a feeling that someone is watching me 
+Maybe they conduct experiments on patients! 
+I'm scared, and I don't know what to do... 
+
+Script3:
+Oh my... I sure don't look all that great 
+I must have been here for a long time
+
+Script4:
+I wonder for how long have I been lying here?
+
+Script5: (if already checked mirror)
+Who are these people, and why are they watching me?!
+
+Script6:
+How do I do it? There is nothing to cling to here! 
+Why did they even put me here? For experiments? Or for something else? 
+Hey, you there! Let me out! 
+What do you want from me? 
+Wow, now that's weird, When I screamed, some sort of writing showed up from my breathing 
+Yes, here it is. It says 807 
+What does it mean?
+
+Script7:
+The code on the mirror is 807
+
+Script8:
+It's locked. Well, this door isn't that easy to kick down. They're definitely not eager to let me out
+Hmmm... There is no handle, no keyhole
+There is a phone hanging next to the door. I wonder hwat is it for?
+
+Script9: (if already gone thru door)
+I've already tried opening the door. I failed
+
+Script10:
+Hello? Who are you? 
+The voice keeps repeating the same phrase, it doesn't react to my words 
+It's a record of some famous expression; I understand this language, and it seems to be Latin: "A friend of my friend is my my friend..."
+
+Script11: (if already tried telephone)
+Yes, it's definitely Latin, it means something like... "A friend of my fried is my friend..." ...So strange...
+Where the hell do I even know it from?!
+
+Script12: 
+Do you suggest talking to the answering machine? Well, ok, let's give it a try
+What should I say?
+
+Script13: (if went back to speak into phone)
+Let's try again
+
+Script14:
+Nothing happened, the voice keeps repaeting the same message
+
+Script15:
+Something changed...Yeah! Right! 
+The voice on the phone stopped for a while and said: rectam responsum 
+I can hear the sound somewhere in the door, some kind of mechanical gnashing 
+The door is opening! 
+I don't believe my eyes! Thanks, I have no idea what I would do without you!
+
+Script16:
+Am I a prisoner here?! There are rusty gratings on the windows, and a cabinet next to the bed. It must be night right now. It's raining outside 
+I'll look under the bed now 
+Interesting, there is a dusty suitcase. It should be mine, since it lies under my bed! 
+Damn, for how long long have I been here? 
+
+Script17: (if already examined room)
+I've already searched all around. I don't have much choice, but I'll try to figure something out
+
+Script18:
+The cabinet is digitally locked
+I need some kind of a code to open it
+Do you have any ideas?
+I noticed a piece of paper sticking out from under the cabinet
+Perhaps I can find something useful on it
+There is only one handwritten note: "Current code: the number of months in a year that have 28 days..."
+Seems to be a hint...
+
+Script19: (if already examined cabinet)
+The following is written on the piece of paper I've found: "Current code: the number of months in a year that have 28 days..." 
+
+Script20:
+No, this code doesn't work!
+
+Script21:
+I did it, I opened it!
+It smells really strange. There are empty medicine bottles on the upper shelf...
+Mnemosyne...Hypnotheryne...Oneurovite... Never heard of these
+There's a ballpoint pen and a flashlight on the lower shelf
+(auto-get pen)
+(auto-get flashlight)
+Batteries still work, it works
+
+Script22: (if already unlocked cabinet)
+I've searched all the shelves and corners, there is nothing more
+
+Script23:
+I'll try opening it
+There is a combination lock, and if it's my suitcase, I should know the code...but I don't remember anything
+You know, it's hard to describe...
+It's like a tune that keeps playing in my mind, or an author whose name is on the tip of my tongue, but my brain just refuses to remember it
+
+Script24:
+How do I open it?! I can't remember the code from the lock
+
+Script25:
+It doesn't open
+
+Script26:
+I opened it, my friend! I guess I had a vague idea of what they were gonna do to me when they dragged me here
+That they would erase my memories...
+And I left a note for myself on the mirror. I can't imagine what would I have done if you hadn't figured it out?!
+Let's see what do we have here
+Warm clothes, a small stack of clean notebooks...
+There is a photo of a girl with a red umbrella... She is very beautiful, and has a nice smile. I think I know her...
+It's signed: "Paris, Summer"
+I have to try and remember her...
+There is a book as well... No, I think it's my diary!
+
+Script27:
+The paper is crumpled. Let's have a look...
+"May 12, 2005. I've finally found some information about her. That's why we'll have to fly to France on holidays. The three of us will manage, we just have to think everything through!"
+"December 25, 2005. I can't fall asleep because it's so cold here. There are only stars and endless memories of her. I'm lucky to have a friend here with me, or else I would probably go crazy"
+I can't understand any other entries...
+I managed to decipher only the last one: Identification of the signature is required
+
+Script28: (if already checked diary)
+I've already looked through all the entries
+
+Script29:
+But I don't remember who I am!
+What if I can't make it?
+And what can I use to sign...
+
+Script30: (if already tried sign but did not use pen)
+I guess I have to sign in this diary...
+
+Script31:
+It worked! My hands remember it! The first letter seems to be L...
+Now there's another entry!
+"April 15, 2006. Huh, I'm back in the game! The key of all doors- "viva"
+I don't understand a thing
+Friend, there are no more entries. I must've gotten so engaged in the game that I had no time to keep writing in my diary...
+But why did I hide this entry?
+
+Script32: (if sign worked and went back to review)
+The last entry in the diary: "Huh, I'm back in the game! Viva!"
