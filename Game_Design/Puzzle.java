@@ -1,6 +1,7 @@
 
 public class Puzzle {
 	Item[] itemsForSolution;
+	Item[] itemsInRoom;
 	Room roomPuzzle;
 	String[] script;
 	boolean isDummy; // for easier comparison with a real and a dummy puzzle
@@ -9,8 +10,10 @@ public class Puzzle {
 	public Puzzle(Room roomPuzzle) {
 		this.roomPuzzle = roomPuzzle;
 		this.itemsForSolution = new Item[roomPuzzle.items.length];
+		this.itemsInRoom = new Item[roomPuzzle.items.length];
 		for (int i = 0; i < roomPuzzle.items.length; i++) {
 			itemsForSolution[i] = roomPuzzle.extracted();
+			itemsInRoom[i] = roomPuzzle.extracted();
 		}
 		this.script = new String[100];
 		for (int j = 0; j < script.length; j++) {
@@ -48,14 +51,15 @@ public class Puzzle {
 		return false;
 	}
 	
-	void viewScript() {
+	String viewScript() {
+		String text = new String();
 		for (int i = 0; i < script.length; i++) {
 			if (!script[i].equals("") && !isShown) {
-				System.out.println(script[i]);
-				System.out.println();
+				text = text + script[i] + "\n";
 			}
 		}
 		isShown = true; // isShown is changed to true if it is already displayed
+		return text;
 	}
 	
 }
