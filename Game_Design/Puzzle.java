@@ -3,11 +3,13 @@ public class Puzzle {
 	Item[] itemsForSolution;
 	Item[] itemsInRoom;
 	Room roomPuzzle;
-	String[] script;
+	Script[] textSc;
 	boolean isDummy; // for easier comparison with a real and a dummy puzzle
-	boolean isShown; // to avoid the same printing of text
 	
-	public Puzzle(Room roomPuzzle) {
+	Script dummySc;
+	int startSc;
+	
+	public Puzzle(Room roomPuzzle, int sizeOfSc) {
 		this.roomPuzzle = roomPuzzle;
 		this.itemsForSolution = new Item[roomPuzzle.items.length];
 		this.itemsInRoom = new Item[roomPuzzle.items.length];
@@ -15,12 +17,13 @@ public class Puzzle {
 			itemsForSolution[i] = roomPuzzle.extracted();
 			itemsInRoom[i] = roomPuzzle.extracted();
 		}
-		this.script = new String[100];
-		for (int j = 0; j < script.length; j++) {
-			script[j] = "";
+		this.textSc = new Script[sizeOfSc];
+		this.dummySc = new Script("", false);
+		for (int j = 0; j < textSc.length; j++) {
+			textSc[j] = dummySc;
 		}
 		this.isDummy = false;
-		this.isShown = false;
+		this.startSc = 0;
 	}
 	
 	boolean partOfSoln(Item contributor) {
@@ -41,25 +44,15 @@ public class Puzzle {
 		return false;
 	}
 	
-	boolean addScript(String dialog) {
-		for (int i = 0; i < script.length; i++) {
-			if (script[i].equals("")) {
-				script[i] = dialog;
+	boolean addScript(String text, boolean printImm) {
+		for (int i = 0; i < textSc.length; i++) {
+			if (textSc[i].equals(dummySc)) {
+				textSc[i] = new Script(text, false);
 				return true;
 			}
 		}
 		return false;
 	}
 	
-	String viewScript() {
-		String text = new String();
-		for (int i = 0; i < script.length; i++) {
-			if (!script[i].equals("") && !isShown) {
-				text = text + script[i] + "\n";
-			}
-		}
-		isShown = true; // isShown is changed to true if it is already displayed
-		return text;
-	}
 	
 }
