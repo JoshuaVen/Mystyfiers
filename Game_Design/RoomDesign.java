@@ -1,13 +1,15 @@
 class RoomDesign {
 	static int noOfRooms; // no of Rooms/Level in the game
 	public Room[] roomDes; // array of Rooms/Levels in the game
+	Room dummy;
 	
 	// constructor for creating rooms
 	RoomDesign(int totalRooms) {
+		this.dummy = dummyRoom();
 		RoomDesign.noOfRooms = totalRooms;
 		this.roomDes = new Room[noOfRooms];
 		for (int i = 0; i < noOfRooms; i++) {
-			roomDes[i] = dummyRoom();
+			roomDes[i] = dummy;
 		}
 		createRooms();
 	}

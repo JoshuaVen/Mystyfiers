@@ -16,11 +16,12 @@ public class GameFlow {
 		Scanner in = new Scanner(System.in);
 		for (int i = current; rooms.roomDes[i].roomNumber != -1; i++) {
 			
-			for (int j = 0; j != puzzles.puzzDes[i].textSc.length; j++) {
-				System.out.print(puzzles.puzzDes[i].textSc[j].read());
-				in.nextLine();
+			for (int j = 0; j < puzzles.puzzDes[i].numberOfSc; j++) {
+				for (int k = 0; k < puzzles.puzzDes[i].actualSizeOfSc(j); k++) {
+					System.out.print(puzzles.puzzDes[i].textSc[j][k].read());
+					in.nextLine();
+				}
 			}
-			
 			choices(i);
 		}	
 	}
