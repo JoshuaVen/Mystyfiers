@@ -60,6 +60,7 @@ public class GameFlow {
 
 	}
 	
+	
 	private void mirror() {
 		/*if (isRead == false) {
 			//script3
@@ -180,7 +181,7 @@ public class GameFlow {
 			System.out.println("Room Escaped");
 			System.exit(0);
 			break;
-		case " ":      //still needs to handle anything aside from viva
+		case " ":        //still needs to handle anything not equal to viva
 			//script14
 			
 			speak();
@@ -193,9 +194,193 @@ public class GameFlow {
 	}
 
 	private void examine() {
+		/*if (isRead == false) {
+			//script16
+		} else {
+			//script17
+		}*/
 		System.out.println("(Go back to the bed) (Examine the cabinet) (Open the suitcase) (Go to the door)");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toLowerCase()) {
+		case "go back to the bed":
+			bed();
+			break;
+		case "examine the cabinet":
+			cabinet();
+			break;
+		case "open the suitcase":
+			suitcase();
+			break;
+		case "go to the door":
+			door();
+			break;
+		default:
+			System.out.println("That's not a verb I recognize.");
+			break;		
+		}
+		in.close();
+	}
+	
+	//problem: if already opened, need to display script22 instead
+	private void cabinet() {
+		/*if (isRead == false) {
+			//script18
+		} else {
+			//script19
+		}*/
+		System.out.println("(Go back to examining the room) (Enter code)");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toLowerCase()) {
+		case "go back to examining the room":
+			examine();
+			break;
+		case "enter code":
+			code();
+			break;
+		default:
+			System.out.println("That's not a verb I recognize.");
+			cabinet();
+			break;		
+		}
+		in.close();
 	}
 
+	private void code() {
+		System.out.println("Enter code: ");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		int code = in.nextInt();
+		if (code == 12) {
+			//script21
+			examine();
+		} else if (code != 12) {
+			//script20
+			cabinet();
+		} else {      //expected for no input, not yet working
+			examine();
+		}
+		in.close();
+	}
+	
+	//problem1: if already unlocked but didnt proceed until the end, would require user to reopen it and go thru each step again
+	//problem2: if already signed needs a way to proceed to displaying script 32
+	private void suitcase() {
+		/*if (isRead == false) {
+			//script23
+		} else {
+			//script24
+		}*/
+		System.out.println("(Enter code) (Continue searching the room) ");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toLowerCase()) {
+		case "enter code":
+			code2();
+			break;
+		case "continue searching the room":
+			examine();
+			break;
+		default:
+			System.out.println("That's not a verb I recognize.");
+			suitcase();
+			break;		
+		}
+		in.close();
+	}
+	
+	private void code2() {
+		System.out.println("Enter code: ");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		int code = in.nextInt();
+		if (code == 807) {
+			//script26
+			openedSuitcase();
+		} else if (code != 807) {
+			//script25
+			suitcase();
+		} else {       //expected for no input, not yet working
+			examine();
+		}
+		in.close();
+	}
+	
+	private void openedSuitcase() {
+		System.out.println("(Diary) (Continue searching the room) ");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toLowerCase()) {
+		case "diary":
+			diary();
+			break;
+		case "continue searching the room":
+			examine();
+			break;
+		default:
+			System.out.println("That's not a verb I recognize.");
+			openedSuitcase();
+			break;		
+		}
+		in.close();
+	}
+	
+	private void diary() {
+		/*if (isRead == false) {
+			//script27
+		} else {
+			//script28
+		}*/
+		System.out.println("(Sign) (Continue searching the room)");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toLowerCase()) {
+		case "sign":
+			sign();
+			break;
+		case "continue searching the room":
+			examine();
+			break;
+		default:
+			System.out.println("That's not a verb I recognize.");
+			diary();
+			break;		
+		}
+		in.close();
+	}
+	
+	private void sign() {
+		/*if (isRead == false) {
+			//script29
+		} else {
+			//script30
+		}*/
+		System.out.println("(Use ballpoint pen) (Continue searching the room)");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toLowerCase()) {
+		case "use ballpoint pen":
+			//script 31
+			examine();
+			break;
+		case "continue searching the room":
+			examine();
+			break;
+		default:
+			System.out.println("That's not a  I recognize.");
+			sign();
+			break;		
+		}
+		in.close();
+	}
+	
 	public static void main(String[] args) {
 		new GameFlow();	
 	}
