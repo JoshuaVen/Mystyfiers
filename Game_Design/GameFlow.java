@@ -11,11 +11,34 @@ public class GameFlow {
 		this.current = 0;
 		start();
 	}
+	
+	private void display(int scriptNum) {
+		Scanner in = new Scanner(System.in);
+		for (int i = 0; i < puzzles.puzzDes[0].actualSizeOfSc(scriptNum); i++) {
+			System.out.print(puzzles.puzzDes[0].textSc[scriptNum][i].text);
+			in.nextLine();
+		}
+	}
 
+	private void branchDisplay(int ifScript, int elseScript) {
+		Scanner in = new Scanner(System.in);
+		if (puzzles.puzzDes[0].textSc[ifScript][0].isRead == false) {
+			for (int i = 0; i < puzzles.puzzDes[0].actualSizeOfSc(ifScript); i++) {
+				System.out.print(puzzles.puzzDes[0].textSc[ifScript][i].text);
+				in.nextLine();
+			}
+		} else {
+			for (int i = 0; i < puzzles.puzzDes[0].actualSizeOfSc(elseScript); i++) {
+				System.out.print(puzzles.puzzDes[0].textSc[elseScript][i].text);
+				in.nextLine();
+			}
+		}
+	}
+	
 	private void start() {
 		Scanner in = new Scanner(System.in);
 		for (int i = current; rooms.roomDes[i].roomNumber != -1; i++) {
-			
+
 			for (int j = 0; j < puzzles.puzzDes[i].numberOfSc; j++) {
 				for (int k = 0; k < puzzles.puzzDes[i].actualSizeOfSc(j); k++) {
 					System.out.print(puzzles.puzzDes[i].textSc[j][k].read());
@@ -42,8 +65,8 @@ public class GameFlow {
 		case "examine the room":
 			examine();
 			break;
-			
-		/*case "help":
+
+			/*case "help":
 			System.out.println("Help: Basic Commands are look, examine, inventory, get, read, open, and help.");
 			choices(i);
 			break;*/
@@ -59,20 +82,12 @@ public class GameFlow {
 		in.close();
 
 	}
-	
-	
+
+
 	private void mirror() {
-		/*if (isRead == false) {
-			//script3
-		} else {
-			//script5
-		}*/
-		
-		//for (int i=0; i < puzzles.puzzDes[1].actualSizeOfSc(3); i++) {
-		//	System.out.print(puzzles.puzzDes[1].textSc[3][i]);
-		//}
-		System.out.println("(Go back to the bed) (Try to take it off)");
 		Scanner in = new Scanner(System.in);
+		branchDisplay(3, 5);
+		System.out.println("(Go back to the bed) (Try to take it off)");
 		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toLowerCase()) {
@@ -89,30 +104,23 @@ public class GameFlow {
 		}
 		in.close();
 	}
-	
+
 	private void remove() {
-		/*if (isRead == false) {
-			//script6
-		} else {
-			//script7
-		}*/
+		Scanner in = new Scanner(System.in);
+		branchDisplay(6, 7);
 		mirror();
 	}
-	
-	
+
+
 	private void bed() {
-		//script4
-		choices(1);
+		display(4);
+		choices(0);
 	}
-	
+
 	private void door() {
-		/*if (isRead == false) {
-			//script8
-		} else {
-			//script9
-		}*/
-		System.out.println("(Go back to the bed) (Telephone)");
 		Scanner in = new Scanner(System.in);
+		branchDisplay(8, 9);
+		System.out.println("(Go back to the bed) (Telephone)");
 		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toLowerCase()) {
@@ -129,13 +137,9 @@ public class GameFlow {
 		}
 		in.close();
 	}
-	
+
 	private void telephone() {
-		/*if (isRead == false) {
-			//script10
-		} else {
-			//script11
-		}*/
+		branchDisplay(10, 11);
 		System.out.println("(Go back to the bed) (Speak into the phone)");
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
@@ -154,32 +158,28 @@ public class GameFlow {
 		}
 		in.close();
 	}
-	
+
 	private void speak() {
-		/*if (isRead == false) {
-			//script12
-		} else {
-			//script13
-		}*/
+		branchDisplay(12, 13);
 		System.out.println("Enter text message: ");	
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
 		String command = in.nextLine();
-		
-		/*command = command.toLowerCase();
+		String pass = new String("viva");
+		command = command.toLowerCase();
 		if (command != "") {
 			bed();
-		} else if (command != "viva" ) {
-			//script14
+		} else if (!command.matches(pass) ) {
+			display(14);
 			speak();
-		} else if (command == "viva" ) {
-			//script15
+		} else if (command.matches(pass)) {
+			display(15);
 			System.out.println("Room Escaped");
 			System.exit(0);
 		} else {
 			bed();
-		}*/
-		
+		}
+/*
 		switch (command.toLowerCase()) {
 		case "viva":
 			//Script15
@@ -188,7 +188,7 @@ public class GameFlow {
 			break;
 		case " ":        //still needs to handle anything not equal to viva
 			//script14
-			
+
 			speak();
 			break;
 		default:
@@ -196,14 +196,10 @@ public class GameFlow {
 			break;		
 		}
 		in.close();
-	}
+*/	}
 
 	private void examine() {
-		/*if (isRead == false) {
-			//script16
-		} else {
-			//script17
-		}*/
+		branchDisplay(16, 17);
 		System.out.println("(Go back to the bed) (Examine the cabinet) (Open the suitcase) (Go to the door)");
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
@@ -227,7 +223,7 @@ public class GameFlow {
 		}
 		in.close();
 	}
-	
+
 	//problem: if already opened, need to display script22 instead
 	private void cabinet() {
 		/*if (isRead == false) {
@@ -260,20 +256,21 @@ public class GameFlow {
 		System.out.print("> ");
 		int code = in.nextInt();
 		if (code == 12) {
-			//script21
+			display(21);
 			examine();
 		} else if (code != 12) {
-			//script20
+			display(20);
 			cabinet();
 		} else {      //expected for no input, not yet working
 			examine();
 		}
 		in.close();
 	}
-	
+
 	//problem1: if already unlocked but didnt proceed until the end, would require user to reopen it and go thru each step again
 	//problem2: if already signed needs a way to proceed to displaying script 32
 	private void suitcase() {
+		branchDisplay(23, 24);
 		/*if (isRead == false) {
 			//script23
 		} else {
@@ -297,24 +294,24 @@ public class GameFlow {
 		}
 		in.close();
 	}
-	
+
 	private void code2() {
 		System.out.println("Enter code: ");
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
 		int code = in.nextInt();
 		if (code == 807) {
-			//script26
+			display(26);
 			openedSuitcase();
 		} else if (code != 807) {
-			//script25
+			display(25);
 			suitcase();
 		} else {       //expected for no input, not yet working
 			examine();
 		}
 		in.close();
 	}
-	
+
 	private void openedSuitcase() {
 		System.out.println("(Diary) (Continue searching the room) ");
 		Scanner in = new Scanner(System.in);
@@ -334,8 +331,9 @@ public class GameFlow {
 		}
 		in.close();
 	}
-	
+
 	private void diary() {
+		branchDisplay(27, 28);
 		/*if (isRead == false) {
 			//script27
 		} else {
@@ -359,8 +357,9 @@ public class GameFlow {
 		}
 		in.close();
 	}
-	
+
 	private void sign() {
+		branchDisplay(29, 30);
 		/*if (isRead == false) {
 			//script29
 		} else {
@@ -385,7 +384,7 @@ public class GameFlow {
 		}
 		in.close();
 	}
-	
+
 	public static void main(String[] args) {
 		new GameFlow();	
 	}
