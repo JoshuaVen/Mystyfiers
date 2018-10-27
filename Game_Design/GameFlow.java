@@ -80,12 +80,7 @@ public class GameFlow {
 			bed();
 			break;
 		case "try to take it off":
-			/*if (isRead == false) {
-				//script6
-			} else {
-				//script7
-			}*/
-			mirror();
+			remove();
 			break;
 		default:
 			System.out.println("That's not a verb I recognize.");
@@ -94,6 +89,16 @@ public class GameFlow {
 		}
 		in.close();
 	}
+	
+	private void remove() {
+		/*if (isRead == false) {
+			//script6
+		} else {
+			//script7
+		}*/
+		mirror();
+	}
+	
 	
 	private void bed() {
 		//script4
