@@ -44,8 +44,8 @@ public class PuzzleDesign {
 				puzz1 = new Puzzle(roomDes.roomDes[i], 14, 32);
 			}
 		}
-		System.out.println(puzz1.sizeOfSc);
-		System.out.println(puzz1.addScript(1, "Hi. Is anyone here?", false));
+		//System.out.println(puzz1.sizeOfSc);
+		puzz1.addScript(1, "Hi. Is anyone here?", false);
 		puzz1.addScript(1, "How do I even use this thing", false);
 		puzz1.addScript(1, "Can anyone hear me?", false);
 		puzz1.addScript(1, "*A sudden sound responded to me*", false);
@@ -59,6 +59,9 @@ public class PuzzleDesign {
 		puzz1.addScript(2, "There is also a mirror hanging opposite to the bed, and I have a feeling that someone is watching me", false);
 		puzz1.addScript(2, "Maybe they conduct experiments on patients! ", false);
 		puzz1.addScript(2, "I'm scared, and I don't know what to do...", false);
+		
+		puzz1.addScript(3, "Oh my... I sure don't look all that great", false);
+		puzz1.addScript(3, "I must have been here for a long time", false);
 		addPuzzle(puzz1);
 	}
 	

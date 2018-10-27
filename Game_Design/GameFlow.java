@@ -23,43 +23,30 @@ public class GameFlow {
 				}
 			}
 			choices(i);
-		}	
+		}
+		in.close();
 	}
 
 	private void choices(int i) {
+		System.out.println("(Come closer to the mirror) (Come closer to the door) (Examine the room)");
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toLowerCase()) {
-		case "look":
-			System.out.println("The room consists of:");
-			rooms.roomDes[i].viewItems();
-			choices(i);
+		case "come closer to the mirror":
+			mirror();
 			break;
-		case "examine":
-			System.out.println("There's a note on the table saying 'You must escape the room or else...'");
-			choices(i);
+		case "come closer to the door":
+			door();
 			break;
-		case "inventory":
-			System.out.println("You have: ");
-			choices(i);
+		case "examine the room":
+			examine();
 			break;
-		case "get":
-			System.out.println("You have gotten the object");
-			choices(i);
-			break;
-		case "read":
-			System.out.println("You are reading...");
-			choices(i);
-			break;
-		case "open":
-			System.out.println("You opened...");
-			choices(i);
-			break;
-		case "help":
+			
+		/*case "help":
 			System.out.println("Help: Basic Commands are look, examine, inventory, get, read, open, and help.");
 			choices(i);
-			break;
+			break;*/
 		case "exit":
 			System.out.println("Thanks for playing!");
 			System.exit(0);
@@ -71,6 +58,142 @@ public class GameFlow {
 		}
 		in.close();
 
+	}
+	
+	private void mirror() {
+		/*if (isRead == false) {
+			//script3
+		} else {
+			//script5
+		}*/
+		
+		//for (int i=0; i < puzzles.puzzDes[1].actualSizeOfSc(3); i++) {
+		//	System.out.print(puzzles.puzzDes[1].textSc[3][i]);
+		//}
+		System.out.println("(Go back to the bed) (Try to take it off)");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toLowerCase()) {
+		case "go back to the bed":
+			bed();
+			break;
+		case "try to take it off":
+			/*if (isRead == false) {
+				//script6
+			} else {
+				//script7
+			}*/
+			mirror();
+			break;
+		default:
+			System.out.println("That's not a verb I recognize.");
+			mirror();
+			break;		
+		}
+		in.close();
+	}
+	
+	private void bed() {
+		//script4
+		choices(1);
+	}
+	
+	private void door() {
+		/*if (isRead == false) {
+			//script8
+		} else {
+			//script9
+		}*/
+		System.out.println("(Go back to the bed) (Telephone)");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toLowerCase()) {
+		case "go back to the bed":
+			bed();
+			break;
+		case "telephone":
+			telephone();
+			break;
+		default:
+			System.out.println("That's not a verb I recognize.");
+			door();
+			break;		
+		}
+		in.close();
+	}
+	
+	private void telephone() {
+		/*if (isRead == false) {
+			//script10
+		} else {
+			//script11
+		}*/
+		System.out.println("(Go back to the bed) (Speak into the phone)");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toLowerCase()) {
+		case "go back to the bed":
+			bed();
+			break;
+		case "speak into the phone":
+			speak();
+			break;
+		default:
+			System.out.println("That's not a verb I recognize.");
+			telephone();
+			break;		
+		}
+		in.close();
+	}
+	
+	private void speak() {
+		/*if (isRead == false) {
+			//script12
+		} else {
+			//script13
+		}*/
+		System.out.println("Enter text message: ");	
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		String command = in.nextLine();
+		
+		/*command = command.toLowerCase();
+		if (command != "") {
+			bed();
+		} else if (command != "viva" ) {
+			//script14
+			speak();
+		} else if (command == "viva" ) {
+			//script15
+			System.out.println("Room Escaped");
+			System.exit(0);
+		} else {
+			bed();
+		}*/
+		
+		switch (command.toLowerCase()) {
+		case "viva":
+			//Script15
+			System.out.println("Room Escaped");
+			System.exit(0);
+			break;
+		case " ":      //still needs to handle anything aside from viva
+			//script14
+			
+			speak();
+			break;
+		default:
+			bed();
+			break;		
+		}
+		in.close();
+	}
+
+	private void examine() {
+		System.out.println("(Go back to the bed) (Examine the cabinet) (Open the suitcase) (Go to the door)");
 	}
 
 	public static void main(String[] args) {
