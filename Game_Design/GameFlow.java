@@ -17,7 +17,7 @@ public class GameFlow {
 	private void display(int scriptNum) {
 		Scanner in = new Scanner(System.in);
 		for (int i = 0; i < puzzles.puzzDes[0].actualSizeOfSc(scriptNum); i++) {
-			System.out.print(puzzles.puzzDes[0].textSc[scriptNum][i].text);
+			System.out.print(puzzles.puzzDes[0].textSc[scriptNum][i].read());
 			in.nextLine();
 		}
 	}
@@ -26,12 +26,12 @@ public class GameFlow {
 		Scanner in = new Scanner(System.in);
 		if (puzzles.puzzDes[0].textSc[ifScript][0].isRead == false) {
 			for (int i = 0; i < puzzles.puzzDes[0].actualSizeOfSc(ifScript); i++) {
-				System.out.print(puzzles.puzzDes[0].textSc[ifScript][i].text);
+				System.out.print(puzzles.puzzDes[0].textSc[ifScript][i].read());
 				in.nextLine();
 			}
 		} else {
 			for (int i = 0; i < puzzles.puzzDes[0].actualSizeOfSc(elseScript); i++) {
-				System.out.print(puzzles.puzzDes[0].textSc[elseScript][i].text);
+				System.out.print(puzzles.puzzDes[0].textSc[elseScript][i].read());
 				in.nextLine();
 			}
 		}
@@ -106,6 +106,7 @@ public class GameFlow {
 		Scanner in = new Scanner(System.in);
 		branchDisplay(6, 7);
 		mirror();
+		in.close();
 	}
 
 
@@ -191,9 +192,9 @@ public class GameFlow {
 		default:
 			bed();
 			break;		
-		}
+		}*/
 		in.close();
-*/	}
+	}
 
 	private void examine() {
 		branchDisplay(16, 17);
