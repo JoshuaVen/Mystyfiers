@@ -154,24 +154,23 @@ public class GameFlow {
 	//if else needs a bit more fixing
 	private void speak() {
 		branchDisplay(12, 13);
-		System.out.println("Enter text message: ");	
+		System.out.println("(Enter text message) (Go back to the bed)");	
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
 		String command = in.nextLine();
-		String pass = new String("viva");
-		command = command.toLowerCase();
-		if (command == "") {
+		switch (command.toLowerCase()) {
+		case "enter text message": 
+			msg();
+			break;
+		case "go back to the bed":
 			bed();
-		} else if (!command.matches(pass) ) {
-			display(14);
+			break;
+		default:
+			System.out.println("That's not a verb I recognize.");
 			speak();
-		} else if (command.matches(pass)) {
-			display(15);
-			System.out.println("Room Escaped");
-			System.exit(0);
-		} else {
-			bed();
+			break;		
 		}
+		
 /*
 		switch (command.toLowerCase()) {
 		case "viva":
@@ -187,7 +186,28 @@ public class GameFlow {
 		default:
 			bed();
 			break;		
-		}*/
+		}
+		*/
+		in.close();
+	}
+	
+	private void msg() {
+		System.out.println("Enter text message: ");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		String command = in.nextLine();
+		String pass = new String("viva");
+		command = command.toLowerCase();
+		if (!command.matches(pass) ) {
+			display(14);
+			speak();
+		} else if (command.matches(pass)) {
+			display(15);
+			System.out.println("Room Escaped");
+			System.exit(0);
+		} else {
+			speak();
+		}
 		in.close();
 	}
 
