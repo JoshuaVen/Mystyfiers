@@ -4,6 +4,7 @@ public class GameFlow {
 	RoomDesign rooms;
 	PuzzleDesign puzzles;
 	boolean isCabinetOpen; //temporary placement... to be added in the puzzle class in solutions array
+	boolean isRoomExamined;
 	int current;
 
 	GameFlow() {
@@ -11,6 +12,7 @@ public class GameFlow {
 		this.puzzles = new PuzzleDesign(rooms);
 		this.current = 0;
 		this.isCabinetOpen = false;
+		this.isRoomExamined = false;
 		start();
 	}
 	
