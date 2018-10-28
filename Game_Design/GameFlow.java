@@ -19,31 +19,24 @@ public class GameFlow {
 	private void display(int scriptNum) {
 		Scanner in = new Scanner(System.in);
 		for (int i = 0; i < puzzles.puzzDes[0].actualSizeOfSc(scriptNum); i++) {
-			System.out.print(puzzles.puzzDes[0].textSc[scriptNum][i].text);
+			System.out.print(puzzles.puzzDes[0].textSc[scriptNum - 1][i].read());
 			in.nextLine();
 		}
 	}
 
 	private void branchDisplay(int ifScript, int elseScript) {
-		Scanner in = new Scanner(System.in);
-		if (puzzles.puzzDes[0].textSc[ifScript][0].isRead == false) {
-			for (int i = 0; i < puzzles.puzzDes[0].actualSizeOfSc(ifScript); i++) {
-				System.out.print(puzzles.puzzDes[0].textSc[ifScript][i].text);
-				in.nextLine();
-			}
+		if (puzzles.puzzDes[0].textSc[ifScript - 1][0].isRead == false) {
+			display(ifScript);
 		} else {
-			for (int i = 0; i < puzzles.puzzDes[0].actualSizeOfSc(elseScript); i++) {
-				System.out.print(puzzles.puzzDes[0].textSc[elseScript][i].text);
-				in.nextLine();
-			}
+			display(elseScript);
 		}
 	}
 	
 	private void start() {
 		Scanner in = new Scanner(System.in);
 
-			display(0);
 			display(1);
+			display(2);
 			choices(0);
 		
 			in.close();
