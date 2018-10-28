@@ -187,9 +187,9 @@ public class GameFlow {
 		default:
 			bed();
 			break;		
-		}
+		}*/
 		in.close();
-*/	}
+	}
 
 	private void examine() {
 		branchDisplay(16, 17);

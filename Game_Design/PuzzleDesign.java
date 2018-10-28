@@ -81,7 +81,7 @@ public class PuzzleDesign {
 		puzz1.addScript(8, "Hmmm... There is no handle, no keyhole", false);
 		puzz1.addScript(8, "There is a phone hanging next to the door. I wonder hwat is it for?", false);
 		
-		puzz1.addScript(9, "The code on the mirror is 807I've already tried opening the door. I failed", false);
+		puzz1.addScript(9, "I've already tried opening the door. I failed", false);
 		
 		puzz1.addScript(10, "Hello? Who are you?", false);
 		puzz1.addScript(10, "The voice keeps repeating the same phrase, it doesn't react to my words", false);
@@ -95,7 +95,7 @@ public class PuzzleDesign {
 		
 		puzz1.addScript(13, "Let's try again", false);
 		
-		puzz1.addScript(14, "Nothing happened, the voice keeps repaeting the same message", false);
+		puzz1.addScript(14, "Nothing happened, the voice keeps repeating the same message", false);
 		
 		puzz1.addScript(15, "Something changed...Yeah! Right!", false);
 		puzz1.addScript(15, "The voice on the phone stopped for a while and said: rectam responsum", false);
