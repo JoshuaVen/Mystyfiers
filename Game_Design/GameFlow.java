@@ -151,6 +151,7 @@ public class GameFlow {
 		in.close();
 	}
 
+	//if else needs a bit more fixing
 	private void speak() {
 		branchDisplay(12, 13);
 		System.out.println("Enter text message: ");	
@@ -159,7 +160,7 @@ public class GameFlow {
 		String command = in.nextLine();
 		String pass = new String("viva");
 		command = command.toLowerCase();
-		if (command != "") {
+		if (command == "") {
 			bed();
 		} else if (!command.matches(pass) ) {
 			display(14);
@@ -211,6 +212,7 @@ public class GameFlow {
 			break;
 		default:
 			System.out.println("That's not a verb I recognize.");
+			examine();
 			break;		
 		}
 		in.close();
@@ -219,15 +221,10 @@ public class GameFlow {
 	//problem: if already opened, need to display script22 instead
 	private void cabinet() {
 		if (isCabinetOpen == false) {
-			display(18);
+			branchDisplay(18, 19);
 		} else {
-			display(19);
+			display(22);
 		}
-		/*if (isRead == false) {
-			//script18
-		} else {
-			//script19
-		}*/
 		System.out.println("(Go back to examining the room) (Enter code)");
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
