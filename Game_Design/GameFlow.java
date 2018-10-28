@@ -39,17 +39,12 @@ public class GameFlow {
 	
 	private void start() {
 		Scanner in = new Scanner(System.in);
-		for (int i = current; rooms.roomDes[i].roomNumber != -1; i++) {
 
-			for (int j = 0; j < puzzles.puzzDes[i].numberOfSc; j++) {
-				for (int k = 0; k < puzzles.puzzDes[i].actualSizeOfSc(j); k++) {
-					System.out.print(puzzles.puzzDes[i].textSc[j][k].read());
-					in.nextLine();
-				}
-			}
-			choices(i);
-		}
-		in.close();
+			display(0);
+			display(1);
+			choices(0);
+		
+			in.close();
 	}
 
 	private void choices(int i) {
