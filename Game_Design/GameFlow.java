@@ -101,6 +101,7 @@ public class GameFlow {
 		Scanner in = new Scanner(System.in);
 		branchDisplay(6, 7);
 		mirror();
+		in.close();
 	}
 
 
@@ -151,7 +152,6 @@ public class GameFlow {
 		in.close();
 	}
 
-	//if else needs a bit more fixing
 	private void speak() {
 		branchDisplay(12, 13);
 		System.out.println("(Enter text message) (Go back to the bed)");	
@@ -170,24 +170,6 @@ public class GameFlow {
 			speak();
 			break;		
 		}
-		
-/*
-		switch (command.toLowerCase()) {
-		case "viva":
-			//Script15
-			System.out.println("Room Escaped");
-			System.exit(0);
-			break;
-		case " ":        //still needs to handle anything not equal to viva
-			//script14
-
-			speak();
-			break;
-		default:
-			bed();
-			break;		
-		}
-		*/
 		in.close();
 	}
 	
@@ -285,11 +267,6 @@ public class GameFlow {
 	//problem2: if already signed needs a way to proceed to displaying script 32
 	private void suitcase() {
 		branchDisplay(23, 24);
-		/*if (isRead == false) {
-			//script23
-		} else {
-			//script24
-		}*/
 		System.out.println("(Enter code) (Continue searching the room) ");
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
@@ -348,11 +325,6 @@ public class GameFlow {
 
 	private void diary() {
 		branchDisplay(27, 28);
-		/*if (isRead == false) {
-			//script27
-		} else {
-			//script28
-		}*/
 		System.out.println("(Sign) (Continue searching the room)");
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
@@ -374,11 +346,6 @@ public class GameFlow {
 
 	private void sign() {
 		branchDisplay(29, 30);
-		/*if (isRead == false) {
-			//script29
-		} else {
-			//script30
-		}*/
 		System.out.println("(Use ballpoint pen) (Continue searching the room)");
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
