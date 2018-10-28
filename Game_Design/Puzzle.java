@@ -1,7 +1,5 @@
 
 public class Puzzle {
-	Item[] itemsForSolution;
-	Item[] itemsInRoom;
 	Room roomPuzzle;
 	Script[][] textSc;
 	boolean isDummy; // for easier comparison with a real and a dummy puzzle
@@ -10,17 +8,12 @@ public class Puzzle {
 	int sizeOfSc;
 	int numberOfSc;
 	int startSc;
+	boolean[] solutions;
 	
 	public Puzzle(Room roomPuzzle, int sizeOfSc, int numberOfSc) {
 		this.roomPuzzle = roomPuzzle;
 		this.sizeOfSc = sizeOfSc;
 		this.numberOfSc = numberOfSc;
-		this.itemsForSolution = new Item[roomPuzzle.items.length];
-		this.itemsInRoom = new Item[roomPuzzle.items.length];
-		for (int i = 0; i < roomPuzzle.items.length; i++) {
-			itemsForSolution[i] = roomPuzzle.extracted();
-			itemsInRoom[i] = roomPuzzle.extracted();
-		}
 		this.textSc = new Script[numberOfSc][sizeOfSc];
 		this.dummySc = new Script("", false);
 		for (int j = 0; j < numberOfSc; j++) {
@@ -28,26 +21,12 @@ public class Puzzle {
 				textSc[j][k] = dummySc;
 			}
 		}
+		this.solutions = new boolean[10]; //for problems in a puzzle that requires true or false
+		for (int i = 0; i < solutions.length; i++) {
+			solutions[i] = false;
+		}
 		this.isDummy = false;
 		this.startSc = 0;
-	}
-	
-	boolean partOfSoln(Item contributor) {
-		for (int i = 0; i < itemsForSolution.length; i++) {
-			if (contributor.equals(itemsForSolution[i])) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	boolean theSoln(Item solution) {
-		for (int i = 0; i < itemsForSolution.length; i++) {
-			if (solution.equals(itemsForSolution[i])) {
-				return true;
-			}
-		}
-		return false;
 	}
 	
 	boolean addScript(int script, String text, boolean printImm) {

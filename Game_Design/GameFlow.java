@@ -3,12 +3,14 @@ import java.util.Scanner;
 public class GameFlow {
 	RoomDesign rooms;
 	PuzzleDesign puzzles;
+	boolean isCabinetOpen; //temporary placement... to be added in the puzzle class in solutions array
 	int current;
 
 	GameFlow() {
 		this.rooms = new RoomDesign(1);
 		this.puzzles = new PuzzleDesign(rooms);
 		this.current = 0;
+		this.isCabinetOpen = false;
 		start();
 	}
 	
@@ -226,6 +228,11 @@ public class GameFlow {
 
 	//problem: if already opened, need to display script22 instead
 	private void cabinet() {
+		if (isCabinetOpen == false) {
+			display(18);
+		} else {
+			display(19);
+		}
 		/*if (isRead == false) {
 			//script18
 		} else {
