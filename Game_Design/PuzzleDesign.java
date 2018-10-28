@@ -167,7 +167,7 @@ public class PuzzleDesign {
 		
 		puzz1.addScript(31, "It worked! My hands remember it! The first letter seems to be L...", false);
 		puzz1.addScript(31, "Now there's another entry!", false);
-		puzz1.addScript(31, "T\"April 15, 2006. Huh, I'm back in the game! The key of all doors- \"viva\"", false);
+		puzz1.addScript(31, "\"April 15, 2006. Huh, I'm back in the game! The key of all doors- \"viva\"", false);
 		puzz1.addScript(31, "I don't understand a thing", false);
 		puzz1.addScript(31, "Friend, there are no more entries. I must've gotten so engaged in the game that I had no time to keep writing in my diary...", false);
 		puzz1.addScript(31, "But why did I hide this entry?", false);
