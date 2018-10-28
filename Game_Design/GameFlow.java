@@ -67,7 +67,7 @@ public class GameFlow {
 			System.exit(0);
 			break;
 		default:
-			System.out.println("That's not a verb I recognize.");
+			System.out.println("That's not a command I recognize.");
 			choices(i);
 			break;		
 		}
@@ -90,7 +90,7 @@ public class GameFlow {
 			remove();
 			break;
 		default:
-			System.out.println("That's not a verb I recognize.");
+			System.out.println("That's not a command I recognize.");
 			mirror();
 			break;		
 		}
@@ -124,7 +124,7 @@ public class GameFlow {
 			telephone();
 			break;
 		default:
-			System.out.println("That's not a verb I recognize.");
+			System.out.println("That's not a command I recognize.");
 			door();
 			break;		
 		}
@@ -145,7 +145,7 @@ public class GameFlow {
 			speak();
 			break;
 		default:
-			System.out.println("That's not a verb I recognize.");
+			System.out.println("That's not a command I recognize.");
 			telephone();
 			break;		
 		}
@@ -166,7 +166,7 @@ public class GameFlow {
 			bed();
 			break;
 		default:
-			System.out.println("That's not a verb I recognize.");
+			System.out.println("That's not a command I recognize.");
 			speak();
 			break;		
 		}
@@ -213,7 +213,7 @@ public class GameFlow {
 			door();
 			break;
 		default:
-			System.out.println("That's not a verb I recognize.");
+			System.out.println("That's not a command I recognize.");
 			examine();
 			break;		
 		}
@@ -239,7 +239,7 @@ public class GameFlow {
 			code();
 			break;
 		default:
-			System.out.println("That's not a verb I recognize.");
+			System.out.println("That's not a command I recognize.");
 			cabinet();
 			break;		
 		}
@@ -279,7 +279,7 @@ public class GameFlow {
 			examine();
 			break;
 		default:
-			System.out.println("That's not a verb I recognize.");
+			System.out.println("That's not a command I recognize.");
 			suitcase();
 			break;		
 		}
@@ -316,7 +316,7 @@ public class GameFlow {
 			examine();
 			break;
 		default:
-			System.out.println("That's not a verb I recognize.");
+			System.out.println("That's not a command I recognize.");
 			openedSuitcase();
 			break;		
 		}
@@ -337,7 +337,7 @@ public class GameFlow {
 			examine();
 			break;
 		default:
-			System.out.println("That's not a verb I recognize.");
+			System.out.println("That's not a command I recognize.");
 			diary();
 			break;		
 		}
@@ -359,7 +359,7 @@ public class GameFlow {
 			examine();
 			break;
 		default:
-			System.out.println("That's not a  I recognize.");
+			System.out.println("That's not a command I recognize.");
 			sign();
 			break;		
 		}
