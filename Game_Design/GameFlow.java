@@ -3,17 +3,12 @@ import java.util.Scanner;
 public class GameFlow {
 	RoomDesign rooms;
 	PuzzleDesign puzzles;
-	boolean isCabinetOpen; //temporary placement... to be added in the puzzle class in solutions array
-	boolean isSuitcaseOpen; //temp
-	boolean isRoomExamined;
 	int current;
 
 	GameFlow() {
 		this.rooms = new RoomDesign(1);
 		this.puzzles = new PuzzleDesign(rooms);
 		this.current = 0;
-		this.isCabinetOpen = false;
-		this.isRoomExamined = false;
 		start();
 	}
 	
@@ -223,7 +218,7 @@ public class GameFlow {
 
 	//problem: if already opened, need to display script22 instead
 	private void cabinet() {
-		if (isCabinetOpen == false) {
+		if (puzzles.puzzDes[0].checkProblemIfSolved("isCabinetOpen") == false) {
 			branchDisplay(18, 19);
 		} else {
 			display(22);
@@ -255,7 +250,7 @@ public class GameFlow {
 		int code = in.nextInt();
 		if (code == 12) {
 			display(21);
-			isCabinetOpen = true;
+			puzzles.puzzDes[0].changeToSolved("isCabinetOpen");
 			examine();
 		} else if (code != 12) {
 			display(20);
@@ -269,8 +264,7 @@ public class GameFlow {
 	//problem1: if already unlocked but didnt proceed until the end, would require user to reopen it and go thru each step again
 	//problem2: if already signed needs a way to proceed to displaying script 32
 	private void suitcase() {
-		
-		if (isSuitcaseOpen == false) {
+		if (puzzles.puzzDes[0].checkProblemIfSolved("isSuitcaseOpen") == false) {
 			branchDisplay(23, 24);
 		} else {
 			display(32);
@@ -355,7 +349,7 @@ public class GameFlow {
 
 	private void sign() {
 		branchDisplay(29, 30);
-		if (isCabinetOpen == true) {
+		if (puzzles.puzzDes[0].checkProblemIfSolved("isCabinetOpen")) {
 			System.out.println("(Use ballpoint pen) (Continue searching the room)");
 		} else {
 			System.out.println("(Continue searching the room)");
@@ -367,7 +361,7 @@ public class GameFlow {
 		switch (command.toLowerCase()) {
 		case "use ballpoint pen":
 			display(31);
-			isSuitcaseOpen = true;
+			puzzles.puzzDes[0].changeToSolved("isSuitcaseOpen");
 			examine();
 			break;
 		case "continue searching the room":

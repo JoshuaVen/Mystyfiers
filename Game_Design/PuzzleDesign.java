@@ -18,6 +18,7 @@ public class PuzzleDesign {
 		createPuzzle();
 	}
 	
+	
 	// dummy puzzle
 	private Puzzle dummyPuzzle() {
 		Puzzle dumm = new Puzzle(new Room(-1), 0, 0);
@@ -174,6 +175,11 @@ public class PuzzleDesign {
 		
 		puzz1.addScript(32, "The last entry in the diary: \"Huh, I'm back in the game! Viva!\"", false);
 
+		puzz1.addProblem("isCabinetOpen");
+		puzz1.addProblem("isSuitcaseOpen");
+		puzz1.addProblem("isRoomExamined");
+
+		
 		addPuzzle(puzz1);
 	}
 	

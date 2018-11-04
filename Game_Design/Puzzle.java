@@ -3,12 +3,13 @@ public class Puzzle {
 	Room roomPuzzle;
 	Script[][] textSc;
 	boolean isDummy; // for easier comparison with a real and a dummy puzzle
-	
+	Problem[] prob;
+
 	Script dummySc;
+	Problem dummyProb;
 	int sizeOfSc;
 	int numberOfSc;
 	int startSc;
-	boolean[] solutions;
 	
 	public Puzzle(Room roomPuzzle, int sizeOfSc, int numberOfSc) {
 		this.roomPuzzle = roomPuzzle;
@@ -16,17 +17,53 @@ public class Puzzle {
 		this.numberOfSc = numberOfSc;
 		this.textSc = new Script[numberOfSc][sizeOfSc];
 		this.dummySc = new Script("", false);
+		this.dummyProb = new Problem("", false);
 		for (int j = 0; j < numberOfSc; j++) {
 			for (int k = 0; k < sizeOfSc; k++) {
 				textSc[j][k] = dummySc;
 			}
 		}
-		this.solutions = new boolean[10]; //for problems in a puzzle that requires true or false
-		for (int i = 0; i < solutions.length; i++) {
-			solutions[i] = false;
+		
+		this.prob = new Problem[10]; //for problems in a puzzle that requires true or false
+		for (int i = 0; i < prob.length; i++) {
+			prob[i] = dummyProb;
 		}
 		this.isDummy = false;
 		this.startSc = 0;
+	}
+	
+	boolean changeToSolved(String problem) {
+		for (int i = 0; i < prob.length; i++) {
+			if (prob[i].problemName.matches(problem)) {
+				if (prob[i].getIsSolved() == false) {
+					prob[i].changetoSolved();
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	boolean checkProblemIfSolved(String problem) {
+		for (int i = 0; i < prob.length; i++) {
+			if (prob[i].problemName.matches(problem)) {
+				if (prob[i].getIsSolved()) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	boolean addProblem(String problem) {
+		Problem newProb = new Problem(problem, false);
+		for (int i = 0; i < prob.length; i++) {
+			if (prob[i].equals(dummyProb)) {
+				prob[i] = newProb;
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	boolean addScript(int script, String text, boolean printImm) {
@@ -42,8 +79,8 @@ public class Puzzle {
 	
 	int actualSizeOfSc(int scriptNum) {
 		int i;
-		int script = scriptNum;
-		for (i = 0; !textSc[script - 1][i].equals(dummySc);) {
+		int script = scriptNum - 1;
+		for (i = 0; !textSc[script][i].equals(dummySc);) {
 			i++;
 		}
 		return i;
