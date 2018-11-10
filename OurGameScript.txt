@@ -1,0 +1,124 @@
+SCRIPT1:
+Hi 
+I found this phone here with your number as the only contact
+I've been kidnapped and locked in a room I'm not familiar with
+Someone was just asking me for directions and next thing you know I'm in this room
+I need your help in escaping this room before the kidnapper kills me
+> Hello
+> How do you know the kidnapper's going to kill you?
+I found a note beside the phone that says I have a limited time before he kills me
+He didnt say how much time I've got so I have to get out of here fast!
+I'm feelings chills down my spine and I don't know where to start looking for a way out of this room...
+
+CHOICES: go near the portrait, go near the bookshelf, check the plants, go to coffee table, come closer to the door
+
+SCRIPT2: (bookshelf)
+There's all sorts of books here, from children's books to professional books
+There are also novels like Harry Potter, the Percy Jackson series, The Kite Runner, Catcher in the Rye and Number the Stars
+But the ones that stand out and looks like it's been read multiple times are A Study in Scarlet, The Hound of Baskervilles, and Hamlet
+
+CHOICES: check a study in scarlet, check the hound of baskervilles, check hamlet, go back to table
+
+SCRIPT3:
+I pulled out The Hound of Baskervilles and it opened to a page with highlights on "That which is clearly known hath less terror than that which is but hinted at and guessed."
+What does this even mean?
+Ohh wait... A note fell down: "Current code: 
+(insert puzzle)
+
+CHOICES: continue searching bookshelf, enter solution, go back to table
+
+SCRIPT4:
+(puzzle solved, give small key to safe under pot)
+
+CHOICES: continue searching bookshelf, go back to table
+
+SCRIPT5:
+No, that doesn't seem to work
+
+CHOICES: continue searching bookshelf, enter solution, go back to table
+
+SCRIPT6:
+Nothing significant about this book except that it's about Sherlock Holmes and Dr. Watson
+
+CHOICES: continue searching bookshelf, go back to table
+
+SCRIPT7:
+I opened Hamlet and it went to a page with highlights on "One may smile, and smile, and be a villain."
+This sounds like a hidden note that the kidnapper left me and I'm scared...
+
+CHOICES: continue searching bookshelf, go back to table
+
+SCRIPT8: (plants)
+I see a Peace Lily, an Areca Palm, Birds of Paradise, and a small Bamboo plant
+I can't recognize the others though
+Something smells nice but I can't figure out where its coming from
+
+CHOICES: check bottom of pots, go back to table
+
+SCRIPT9:
+(bottom of pots, puzzle/clue - code for safe)
+
+CHOICES: enter solution, go back to table
+
+SCRIPT10:
+(hidden cicular safe under a pot)
+(contains a small box)
+(get key from bookshelf puzzle)
+
+CHOICES: (use key), go back to table
+
+SCRIPT11:
+(small box opened)
+
+CHOICES: go back to table
+
+SCRIPT12: (coffee table)
+There's a cup of coffee here
+It's still a bit warm, I wonder if the kidnapper will come back for this
+There's a chair right beside the table
+Wait... Let me check it out...
+Ohh wow! It's a recliner and made of genuine leather!
+I wonder if my kidnapper is rich since he was able to afford this
+
+CHOICES: recline the chair, go back to table
+
+SCRIPT13:
+Wow! It's sooo comfortable!
+This makes me want to read a book or sleep
+I know I shouldn't though so let me unrecline this chair
+Huh? What's this under the handle?
+(insert puzzle)
+
+CHOICES: enter solution, go back to table
+
+SCRIPT14:
+Incorrest solution
+
+CHOICES: enter solution, go back to table
+
+SCRIPT15:
+Correct solution
+
+CHOICES: go back to table
+
+SCRIPT16: (portrait)
+It looks like an imitation painting of the Abduction of Psyche
+...
+
+CHOICES: try to take it off, go back to table, check broken tile
+
+SCRIPT17:
+(broken tile with clue to code of vault behind portrait)
+
+CHOICES: try to take it off, go back to table, check broken tile
+
+SCRIPT18:
+(take off portrait)
+(see safe behind it)
+
+CHOICES: enter code, go back to table
+
+SCRIPT 19:
+(safe opened)
+
+
