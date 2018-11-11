@@ -1,13 +1,11 @@
 import java.util.Scanner;
 // a class that contains the choices and how the game progresses
 public class GameFlow {
-	RoomDesign rooms;
 	PuzzleDesign puzzles;
 	int current;
 
 	GameFlow() {
-		this.rooms = new RoomDesign(1);
-		this.puzzles = new PuzzleDesign(rooms);
+		this.puzzles = new PuzzleDesign();
 		this.current = 0;
 		start();
 	}

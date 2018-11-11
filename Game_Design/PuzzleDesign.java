@@ -3,24 +3,22 @@ public class PuzzleDesign {
 
 	int numOfPuzz;
 	Puzzle[] puzzDes;
-	RoomDesign roomDes;
 	Puzzle dummy;
 	
 	// constructor needing the RoomDesign class to coincide the room and puzzle
-	public PuzzleDesign(RoomDesign roomDes) {
-		this.roomDes = roomDes;
-		this.numOfPuzz = roomDes.roomDes.length;
+	public PuzzleDesign() {
+		this.numOfPuzz = 10;
 		this.puzzDes = new Puzzle[numOfPuzz];
 		this.dummy = dummyPuzzle();
 		for (int i = 0; i < numOfPuzz; i++) {
-			puzzDes[i] = dummyPuzzle();
+			puzzDes[i] = dummy;
 		}
 		createPuzzle();
 	}
 	
 	// dummy puzzle
 	private Puzzle dummyPuzzle() {
-		Puzzle dumm = new Puzzle(new Room(-1), 0, 0);
+		Puzzle dumm = new Puzzle(0, 0);
 		dumm.isDummy = true; // isDummy is set to true for easier comparison later
 		return dumm;
 	}
@@ -38,12 +36,10 @@ public class PuzzleDesign {
 	
 	// create a puzzle
 	protected void createPuzzle() {
-		Puzzle puzz1 = dummy;
-		for (int i = 0; i < roomDes.roomDes.length; i++) {
-			if (roomDes.roomDes[i].roomNumber != -1) {
-				puzz1 = new Puzzle(roomDes.roomDes[i], 14, 32);
-			}
-		}
+		
+		Puzzle puzz1 = new Puzzle(14, 32);
+			
+		
 		//System.out.println(puzz1.sizeOfSc);
 		puzz1.addScript(1, "Hi. Is anyone here?", false);
 		puzz1.addScript(1, "How do I even use this thing", false);

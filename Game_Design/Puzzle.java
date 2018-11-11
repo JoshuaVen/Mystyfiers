@@ -1,6 +1,5 @@
 
 public class Puzzle {
-	Room roomPuzzle;
 	Script[][] textSc;
 	boolean isDummy; // for easier comparison with a real and a dummy puzzle
 	Problem[] prob;
@@ -12,9 +11,8 @@ public class Puzzle {
 	int numberOfSc;
 	int startSc;
 	
-	public Puzzle(Room roomPuzzle, int sizeOfSc, int numberOfSc) {
+	public Puzzle(int sizeOfSc, int numberOfSc) {
 		this.counter = 0.0;
-		this.roomPuzzle = roomPuzzle;
 		this.sizeOfSc = sizeOfSc;
 		this.numberOfSc = numberOfSc;
 		this.textSc = new Script[numberOfSc][sizeOfSc];
