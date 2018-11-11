@@ -3,11 +3,11 @@ Hi
 I found this phone here with your number as the only contact
 I've been kidnapped and locked in a room I'm not familiar with
 Someone was just asking me for directions and next thing you know I'm in this room
-I need your help in escaping this room before the kidnapper kills me
+I need your help in escaping this room before the kidnapper kills me!
 > Hello
 > How do you know the kidnapper's going to kill you?
 I found a note beside the phone that says I have a limited time before he kills me
-He didnt say how much time I've got so I have to get out of here fast!
+He didnt say how much time I've got but I have to get out of here fast!
 I'm feelings chills down my spine and I don't know where to start looking for a way out of this room...
 
 CHOICES: go near the portrait, go near the bookshelf, check the plants, go to coffee table, come closer to the door
@@ -22,13 +22,25 @@ CHOICES: check a study in scarlet, check the hound of baskervilles, check hamlet
 SCRIPT3:
 I pulled out The Hound of Baskervilles and it opened to a page with highlights on "That which is clearly known hath less terror than that which is but hinted at and guessed."
 What does this even mean?
-Ohh wait... A note fell down: "" 
-(add word puzzle)
+Ohh wait...There's a compartment within a book looking for a password...
+And a note fell down: "Which creature walks on four legs in the morning, two legs in the afternoon, and three legs in the evening?" 
+Huh?! This riddle sounds complicated...
+
+CHOICES: continue searching bookshelf, enter solution, go back to table
+
+HINT1:
+This line of the book was highlighted: "That which is clearly known hath less terror than that which is but hinted at and guessed."
+There's also a note that says: "Which creature walks on four legs in the morning, two legs in the afternoon, and three legs in the evening?"
+What does this mean?
 
 CHOICES: continue searching bookshelf, enter solution, go back to table
 
 SCRIPT4:
-(puzzle solved, give small key to safe under pot)
+That's right! A man uses four limbs as a toddler, two feet as an adult, two feet and a walking stick as an elderly.
+Why did I not think of that earlier?
+There's a small key here
+(auto-get small key)
+I wonder if this has a use somewhere...
 
 CHOICES: continue searching bookshelf, go back to table
 
@@ -49,13 +61,18 @@ This sounds like a hidden note that the kidnapper left me and I'm scared...
 CHOICES: continue searching bookshelf, go back to table
 
 SCRIPT8: (plants)
-I see a Peace Lily, an Areca Palm, Birds of Paradise, and a small Bamboo plant
+I see a Peace Lily, an Areca Palm, some Birds of Paradise, and a small Bamboo plant
 I can't recognize the others though
 Something smells nice but I can't figure out where its coming from
 
 CHOICES: check bottom of pots, go back to table
 
 SCRIPT9:
+There's just different types of indoor plants here and some smell I can't find the source of...
+
+CHOICES: check bottom of pots, go back to table
+
+SCRIPT10:
 I found where the smell's coming from! Yey!
 It's from a scented paper hidden under one of the pots
 The paper states: "Current code: Take this number, add twelve twice, add 6 thrice, and get 52, nice"
@@ -66,9 +83,15 @@ Now how do I open this?
 CHOICES: enter code, go back to table
 (correct code = 10)
 
-SCRIPT10:
+HINT2:
+The paper states: "Current code: Take this number, add twelve twice, add 6 thrice, and get 52, nice"
+
+CHOICES: enter code, go back to table
+(correct code = 10)
+
+SCRIPT11:
 Yes! It opened!
-Pssh...I knew that was the answer, I was just checking if you know it too
+Pssh...I knew that was the answer, I was just checking if you know it too...
 Amazing! There's a small box hidden here!
 It sounds like it has something inside it
 But how do I open this? There's no passcode needed or something of the like
@@ -76,15 +99,31 @@ But how do I open this? There's no passcode needed or something of the like
 (use key if checked the book Hound)
 CHOICES: (use key), go back to table
 
-SCRIPT11:
+SCRIPT12:
+Oops! Wrong code! Value is between 6 and 15...
+
+CHOICES: enter code, go back to table
+(correct code = 10)
+
+SCRIPT13:
 So that was the use of the key! 
 Who would have thought that that small key can be used for something in this room
-
-(small box opened containing PROOF of relationship with kidnapper)
+Huh?? There's nothing inside this box...
+It looks like a paper was recently taken out since I can see a freshly ripped piece of paper
 
 CHOICES: go back to table
 
-SCRIPT12: (coffee table)
+SCRIPT14:
+I found a small key, but what can I use it for?
+
+CHOICES: go back to table
+
+SCRIPT15:
+It's just an empty box aside from a ripped piece of paper: "Dear E..."
+
+CHOICES: go back to table
+
+SCRIPT16: (coffee table)
 There's a cup of coffee here
 It's still a bit warm, I wonder if the kidnapper will come back for this
 There's a chair right beside the table
@@ -94,26 +133,48 @@ I wonder if my kidnapper is rich since he was able to afford this
 
 CHOICES: recline the chair, go back to table
 
-SCRIPT13:
+SCRIPT17:
+Not much here except for a recliner made of genuine leather, must be owned by a rich person...
+
+CHOICES: recline the chair, go back to table
+
+SCRIPT18:
 Wow! It's sooo comfortable!
 This makes me want to read a book or sleep
-I know I shouldn't though so let me unrecline this chair
+I know I shouldn't though, so let me unrecline this chair
 Huh? What's this under the handle?
-(insert puzzle)
+There's a note carved on the leather: "What is 3/7 chicken, 2/3 cat, and a half goat?"
+(CHICAGO)
+
+CHOICES: type password, go back to table
+
+HINT3:
+Note carved on the leather: "What is 3/7 chicken, 2/3 cat, and a half goat?"
+What does this mean?
+
+CHOICES: type password, go back to table
+
+SCRIPT19:
+Incorrect password... It is also a rock band, a musical, and a state
 
 CHOICES: enter solution, go back to table
 
-SCRIPT14:
-Incorrest solution
-
-CHOICES: enter solution, go back to table
-
-SCRIPT15:
-Correct solution
+SCRIPT20:
+There's a box hidden inside
+There's so much pictures here and all of it has me in it!
+Some pictures were from high school, but most are just recent photos
+Why and how did he get these photos?
+What's my relationship with the kidnapper?
 
 CHOICES: go back to table
 
-SCRIPT16: (portrait)
+SCRIPT21:
+There's pictures here from my high school days until my most recent activities
+How did he get these and how are we connected?
+
+CHOICES: go back to table
+
+SCRIPT22: (portrait)
 It looks like an image of the Abduction of Psyche
 I love Greek and Roman mythology so I can tell that this is Cupid and Psyche
 Ohh how I love the story of what Cupid did for his loved one
@@ -122,24 +183,97 @@ Maybe the kidnapper also likes their story...
 
 CHOICES: try to take it off, go back to table, check broken tile
 
-SCRIPT17:
-*creaking sounds*
-Ahah! There's a broken tile by my foot
-It looks like it's been deliberately removed as if to hide something important
-Hmm...
-I was right! There's a note here: 
-"If 2 + 3 = 5, 3 + 7 = 17, 4 + 5 = 19 and 5 + 8 = 37, then what number between 40 and 50 is 6 + 7?"
-(broken tile with clue to code of vault behind portrait)
+SCRIPT23:
+It's an image of the Abduction of Psyche
 
 CHOICES: try to take it off, go back to table, check broken tile
 
-SCRIPT18:
-(take off portrait)
-(see safe behind it)
+SCRIPT24:
+*creaking sounds*
+Ohh! There's a broken tile by my foot
+It looks like it's been deliberately removed as if to hide something important
+Hmm...
+I was right! There's a note here: 
+"If 2 + 3 = 5, 3 + 7 = 17, 4 + 5 = 19 and 5 + 8 = 37, then what is 6 + 7?"
+I wonder what's this for?
+
+CHOICES: continue checking portrait, go back to table
+
+HINT4:
+The note says: "If 2 + 3 = 5, 3 + 7 = 17, 4 + 5 = 19 and 5 + 8 = 37, then what is 6 + 7?"
+The number should be between 40 and 50
+What's this for?
+(answer 41)
+
+CHOICES: continue checking portrait, go back to table
+
+SCRIPT25:
+There's a safe behind the portrait and its asking for a fingerprint or a code
+This vault probably contains my kidnapper's secrets
+Let's try to unlock it... but how?
 
 CHOICES: enter code, go back to table
 
-SCRIPT 19:
-(safe opened)
+SCRIPT26:
+Its asking for a fingerprint or a code
+What code?
 
+CHOICES: enter code, go back to table
 
+SCRIPT27:
+It was the wrong code... How do I open this?
+
+CHOICES: enter code, go back to table
+
+SCRIPT28:
+It opened! You're a genius!
+How did you figure out the code?... 
+Inside the vault is a torn off piece of paper
+It looks like a collection of quotes:
+"It sucks when you know that you need to let go, but you can't, because you're still waiting for the impossible to happen.
+I will always have this impossible little hope that you'll suddenly wake up one day and realize we're meant to be together.
+I'm at such a dilemma. I want to distance myself from you, but yet, I don't want to lose you.
+It hurts to let go, but sometimes it hurts more to hold on."
+There's a note on the back...
+"It's now time for me to let you go. I'm sorry for all the things I have done. I kidnapped you so that in some way, you will still remember the good memories we had through the photos. Whatever is surrounding is now yours. You will not see me again. Farewell!"
+...
+I recognize this handwriting! It's Charley's!
+I can't forgive him yet but maybe time will heal my wounds...
+
+CHOICES: go back to table
+
+SCRIPT29:
+The vault behind the portrait had a list of quotes and a note from Charley...
+
+CHOICES: go back to table
+
+SCRIPT30: (table)
+Note: "Be ready to be killed at any time!"
+I wonder how long I've been here...
+
+CHOICES: go near the portrait, go near the bookshelf, check the plants, go to coffee table, come closer to the door
+
+SCRIPT31: (door)
+There's an intercom here and whatever button I press, it keeps repeating: "What's my name?"
+Whatever that name is I know that that's my only way out of here!
+
+CHOICES: say the name, go back to table
+
+SCRIPT32:
+"That's not my name!!!"
+*silence*
+
+CHOICES: say the name, go back to table
+
+HINT5:
+Password: "What's my name?"
+
+CHOICES: say the name, go back to table
+
+SCRIPT33:
+It worked! The intercom responded: "Yes! That's my name!"
+The door is opening! 
+Thank you! I don't know what I would have done without you!
+
+FINAL:
+Great job! You have completed the story and exited the room successfully!
