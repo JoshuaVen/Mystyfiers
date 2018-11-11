@@ -22,8 +22,8 @@ CHOICES: check a study in scarlet, check the hound of baskervilles, check hamlet
 SCRIPT3:
 I pulled out The Hound of Baskervilles and it opened to a page with highlights on "That which is clearly known hath less terror than that which is but hinted at and guessed."
 What does this even mean?
-Ohh wait... A note fell down: "Current code: 
-(insert puzzle)
+Ohh wait... A note fell down: "" 
+(add word puzzle)
 
 CHOICES: continue searching bookshelf, enter solution, go back to table
 
@@ -56,19 +56,31 @@ Something smells nice but I can't figure out where its coming from
 CHOICES: check bottom of pots, go back to table
 
 SCRIPT9:
-(bottom of pots, puzzle/clue - code for safe)
+I found where the smell's coming from! Yey!
+It's from a scented paper hidden under one of the pots
+The paper states: "Current code: Take this number, add twelve twice, add 6 thrice, and get 52, nice"
+Huh? I don't understand...
+Ohh wait... There's a hidden safe right where I got the paper
+Now how do I open this?
 
-CHOICES: enter solution, go back to table
+CHOICES: enter code, go back to table
+(correct code = 10)
 
 SCRIPT10:
-(hidden cicular safe under a pot)
-(contains a small box)
-(get key from bookshelf puzzle)
+Yes! It opened!
+Pssh...I knew that was the answer, I was just checking if you know it too
+Amazing! There's a small box hidden here!
+It sounds like it has something inside it
+But how do I open this? There's no passcode needed or something of the like
 
+(use key if checked the book Hound)
 CHOICES: (use key), go back to table
 
 SCRIPT11:
-(small box opened)
+So that was the use of the key! 
+Who would have thought that that small key can be used for something in this room
+
+(small box opened containing PROOF of relationship with kidnapper)
 
 CHOICES: go back to table
 
@@ -102,12 +114,21 @@ Correct solution
 CHOICES: go back to table
 
 SCRIPT16: (portrait)
-It looks like an imitation painting of the Abduction of Psyche
-...
+It looks like an image of the Abduction of Psyche
+I love Greek and Roman mythology so I can tell that this is Cupid and Psyche
+Ohh how I love the story of what Cupid did for his loved one
+Despite the choices Psyche did, Cupid kept on loving and helping her all through-out
+Maybe the kidnapper also likes their story...
 
 CHOICES: try to take it off, go back to table, check broken tile
 
 SCRIPT17:
+*creaking sounds*
+Ahah! There's a broken tile by my foot
+It looks like it's been deliberately removed as if to hide something important
+Hmm...
+I was right! There's a note here: 
+"If 2 + 3 = 5, 3 + 7 = 17, 4 + 5 = 19 and 5 + 8 = 37, then what number between 40 and 50 is 6 + 7?"
 (broken tile with clue to code of vault behind portrait)
 
 CHOICES: try to take it off, go back to table, check broken tile
