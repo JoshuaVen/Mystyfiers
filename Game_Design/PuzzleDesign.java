@@ -18,7 +18,6 @@ public class PuzzleDesign {
 		createPuzzle();
 	}
 	
-	
 	// dummy puzzle
 	private Puzzle dummyPuzzle() {
 		Puzzle dumm = new Puzzle(new Room(-1), 0, 0);

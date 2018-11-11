@@ -4,6 +4,7 @@ public class Puzzle {
 	Script[][] textSc;
 	boolean isDummy; // for easier comparison with a real and a dummy puzzle
 	Problem[] prob;
+	Double counter;
 
 	Script dummySc;
 	Problem dummyProb;
@@ -12,6 +13,7 @@ public class Puzzle {
 	int startSc;
 	
 	public Puzzle(Room roomPuzzle, int sizeOfSc, int numberOfSc) {
+		this.counter = 0.0;
 		this.roomPuzzle = roomPuzzle;
 		this.sizeOfSc = sizeOfSc;
 		this.numberOfSc = numberOfSc;
@@ -75,6 +77,26 @@ public class Puzzle {
 			}
 		}
 		return false;
+	}
+	
+	private int totalNumberOfSc() {
+		int scripts = 0;
+		for (int i = 0; i < numberOfSc; i++) {
+			if (!textSc[i][0].equals(dummySc)) {
+				scripts++;
+			}
+		}
+		return scripts;
+	}
+	
+	void updateCounter() {
+		Double tempCounter = 0.0;
+		for (int i = 0; i < totalNumberOfSc(); i++) {
+			if (textSc[i][0].isRead = true) {
+				tempCounter++;
+			}
+		}
+		this.counter = (tempCounter / totalNumberOfSc()) * 100;
 	}
 	
 	int actualSizeOfSc(int scriptNum) {
