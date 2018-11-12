@@ -77,7 +77,7 @@ public class Puzzle {
 		return false;
 	}
 	
-	Double totalNumberOfSc() {
+	private Double totalNumberOfSc() {
 		Double scripts = 0.0;
 		for (int i = 0; i < numberOfSc; i++) {
 			if (!textSc[i][0].equals(dummySc)) {
@@ -87,14 +87,14 @@ public class Puzzle {
 		return scripts;
 	}
 	
-	Double updateCounter() {
+	void updateCounter() {
 		Double tempCounter = 0.0;
 		for (int i = 0; i < totalNumberOfSc(); i++) {
 			if (textSc[i][0].isRead == true) {
 				tempCounter = tempCounter + 1.0;
 			}
 		}
-		return (tempCounter / totalNumberOfSc()) * 100;
+		this.counter = (tempCounter / totalNumberOfSc()) * 100;
 	}
 	
 	int actualSizeOfSc(int scriptNum) {
