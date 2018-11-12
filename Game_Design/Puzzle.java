@@ -77,24 +77,24 @@ public class Puzzle {
 		return false;
 	}
 	
-	private int totalNumberOfSc() {
-		int scripts = 0;
+	Double totalNumberOfSc() {
+		Double scripts = 0.0;
 		for (int i = 0; i < numberOfSc; i++) {
 			if (!textSc[i][0].equals(dummySc)) {
-				scripts++;
+				scripts = scripts + 1.0;
 			}
 		}
 		return scripts;
 	}
 	
-	void updateCounter() {
+	Double updateCounter() {
 		Double tempCounter = 0.0;
 		for (int i = 0; i < totalNumberOfSc(); i++) {
-			if (textSc[i][0].isRead = true) {
-				tempCounter++;
+			if (textSc[i][0].isRead == true) {
+				tempCounter = tempCounter + 1.0;
 			}
 		}
-		this.counter = (tempCounter / totalNumberOfSc()) * 100;
+		return (tempCounter / totalNumberOfSc()) * 100;
 	}
 	
 	int actualSizeOfSc(int scriptNum) {
