@@ -43,7 +43,7 @@ public class GameFlow {
 		String com = in.nextLine();
 		switch (com.toUpperCase()) {
 		case "P":
-			portrait();
+			//portrait();
 			break;
 		case "B":
 			bookshelf();
@@ -52,7 +52,7 @@ public class GameFlow {
 			plants();
 			break;
 		case "T":
-			coffee();
+			//coffee();
 			break;
 		case "D":
 			//door();
@@ -68,7 +68,7 @@ public class GameFlow {
 	private void bookshelf() {
 		Scanner in = new Scanner(System.in);
 		branchDisplay(2, 40);
-		System.out.println("(S - check 'A Study in Scaret') (B- check 'The Hound of Baskervilles') (H - check 'Hamlet') (G - go back to table)");
+		System.out.println("(S - check 'A Study in Scarlet') (B- check 'The Hound of Baskervilles') (H - check 'Hamlet') (G - go back to table)");
 		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
@@ -191,7 +191,7 @@ public class GameFlow {
 			goBack();
 		}
 		Scanner in = new Scanner(System.in);
-		System.out.println("(C - check bottom of pots)(G - go back to table)");
+		System.out.println("(C - check bottom of pots) (G - go back to table)");
 		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
@@ -229,7 +229,7 @@ public class GameFlow {
 		}
 		in.close();
 	}
-	
+
 	private void pass2() {
 		System.out.println("Enter code: ");
 		Scanner in = new Scanner(System.in);
@@ -237,8 +237,7 @@ public class GameFlow {
 		int code = in.nextInt();
 		if (code == 10) {
 			display(11);
-			puzzles.puzzDes[0].changeToSolved("isBottomChecked");
-			goBack();
+			key();
 		} else if (code != 10) {
 			display(12);
 			bottom();
@@ -248,25 +247,30 @@ public class GameFlow {
 		in.close();
 	}
 	
-	private void pass3() {
-		System.out.println("(U - Use key) (G - Go back to the table)");
+	private void key() {
+		if (puzzles.puzzDes[0].checkProblemIfSolved("isHoundChecked")) {
+			System.out.println("(U - use key) (G - go back to table)");
+		} else {
+			System.out.println("(G - go back to table)");
+		}
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
 		case "U":
 			display(13);
+			puzzles.puzzDes[0].changeToSolved("isPlantsChecked");
+			goBack();
 			break;
 		case "G":
 			goBack();
 			break;
 		default:
 			System.out.println("That's not a command I recognize.");
-			pass3();
+			key();
 			break;		
 		}
 		in.close();
-		
 	}
 	
 	private void coffee() {
@@ -321,7 +325,7 @@ public class GameFlow {
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
 		String command = in.nextLine();
-		String pass = new String("Chicago");
+		String pass = new String("chicago");
 		command = command.toLowerCase();
 		if (!command.matches(pass) ) {
 			display(19);
@@ -335,137 +339,6 @@ public class GameFlow {
 		}
 		in.close();
 	}
-	
-	private void portrait() {
-		if (puzzles.puzzDes[0].checkProblemIfSolved("isPortraitChecked") == false) {
-			branchDisplay(22, 23);
-		} else {
-			display(29);
-			goBack();
-		}
-		Scanner in = new Scanner(System.in);
-		System.out.println("(T - try to take it off)(G - go back to table)(C - Check broken tile)");
-		System.out.print("> ");
-		String command = in.nextLine();
-		switch (command.toUpperCase()) {
-		case "T":
-			take();
-			break;
-		case "G":
-			goBack();
-			break;
-		case "C":
-			brokenTile();
-			break;
-		default:
-			System.out.println("That's not a command I recognize.");
-			portrait();
-			break;		
-		}
-		in.close();
-	}
-	
-	private void take() {
-		branchDisplay(25, 26);
-		Scanner in = new Scanner(System.in);
-		System.out.println("(E - enter code) (G - go back to table)");
-		System.out.print("> ");
-		String command = in.nextLine();
-		switch (command.toUpperCase()) {
-		case "E":
-			pass5();
-			break;
-		case "G":
-			goBack();
-			break;
-		default:
-			System.out.println("That's not a command I recognize.");
-			take();
-			break;		
-		}
-		in.close();
-	}
-	
-	private void pass5() {
-		System.out.println("Enter code: ");
-		Scanner in = new Scanner(System.in);
-		System.out.print("> ");
-		int code = in.nextInt();
-		if (code == 41) {
-			display(28);
-			puzzles.puzzDes[0].changeToSolved("isPortraitChecked");
-			goBack();
-		} else if (code != 41) {
-			display(27);
-			take();
-		} else {      //expected for no input, not yet working
-			goBack();
-		}
-		in.close();
-	}
-	
-	private void brokenTile() {
-		branchDisplay(24, 37);
-		Scanner in = new Scanner(System.in);
-		System.out.println("(C - Continue cheking the portrait) (G - go back to table)");
-		System.out.print("> ");
-		String command = in.nextLine();
-		switch (command.toUpperCase()) {
-		case "C":
-			portrait();
-			break;
-		case "G":
-			goBack();
-			break;
-		default:
-			System.out.println("That's not a command I recognize.");
-			brokenTile();
-			break;		
-		}
-		in.close();
-	}
-	
-	private void door() {
-		branchDisplay(31, 38);
-		Scanner in = new Scanner(System.in);
-		System.out.println("(S - Say the name) (G - go back to table)");
-		System.out.print("> ");
-		String command = in.nextLine();
-		switch (command.toUpperCase()) {
-		case "S":
-			pass6();
-			break;
-		case "G":
-			goBack();
-			break;
-		default:
-			System.out.println("That's not a command I recognize.");
-			door();
-			break;		
-		}
-		in.close();
-	}
-	
-	private void pass6() {
-		System.out.println("Enter the answer: ");
-		Scanner in = new Scanner(System.in);
-		System.out.print("> ");
-		String command = in.nextLine();
-		String pass = new String("Charley");
-		command = command.toLowerCase();
-		if (!command.matches(pass) ) {
-			display(32);
-			pass4();
-		} else if (command.matches(pass)) {
-			display(33);
-			puzzles.puzzDes[0].changeToSolved("isDoorChecked");
-			display(39);
-		} else {
-			door();
-		}
-		in.close();
-	}
-	
 	
 	private void goBack() {
 		display(30);
@@ -550,7 +423,7 @@ public class GameFlow {
 		choices(0);
 	}
 
-	private void entrance() {
+	private void door() {
 		Scanner in = new Scanner(System.in);
 		branchDisplay(8, 9);
 		System.out.println("(Go back to the bed) (Telephone)");
