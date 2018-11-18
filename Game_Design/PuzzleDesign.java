@@ -254,6 +254,9 @@ public class PuzzleDesign {
 		puzz2.addProblem("isHoundChecked");
 		puzz2.addProblem("isBottomChecked");
 		puzz2.addProblem("isPlantsChecked");
+		puzz2.addProblem("isCoffeeChecked");
+		puzz2.addProblem("isPortraitChecked");
+		puzz2.addProblem("isDoorChecked");
 		
 		addPuzzle(puzz2);
 	}
