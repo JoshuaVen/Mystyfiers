@@ -73,102 +73,129 @@ public class PuzzleDesign {
 		
 		puzz1.addScript(7, "The code on the mirror is 807", false);
 		
-		puzz1.addScript(8, "It's locked. Well, this door isn't that easy to kick down. They're definitely not eager to let me out", false);
-		puzz1.addScript(8, "Hmmm... There is no handle, no keyhole", false);
-		puzz1.addScript(8, "There is a phone hanging next to the door. I wonder hwat is it for?", false);
+		puzz1.addScript(8, "I see a Peace Lily, an Areca Palm, some Birds of Paradise, and a small Bamboo plant", false);
+		puzz1.addScript(8, "I can't recognize the others though", false);
+		puzz1.addScript(8, "Something smells nice but I can't figure out where its coming from", false);
 		
-		puzz1.addScript(9, "I've already tried opening the door. I failed", false);
+		puzz1.addScript(9, "There's just different types of indoor plants here and some smell I can't find the source of...", false);
 		
-		puzz1.addScript(10, "Hello? Who are you?", false);
-		puzz1.addScript(10, "The voice keeps repeating the same phrase, it doesn't react to my words", false);
-		puzz1.addScript(10, "It's a record of some famous expression; I understand this language, and it seems to be Latin: \"A friend of my friend is my my friend...", false);
+		puzz1.addScript(10, "I found where the smell's coming from! Yey!", false);
+		puzz1.addScript(10, "It's from a scented paper hidden under one of the pots", false);
+		puzz1.addScript(10, "The paper states: \"Current code: Take this number, add twelve twice, add 6 thrice, and get 52, nice\"", false);
+		puzz1.addScript(10, "Huh? I don't understand...", false);
+		puzz1.addScript(10, "Ohh wait... There's a hidden safe right where I got the paper", false);
+		puzz1.addScript(10, "Now how do I open this?", false);
 		
-		puzz1.addScript(11, "Yes, it's definitely Latin, it means something like... \"A friend of my fried is my friend...\" ...So strange...", false);
-		puzz1.addScript(11, "Where the hell do I even know it from?!", false);
+		puzz1.addScript(35, "The paper states: \"Current code: Take this number, add twelve twice, add 6 thrice, and get 52, nice\"", false);
 		
-		puzz1.addScript(12, "Do you suggest talking to the answering machine? Well, ok, let's give it a try", false);
-		puzz1.addScript(12, "What should I say?", false);
+		puzz1.addScript(11, "Yes! It opened!", false);
+		puzz1.addScript(11, "Pssh...I knew that was the answer, I was just checking if you know it too...", false);
+		puzz1.addScript(11, "Amazing! There's a small box hidden here!", false);
+		puzz1.addScript(11, "It sounds like it has something inside it", false);
+		puzz1.addScript(11, "But how do I open this? There's no passcode needed or something of the like", false);
 		
-		puzz1.addScript(13, "Let's try again", false);
+		puzz1.addScript(12, "Oops! Wrong code! Value is between 6 and 15...", false);
 		
-		puzz1.addScript(14, "Nothing happened, the voice keeps repeating the same message", false);
+		puzz1.addScript(13, "So that was the use of the key!", false);
+		puzz1.addScript(13, "Who would have thought that that small key can be used for something in this room", false);
+		puzz1.addScript(13, "Huh?? There's nothing inside this box...", false);
+		puzz1.addScript(13, "It looks like a paper was recently taken out since I can see a freshly ripped piece of paper", false);	
 		
-		puzz1.addScript(15, "Something changed...Yeah! Right!", false);
-		puzz1.addScript(15, "The voice on the phone stopped for a while and said: rectam responsum", false);
-		puzz1.addScript(15, "I can hear the sound somewhere in the door, some kind of mechanical gnashing", false);
-		puzz1.addScript(15, "The door is opening!", false);
-		puzz1.addScript(15, "I don't believe my eyes! Thanks, I have no idea what I would do without you!", false);
+		puzz1.addScript(14, "I found a small key, but what can I use it for?", false);
 		
-		puzz1.addScript(16, "Am I a prisoner here?! There are rusty gratings on the windows, and a cabinet next to the bed. It must be night right now. It's raining outside", false);
-		puzz1.addScript(16, "I'll look under the bed now", false);
-		puzz1.addScript(16, "Interesting, there is a dusty suitcase. It should be mine, since it lies under my bed!", false);
-		puzz1.addScript(16, "Damn, for how long long have I been here?", false);
+		puzz1.addScript(15, "It's just an empty box aside from a ripped piece of paper: \"Dear E...\"", false);
 		
-		puzz1.addScript(17, "I've already searched all around. I don't have much choice, but I'll try to figure something out", false);
+		puzz1.addScript(16, "There's a cup of coffee here", false);
+		puzz1.addScript(16, "It's still a bit warm, I wonder if the kidnapper will come back for this", false);
+		puzz1.addScript(16, "There's a chair right beside the table", false);
+		puzz1.addScript(16, "Wait... Let me check it out...", false);
+		puzz1.addScript(16, "Ohh wow! It's a recliner and made of genuine leather!", false);
+		puzz1.addScript(16, "I wonder if my kidnapper is rich since he was able to afford this", false);
 		
-		puzz1.addScript(18, "The cabinet is digitally locked", false);
-		puzz1.addScript(18, "I need some kind of a code to open it", false);
-		puzz1.addScript(18, "Do you have any ideas?", false);
-		puzz1.addScript(18, "I noticed a piece of paper sticking out from under the cabinet", false);
-		puzz1.addScript(18, "Perhaps I can find something useful on it", false);
-		puzz1.addScript(18, "There is only one handwritten note: \"Current code: the number of months in a year that have 28 days...\"", false);
-		puzz1.addScript(18, "Seems to be a hint...", false);
+		puzz1.addScript(17, "Not much here except for a recliner made of genuine leather, must be owned by a rich person...", false);
 		
-		puzz1.addScript(19, "The following is written on the piece of paper I've found: \"Current code: the number of months in a year that have 28 days...\"", false);
+		puzz1.addScript(18, "Wow! It's sooo comfortable!", false);
+		puzz1.addScript(18, "This makes me want to read a book or sleep", false);
+		puzz1.addScript(18, "I know I shouldn't though, so let me unrecline this chair", false);
+		puzz1.addScript(18, "Huh? What's this under the handle", false);
+		puzz1.addScript(18, "There's a note carved on the leather: \"What is 3/7 chicken, 2/3 cat, and a half goat?\"", false);
+		puzz1.addScript(18, "(CHICAGO)", false);
 		
-		puzz1.addScript(20, "No, this code doesn't work!", false);
+		puzz1.addScript(36, "Note carved on the leather: \"What is 3/7 chicken, 2/3 cat, and a half goat?\"", false);
+		puzz1.addScript(36, "What does this mean?", false);
 		
-		puzz1.addScript(21, "I did it, I opened it!", false);
-		puzz1.addScript(21, "It smells really strange. There are empty medicine bottles on the upper shelf...", false);
-		puzz1.addScript(21, "Mnemosyne...Hypnotheryne...Oneurovite... Never heard of these", false);
-		puzz1.addScript(21, "There's a ballpoint pen and a flashlight on the lower shelf", false);
-		puzz1.addScript(21, "(auto-get pen)", false);
-		puzz1.addScript(21, "(auto-get flashlight)", false);
-		puzz1.addScript(21, "Batteries still work, it works", false);
+		puzz1.addScript(19, "Incorrect password... It is also a rock band, a musical, and a state", false);
 		
-		puzz1.addScript(22, "I've searched all the shelves and corners, there is nothing more", false);
+		puzz1.addScript(20, "There's a box hidden inside", false);
+		puzz1.addScript(20, "There's so much pictures here and all of it has me in it!", false);
+		puzz1.addScript(20, "Some pictures were from high school, but most are just recent photos!", false);
+		puzz1.addScript(20, "Why and how did he get these photos?", false);
+		puzz1.addScript(20, "What's my relationship with the kidnapper?!", false);
 		
-		puzz1.addScript(23, "I'll try opening it", false);
-		puzz1.addScript(23, "There is a combination lock, and if it's my suitcase, I should know the code...but I don't remember anything", false);
-		puzz1.addScript(23, "You know, it's hard to describe...", false);
-		puzz1.addScript(23, "It's like a tune that keeps playing in my mind, or an author whose name is on the tip of my tongue, but my brain just refuses to remember it", false);
+		puzz1.addScript(21, "There's pictures here from my high school days until my most recent activities", false);
+		puzz1.addScript(21, "How did he get these and how are we connected?", false);
 		
-		puzz1.addScript(24, "How do I open it?! I can't remember the code from the lock", false);
+		puzz1.addScript(22, "It looks like an image of the Abduction of Psyche", false);
+		puzz1.addScript(22, "I love Greek and Roman mythology so I can tell that this is Cupid and Psyche", false);
+		puzz1.addScript(22, "Ohh how I love the story of what Cupid did for his loved one", false);
+		puzz1.addScript(22, "Despite the choices Psyche did, Cupid kept on loving and helping her all through-out", false);
+		puzz1.addScript(22, "Maybe the kidnapper also likes their story...", false);
 		
-		puzz1.addScript(25, "It doesn't open", false);
+		puzz1.addScript(23, "It's an image of the Abduction of Psyche", false);
 		
-		puzz1.addScript(26, "I opened it, my friend! I guess I had a vague idea of what they were gonna do to me when they dragged me here", false);
-		puzz1.addScript(26, "That they would erase my memories...", false);
-		puzz1.addScript(26, "And I left a note for myself on the mirror. I can't imagine what would I have done if you hadn't figured it out?!", false);
-		puzz1.addScript(26, "Let's see what do we have here", false);
-		puzz1.addScript(26, "Warm clothes, a small stack of clean notebooks...", false);
-		puzz1.addScript(26, "There is a photo of a girl with a red umbrella... She is very beautiful, and has a nice smile. I think I know her...", false);
-		puzz1.addScript(26, "It's signed: \"Paris, Summer\"", false);
-		puzz1.addScript(26, "I have to try and remember her...", false);
-		puzz1.addScript(26, "There is a book as well... No, I think it's my diary!", false);
+		puzz1.addScript(24, "*creaking sounds*", false);
+		puzz1.addScript(24, "Ohh! There's a broken tile by my foot", false);
+		puzz1.addScript(24, "It looks like it's been deliberately removed as if to hide something important", false);
+		puzz1.addScript(24, "Hmm...", false);
+		puzz1.addScript(24, "I was right! There's a note here:", false);
+		puzz1.addScript(24, "\"If 2 + 3 = 5, 3 + 7 = 17, 4 + 5 = 19 and 5 + 8 = 37, then what is 6 + 7?\"", false);
+		puzz1.addScript(24, "I wonder what's this for?", false);
 		
-		puzz1.addScript(27, "The paper is crumpled. Let's have a look...", false);
-		puzz1.addScript(27, "\"May 12, 2005. I've finally found some information about her. That's why we'll have to fly to France on holidays. The three of us will manage, we just have to think everything through!\"", false);
-		puzz1.addScript(27, "\"December 25, 2005. I can't fall asleep because it's so cold here. There are only stars and endless memories of her. I'm lucky to have a friend here with me, or else I would probably go crazy\"", false);
-		puzz1.addScript(27, "I can't understand any other entries...", false);
-		puzz1.addScript(27, "I managed to decipher only the last one: Identification of the signature is required", false);
+		puzz1.addScript(37, "The note says: \"If 2 + 3 = 5, 3 + 7 = 17, 4 + 5 = 19 and 5 + 8 = 37, then what is 6 + 7?\"", false);
+		puzz1.addScript(37, "The number should be between 40 and 50", false);
+		puzz1.addScript(37, "What's this for?", false);
 		
-		puzz1.addScript(28, "I've already looked through all the entries", false);		
+		puzz1.addScript(25, "There's a safe behind the portrait and its asking for a fingerprint or a code", false);
+		puzz1.addScript(25, "This vault probably contains my kidnapper's secrets", false);
+		puzz1.addScript(25, "Let's try to unlock it... but how?", false);
 		
-		puzz1.addScript(29, "But I don't remember who I am!", false);
-		puzz1.addScript(29, "What if I can't make it?", false);
-		puzz1.addScript(29, "And what can I use to sign...", false);
+		puzz1.addScript(26, "Its asking for a fingerprint or a code", false);
+		puzz1.addScript(26, "What code?", false);
 		
-		puzz1.addScript(30, "I guess I have to sign in this diary...", false);
+		puzz1.addScript(27, "It was the wrong code... How do I open this?", false);
 		
-		puzz1.addScript(31, "It worked! My hands remember it! The first letter seems to be L...", false);
-		puzz1.addScript(31, "Now there's another entry!", false);
-		puzz1.addScript(31, "\"April 15, 2006. Huh, I'm back in the game! The key of all doors- \"viva\"", false);
-		puzz1.addScript(31, "I don't understand a thing", false);
-		puzz1.addScript(31, "Friend, there are no more entries. I must've gotten so engaged in the game that I had no time to keep writing in my diary...", false);
-		puzz1.addScript(31, "But why did I hide this entry?", false);
+		puzz1.addScript(28, "It opened! You're a genius!", false);
+		puzz1.addScript(28, "How did you figure out the code?...", false);
+		puzz1.addScript(28, "Inside the vault is a torn off piece of paper", false);
+		puzz1.addScript(28, "It looks like a collection of quotes:", false);
+		puzz1.addScript(28, "\"It sucks when you know that you need to let go, but you can't, because you're still waiting for the impossible to happen.", false);
+		puzz1.addScript(28, "I will always have this impossible little hope that you'll suddenly wake up one day and realize we're meant to be together.", false);
+		puzz1.addScript(28, "I'm at such a dilemma. I want to distance myself from you, but yet, I don't want to lose you.", false);
+		puzz1.addScript(28, "It hurts to let go, but sometimes it hurts more to hold on.", false);
+		puzz1.addScript(28, "There's a note on the back...", false);
+		puzz1.addScript(28, "\"It's now time for me to let you go. I'm sorry for all the things I have done. I kidnapped you so that in some way, you will still remember the good memories we had through the photos. Whatever is surrounding is now yours. You will not see me again. Farewell!\"", false);
+		puzz1.addScript(28, "...", false);
+		puzz1.addScript(28, "I recognize this handwriting! It's Charley's!", false);
+		puzz1.addScript(28, "I can't forgive him yet but maybe time will heal my wounds...", false);
 		
-		puzz1.addScript(32, "The last entry in the diary: \"Huh, I'm back in the game! Viva!\"", false);
+		puzz1.addScript(29, "The vault behind the portrait had a list of quotes and a note from Charley...", false);
+		
+		puzz1.addScript(30, "Note: \"Be ready to be killed at any time!\"", false);
+		puzz1.addScript(30, "I wonder how long I've been here...", false);
+		
+		puzz1.addScript(31, "There's an intercom here and whatever button I press, it keeps repeating: \"What's my name?\"", false);
+		puzz1.addScript(31, "Whatever that name is I know that that's my only way out of here!", false);
+		
+		puzz1.addScript(32, "\"That's not my name!!!\"", false);
+		puzz1.addScript(32, "*silence*", false);
+		
+		puzz1.addScript(38, "Password: \"What's my name?\"", false);
+		
+		puzz1.addScript(33, "It worked! The intercom responded: \"Yes! That's my name!\"", false);
+		puzz1.addScript(33, "The door is opening!", false);
+		puzz1.addScript(33, "Thank you! I don't know what I would have done without you!", false);
+		
+		puzz1.addScript(39, "Great job! You have completed the story and exited the room successfully!", false);
 
 		puzz1.addProblem("isCabinetOpen");
 		puzz1.addProblem("isSuitcaseOpen");
@@ -226,6 +253,7 @@ public class PuzzleDesign {
 		
 		puzz2.addProblem("isHoundChecked");
 		puzz2.addProblem("isBottomChecked");
+		puzz2.addProblem("isPlantsChecked");
 		
 		addPuzzle(puzz2);
 	}
