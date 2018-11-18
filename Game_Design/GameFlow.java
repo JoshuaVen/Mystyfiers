@@ -6,8 +6,8 @@ public class GameFlow {
 
 	GameFlow() {
 		this.puzzles = new PuzzleDesign();
-		this.current = 0;
-		start();
+		this.current = 1;
+		start2();
 	}
 	
 	private void display(int scriptNum) {
@@ -16,8 +16,7 @@ public class GameFlow {
 			System.out.print(puzzles.puzzDes[0].textSc[scriptNum - 1][i].read());
 			in.nextLine();
 		}
-		puzzles.puzzDes[0].updateCounter();
-		System.out.println(puzzles.puzzDes[0].counter);
+		System.out.println(puzzles.puzzDes[0].updateCounter());
 	}
 
 	private void branchDisplay(int ifScript, int elseScript) {
@@ -26,6 +25,168 @@ public class GameFlow {
 		} else {
 			display(elseScript);
 		}
+	}
+	
+	private void start2() {
+		Scanner in = new Scanner(System.in);
+		
+		display(1);
+		options(1);
+		
+		in.close();
+	}
+	
+	private void options(int i) {
+		System.out.println("(P - go near the portrait) (B - go near the bookshelf) (C - check the plants) (T - go to coffee table) (D - come closer to the door)");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		String com = in.nextLine();
+		switch (com.toUpperCase()) {
+		case "P":
+			//portrait();
+			break;
+		case "B":
+			bookshelf();
+			break;
+		case "C":
+			//plants();
+			break;
+		case "T":
+			//coffee();
+			break;
+		case "D":
+			//door();
+			break;
+		default:
+			System.out.println("That's not a command I recognize.");
+			options(i);
+			break;		
+		}
+		in.close();
+	} 
+	
+	private void bookshelf() {
+		Scanner in = new Scanner(System.in);
+		branchDisplay(2, 40);
+		System.out.println("(S - check 'A Study in Scaret') (B- check 'The Hound of Baskervilles') (H - check 'Hamlet') (G - go back to table)");
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toUpperCase()) {
+		case "S":
+			scarlet();
+			break;
+		case "B":
+			basker();
+			break;
+		case "H":
+			hamlet();
+			break;
+		case "G":
+			goBack();
+			break;
+		default:
+			System.out.println("That's not a command I recognize.");
+			bookshelf();
+			break;		
+		}
+		in.close();
+	}
+	
+	private void scarlet() {
+		Scanner in = new Scanner(System.in);
+		display(6);
+		System.out.println("(C - continue searching bookshelf) (G - go back to table)");
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toUpperCase()) {
+		case "C":
+			bookshelf();
+			break;
+		case "G":
+			goBack();
+			break;
+		default:
+			System.out.println("That's not a command I recognize.");
+			bookshelf();
+			break;		
+		}
+		in.close();
+	}
+	
+	private void basker() {
+		if (puzzles.puzzDes[0].checkProblemIfSolved("isHoundChecked") == false) {
+			branchDisplay(3, 34);
+		} else {
+			display(14);
+			goBack();
+		}
+		Scanner in = new Scanner(System.in);
+		System.out.println("(C - continue searching bookshelf) (E - enter solution) (G - go back to table)");
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toUpperCase()) {
+		case "C":
+			bookshelf();
+			break;
+		case "E":
+			pass1();
+			break;
+		case "G":
+			goBack();
+			break;
+		default:
+			System.out.println("That's not a command I recognize.");
+			bookshelf();
+			break;		
+		}
+		in.close();
+	}
+	
+	private void pass1() {
+		System.out.println("Enter text message: ");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		String command = in.nextLine();
+		String pass = new String("man");
+		command = command.toLowerCase();
+		if (!command.matches(pass) ) {
+			display(5);
+			basker();
+		} else if (command.matches(pass)) {
+			display(4);
+			puzzles.puzzDes[0].changeToSolved("isHoundChecked");
+			goBack();
+		} else {
+			basker();
+		}
+		in.close();
+	}
+	
+	private void hamlet() {
+		Scanner in = new Scanner(System.in);
+		display(7);
+		System.out.println("(C - continue searching bookshelf) (G - go back to table)");
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toUpperCase()) {
+		case "C":
+			bookshelf();
+			break;
+		case "G":
+			goBack();
+			break;
+		default:
+			System.out.println("That's not a command I recognize.");
+			bookshelf();
+			break;		
+		}
+		in.close();
+	}
+
+	
+	private void goBack() {
+		display(30);
+		options(1);
 	}
 	
 	private void start() {

@@ -176,6 +176,57 @@ public class PuzzleDesign {
 
 		
 		addPuzzle(puzz1);
+		
+		Puzzle puzz2 = new Puzzle(15, 40);
+		
+		puzz2.addScript(1, "Hi", false);
+		puzz2.addScript(1, "I found this phone here with your number as the only contact", false);
+		puzz2.addScript(1, "I've been kidnapped and locked in a room I'm not familiar with", false);
+		puzz2.addScript(1, "Someone was just asking me for directions and next thing you know I'm in this room", false);
+		puzz2.addScript(1, "I need your help in escaping this room before the kidnapper kills me!", false);
+		puzz2.addScript(1, "> Hello", false);
+		puzz2.addScript(1, "> How do you know the kidnapper's going to kill you?", false);
+		puzz2.addScript(1, "I found a note beside the phone that says I have a limited time before he kills me", false);
+		puzz2.addScript(1, "He didnt say how much time I've got but I have to get out of here fast!", false);
+		puzz2.addScript(1, "I'm feelings chills down my spine and I don't know where to start looking for a way out of this room...", false);
+		
+		puzz2.addScript(2, "There's all sorts of books here, from children's books to professional books", false);
+		puzz2.addScript(2, "There are also novels like Harry Potter, the Percy Jackson series, The Kite Runner, Catcher in the Rye and Number the Stars", false);
+		puzz2.addScript(2, "But the ones that stand out and looks like it's been read multiple times are A Study in Scarlet, The Hound of Baskervilles, and Hamlet", false);
+		
+		puzz2.addScript(40, "These books stand out the most: A Study in Scarlet, The Hound of Baskervilles, and Hamlet", false);
+		
+		puzz2.addScript(3, "I pulled out The Hound of Baskervilles and it opened to a page with highlights on \"That which is clearly known hath less terror than that which is but hinted at and guessed.\"", false);
+		puzz2.addScript(3, "What does this even mean?", false);
+		puzz2.addScript(3, "Ohh wait...There's a compartment within a book looking for a password...", false);
+		puzz2.addScript(3, "And a note fell down: \"Which creature walks on four legs in the morning, two legs in the afternoon, and three legs in the evening?\"", false);
+		puzz2.addScript(3, "Huh?! This riddle sounds complicated...", false);
+		
+		puzz2.addScript(34, "This line of the book was highlighted: \"That which is clearly known hath less terror than that which is but hinted at and guessed.\"", false);
+		puzz2.addScript(34, "There's also a note that says: \"Which creature walks on four legs in the morning, two legs in the afternoon, and three legs in the evening?\"", false);
+		puzz2.addScript(34, "What does this mean?", false);
+		
+		puzz2.addScript(4, "That's right! A man uses four limbs as a toddler, two feet as an adult, two feet and a walking stick as an elderly.", false);
+		puzz2.addScript(4, "Why did I not think of that earlier?", false);
+		puzz2.addScript(4, "There's a small key here", false);
+		puzz2.addScript(4, "(auto-get small key)", false);
+		puzz2.addScript(4, "I wonder if this has a use somewhere...", false);
+		
+		puzz2.addScript(5, "No, that doesn't seem to work", false);
+		
+		puzz2.addScript(6, "Nothing significant about this book except that it's about Sherlock Holmes and Dr. Watson", false);
+		
+		puzz2.addScript(7, "I opened Hamlet and it went to a page with highlights on \"One may smile, and smile, and be a villain.\"", false);
+		puzz2.addScript(7, "This sounds like a hidden note that the kidnapper left me and I'm scared...", false);
+		
+		puzz2.addScript(30, "Note: \"Be ready to be killed at any time!\"", false);
+		puzz2.addScript(30, "I wonder how long I've been here...", false);
+		
+		
+		
+		puzz2.addProblem("isHoundChecked");
+		
+		addPuzzle(puzz2);
 	}
 	
 }
