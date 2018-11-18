@@ -429,6 +429,48 @@ public class GameFlow {
 		in.close();
 	}
 	
+	private void door2() {
+		branchDisplay(31, 38);
+		Scanner in = new Scanner(System.in);
+		System.out.println("(S - Say the name) (G - go back to table)");
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toUpperCase()) {
+		case "S":
+			pass6();
+			break;
+		case "G":
+			goBack();
+			break;
+		default:
+			System.out.println("That's not a command I recognize.");
+			door2();
+			break;		
+		}
+		in.close();
+	}
+	
+	private void pass6() {
+		System.out.println("Enter the answer: ");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		String command = in.nextLine();
+		String pass = new String("charley");
+		command = command.toLowerCase();
+		if (!command.matches(pass) ) {
+			display(32);
+			door2();
+		} else if (command.matches(pass)) {
+			display(33);
+			//puzzles.puzzDes[0].changeToSolved("isDoorChecked");
+			display(39);
+			System.exit(0);
+		} else {
+			door2();
+		}
+		in.close();
+	}
+	
 	private void goBack() {
 		display(30);
 		options(1);
