@@ -225,6 +225,7 @@ public class PuzzleDesign {
 		
 		
 		puzz2.addProblem("isHoundChecked");
+		puzz2.addProblem("isBottomChecked");
 		
 		addPuzzle(puzz2);
 	}
