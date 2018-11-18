@@ -268,7 +268,6 @@ public class PuzzleDesign {
 		puzz2.addScript(18, "I know I shouldn't though, so let me unrecline this chair", false);
 		puzz2.addScript(18, "Huh? What's this under the handle", false);
 		puzz2.addScript(18, "There's a note carved on the leather: \"What is 3/7 chicken, 2/3 cat, and a half goat?\"", false);
-		puzz2.addScript(18, "(CHICAGO)", false);
 		
 		puzz2.addScript(36, "Note carved on the leather: \"What is 3/7 chicken, 2/3 cat, and a half goat?\"", false);
 		puzz2.addScript(36, "What does this mean?", false);
@@ -329,9 +328,6 @@ public class PuzzleDesign {
 		
 		puzz2.addScript(29, "The vault behind the portrait had a list of quotes and a note from Charley...", false);
 		
-		puzz2.addScript(30, "Note: \"Be ready to be killed at any time!\"", false);
-		puzz2.addScript(30, "I wonder how long I've been here...", false);
-		
 		puzz2.addScript(31, "There's an intercom here and whatever button I press, it keeps repeating: \"What's my name?\"", false);
 		puzz2.addScript(31, "Whatever that name is I know that that's my only way out of here!", false);
 		
@@ -348,10 +344,11 @@ public class PuzzleDesign {
 		
 		
 		puzz2.addProblem("isHoundChecked");
-		puzz2.addProblem("isBottomChecked");
 		puzz2.addProblem("isPlantsChecked");
 		puzz2.addProblem("isCoffeeChecked");
-		puzz2.addProblem("isChecked");
+		puzz2.addProblem("isPortraitChecked");
+		//puzz2.addProblem("isDoorChecked");
+		
 		
 		addPuzzle(puzz2);
 	}
