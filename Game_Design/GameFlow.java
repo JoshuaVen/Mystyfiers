@@ -340,6 +340,95 @@ public class GameFlow {
 		in.close();
 	}
 	
+	private void portrait() {
+		if (puzzles.puzzDes[0].checkProblemIfSolved("isPortraitChecked") == false) {
+			branchDisplay(22, 23);
+		} else {
+			display(29);
+			goBack();
+		}
+		Scanner in = new Scanner(System.in);
+		System.out.println("(T - try to take it off)(G - go back to table)(C - Check broken tile)");
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toUpperCase()) {
+		case "T":
+			take();
+			break;
+		case "G":
+			goBack();
+			break;
+		case "C":
+			brokenTile();
+			break;
+		default:
+			System.out.println("That's not a command I recognize.");
+			portrait();
+			break;		
+		}
+		in.close();
+	}
+	
+	private void take() {
+		branchDisplay(25, 26);
+		Scanner in = new Scanner(System.in);
+		System.out.println("(E - enter code) (G - go back to table)");
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toUpperCase()) {
+		case "E":
+			pass5();
+			break;
+		case "G":
+			goBack();
+			break;
+		default:
+			System.out.println("That's not a command I recognize.");
+			take();
+			break;		
+		}
+		in.close();
+	}
+	
+	private void pass5() {
+		System.out.println("Enter code: ");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		int code = in.nextInt();
+		if (code == 41) {
+			display(28);
+			puzzles.puzzDes[0].changeToSolved("isPortraitChecked");
+			goBack();
+		} else if (code != 41) {
+			display(27);
+			take();
+		} else {      //expected for no input, not yet working
+			goBack();
+		}
+		in.close();
+	}
+	
+	private void brokenTile() {
+		branchDisplay(24, 37);
+		Scanner in = new Scanner(System.in);
+		System.out.println("(C - Continue cheking the portrait) (G - go back to table)");
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toUpperCase()) {
+		case "C":
+			portrait();
+			break;
+		case "G":
+			goBack();
+			break;
+		default:
+			System.out.println("That's not a command I recognize.");
+			brokenTile();
+			break;		
+		}
+		in.close();
+	}
+	
 	private void goBack() {
 		display(30);
 		options(1);
