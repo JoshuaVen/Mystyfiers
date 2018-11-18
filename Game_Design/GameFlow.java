@@ -16,7 +16,7 @@ public class GameFlow {
 			System.out.print(puzzles.puzzDes[0].textSc[scriptNum - 1][i].read());
 			in.nextLine();
 		}
-		System.out.println(puzzles.puzzDes[0].updateCounter());
+		System.out.println("Progress: " + puzzles.puzzDes[0].updateCounter());
 	}
 
 	private void branchDisplay(int ifScript, int elseScript) {
@@ -43,7 +43,7 @@ public class GameFlow {
 		String com = in.nextLine();
 		switch (com.toUpperCase()) {
 		case "P":
-			//portrait();
+			portrait();
 			break;
 		case "B":
 			bookshelf();
@@ -52,10 +52,10 @@ public class GameFlow {
 			plants();
 			break;
 		case "T":
-			//coffee();
+			coffee();
 			break;
 		case "D":
-			//door();
+			door2();
 			break;
 		default:
 			System.out.println("That's not a command I recognize.");
