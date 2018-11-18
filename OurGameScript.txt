@@ -19,6 +19,9 @@ But the ones that stand out and looks like it's been read multiple times are A S
 
 CHOICES: check a study in scarlet, check the hound of baskervilles, check hamlet, go back to table
 
+SCRIPT40:
+These books stand out the most: A Study in Scarlet, The Hound of Baskervilles, and Hamlet
+
 SCRIPT3:
 I pulled out The Hound of Baskervilles and it opened to a page with highlights on "That which is clearly known hath less terror than that which is but hinted at and guessed."
 What does this even mean?
@@ -28,7 +31,7 @@ Huh?! This riddle sounds complicated...
 
 CHOICES: continue searching bookshelf, enter solution, go back to table
 
-HINT1:
+SCRIPT34:
 This line of the book was highlighted: "That which is clearly known hath less terror than that which is but hinted at and guessed."
 There's also a note that says: "Which creature walks on four legs in the morning, two legs in the afternoon, and three legs in the evening?"
 What does this mean?
@@ -83,7 +86,7 @@ Now how do I open this?
 CHOICES: enter code, go back to table
 (correct code = 10)
 
-HINT2:
+SCRIPT35:
 The paper states: "Current code: Take this number, add twelve twice, add 6 thrice, and get 52, nice"
 
 CHOICES: enter code, go back to table
@@ -148,7 +151,7 @@ There's a note carved on the leather: "What is 3/7 chicken, 2/3 cat, and a half 
 
 CHOICES: type password, go back to table
 
-HINT3:
+SCRIPT36:
 Note carved on the leather: "What is 3/7 chicken, 2/3 cat, and a half goat?"
 What does this mean?
 
@@ -199,7 +202,7 @@ I wonder what's this for?
 
 CHOICES: continue checking portrait, go back to table
 
-HINT4:
+SCRIPT37:
 The note says: "If 2 + 3 = 5, 3 + 7 = 17, 4 + 5 = 19 and 5 + 8 = 37, then what is 6 + 7?"
 The number should be between 40 and 50
 What's this for?
@@ -265,7 +268,7 @@ SCRIPT32:
 
 CHOICES: say the name, go back to table
 
-HINT5:
+SCRIPT38:
 Password: "What's my name?"
 
 CHOICES: say the name, go back to table
@@ -275,5 +278,5 @@ It worked! The intercom responded: "Yes! That's my name!"
 The door is opening! 
 Thank you! I don't know what I would have done without you!
 
-FINAL:
+SCRIPT39:
 Great job! You have completed the story and exited the room successfully!
