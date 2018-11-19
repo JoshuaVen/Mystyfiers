@@ -16,7 +16,7 @@ public class GameFlow {
 			System.out.print(puzzles.puzzDes[0].textSc[scriptNum - 1][i].read());
 			in.nextLine();
 		}
-		System.out.println("Progress: " + puzzles.puzzDes[0].updateCounter());
+		System.out.println("Progress: " + puzzles.puzzDes[0].counter);
 	}
 
 	private void branchDisplay(int ifScript, int elseScript) {
