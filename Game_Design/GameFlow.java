@@ -348,7 +348,7 @@ public class GameFlow {
 			goBack();
 		}
 		Scanner in = new Scanner(System.in);
-		System.out.println("(T - try to take it off)(G - go back to table)(C - Check broken tile)");
+		System.out.println("(T - try to take it off)(G - go back to table)(C - Check the floor)");
 		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
