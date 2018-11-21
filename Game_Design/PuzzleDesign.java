@@ -252,7 +252,7 @@ public class PuzzleDesign {
 		
 		puzz2.addScript(14, "I found a small key, but what can I use it for?", false);
 		
-		puzz2.addScript(15, "It's just an empty box aside from a ripped piece of paper: \"Dear E...\"", false);
+		puzz2.addScript(15, "It's just an empty box aside from a ripped piece of paper: \"Dear D...\"", false);
 		
 		puzz2.addScript(16, "There's a cup of coffee here", false);
 		puzz2.addScript(16, "It's still a bit warm, I wonder if the kidnapper will come back for this", false);

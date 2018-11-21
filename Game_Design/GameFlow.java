@@ -37,7 +37,12 @@ public class GameFlow {
 	}
 	
 	private void options(int i) {
-		System.out.println("(P - go near the portrait) (B - go near the bookshelf) (C - check the plants) (T - go to coffee table) (D - come closer to the door)");
+		if (puzzles.puzzDes[0].checkProblemIfSolved("isHoundChecked") && puzzles.puzzDes[0].checkProblemIfSolved("isPlantsChecked")
+				&& puzzles.puzzDes[0].checkProblemIfSolved("isCoffeeChecked") && puzzles.puzzDes[0].checkProblemIfSolved("isPortraitChecked")) {
+			System.out.println("(P - go near the portrait) (B - go near the bookshelf) (C - check the plants) (T - go to coffee table) (D - come closer to the door)");
+		} else {
+			System.out.println("(P - go near the portrait) (B - go near the bookshelf) (C - check the plants) (T - go to coffee table)");
+		}
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
 		String com = in.nextLine();
