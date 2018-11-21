@@ -122,7 +122,7 @@ I found a small key, but what can I use it for?
 CHOICES: go back to table
 
 SCRIPT15:
-It's just an empty box aside from a ripped piece of paper: "Dear E..."
+It's just an empty box aside from a ripped piece of paper: "Dear D..."
 
 CHOICES: go back to table
 
@@ -184,12 +184,12 @@ Ohh how I love the story of what Cupid did for his loved one
 Despite the choices Psyche did, Cupid kept on loving and helping her all through-out
 Maybe the kidnapper also likes their story...
 
-CHOICES: try to take it off, go back to table, check broken tile
+CHOICES: try to take it off, go back to table, check the floor
 
 SCRIPT23:
 It's an image of the Abduction of Psyche
 
-CHOICES: try to take it off, go back to table, check broken tile
+CHOICES: try to take it off, go back to table, check the floor
 
 SCRIPT24:
 *creaking sounds*
