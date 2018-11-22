@@ -71,6 +71,7 @@ public class MainEscape extends JApplet {
 					startThread(line);
 					textArea.append(printScript); // PRINTING TO THE TEXT AREA FROM DISPLAY
 					line++; // update index line to be printed
+					textFieldUserInput.setEditable(false);
 					
 					System.out.println(puzzles.puzzDes[1].textSc.length);
 					System.out.println(puzzles.puzzDes.length);
@@ -79,6 +80,20 @@ public class MainEscape extends JApplet {
 				else {
 					options(current);
 					textArea.append(printScript);
+					textFieldUserInput.setEditable(true);
+					if(textFieldUserInput.getText().equals("P") || 
+							textFieldUserInput.getText().equals("") || 
+							textFieldUserInput.getText().equals("B") || 
+							textFieldUserInput.getText().equals("C") || 
+							textFieldUserInput.getText().equals("T") || 
+							textFieldUserInput.getText().equals("D")) {
+						
+					} else {
+						textArea.append("That's not a command I recognize.");
+						textFieldUserInput.setText("");
+					}
+					
+					
 				}
 //				if(puzzles.puzzDes[0].textSc.length)
 				
@@ -106,7 +121,7 @@ public class MainEscape extends JApplet {
 	}
 	
 	private void options(int i) {
-		scr = "~\nP - go near the portrait \nB - go near the bookshelf \nC - check the plants \nT - go to coffee table \nD - come closer to the door)\n~";
+		scr = "`\n~\nP - go near the portrait \nB - go near the bookshelf \nC - check the plants \nT - go to coffee table \nD - come closer to the door)\n~";
 		printScript = scr;
 		System.out.println("(P - go near the portrait) (B - go near the bookshelf) (C - check the plants) (T - go to coffee table) (D - come closer to the door)");
 //		switch (com.toUpperCase()) {
@@ -130,6 +145,6 @@ public class MainEscape extends JApplet {
 //			options(i);
 //			break;		
 //		}
-	} 
+	}
 	
 }
