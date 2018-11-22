@@ -17,6 +17,14 @@ import java.awt.event.ActionEvent;
  *
  */
 
+/**
+* Hi, you can try to run this code, there is no KeyEvent for "Enter" key yet, so if
+* you want to print the script lines, just click Enter button.
+* Enter is also until the last line of
+* puzz2.addScript(1, string), after that, it will show 
+* Exception in thread "AWT-EventQueue-1" java.lang.ArrayIndexOutOfBoundsException
+*/
+
 public class MainEscape extends JApplet {
 	PuzzleDesign puzzles;
 	int current;
