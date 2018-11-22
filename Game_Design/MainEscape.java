@@ -16,6 +16,8 @@ import java.awt.event.ActionEvent;
  *
  */
 
+/* Before running, please set Run Configurations > Parameters > Width = 1000 && Height = 700*/
+
 @SuppressWarnings("serial")
 public class MainEscape extends JApplet {
 	PuzzleDesign puzzles;
@@ -62,6 +64,7 @@ public class MainEscape extends JApplet {
 		textFieldUserInput.setBounds(10, 622, 809, 45);
 		mainPanel.add(textFieldUserInput);
 		textFieldUserInput.setColumns(10);
+		textFieldUserInput.setEditable(false);
 
 		JButton btnNewButton = new JButton("START");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -71,7 +74,6 @@ public class MainEscape extends JApplet {
 					startThread(line);
 					textArea.append(printScript); // PRINTING TO THE TEXT AREA FROM DISPLAY
 					line++; // update index line to be printed
-					textFieldUserInput.setEditable(false);
 					
 					System.out.println(puzzles.puzzDes[1].textSc.length);
 					System.out.println(puzzles.puzzDes.length);
@@ -81,12 +83,11 @@ public class MainEscape extends JApplet {
 					options(current);
 					textArea.append(printScript);
 					textFieldUserInput.setEditable(true);
-					if(textFieldUserInput.getText().equals("P") || 
-							textFieldUserInput.getText().equals("") || 
-							textFieldUserInput.getText().equals("B") || 
-							textFieldUserInput.getText().equals("C") || 
-							textFieldUserInput.getText().equals("T") || 
-							textFieldUserInput.getText().equals("D")) {
+					if(textFieldUserInput.getText().toUpperCase().equals("P") || textFieldUserInput.getText().toUpperCase().equals("") || textFieldUserInput.getText().toUpperCase().equals("B") || textFieldUserInput.getText().toUpperCase().equals("C") || textFieldUserInput.getText().toUpperCase().equals("T") || textFieldUserInput.getText().toUpperCase().equals("D")) {
+						if(textFieldUserInput.getText().toUpperCase().equals("")) {
+							textArea.append("Tell me what to do!\n");
+						}
+						textFieldUserInput.setText("");
 						
 					} else {
 						textArea.append("That's not a command I recognize.");
@@ -121,7 +122,7 @@ public class MainEscape extends JApplet {
 	}
 	
 	private void options(int i) {
-		scr = "`\n~\nP - go near the portrait \nB - go near the bookshelf \nC - check the plants \nT - go to coffee table \nD - come closer to the door)\n~";
+		scr = "`\n~\nP - go near the portrait \nB - go near the bookshelf \nC - check the plants \nT - go to coffee table \nD - come closer to the door\n~";
 		printScript = scr;
 		System.out.println("(P - go near the portrait) (B - go near the bookshelf) (C - check the plants) (T - go to coffee table) (D - come closer to the door)");
 //		switch (com.toUpperCase()) {
