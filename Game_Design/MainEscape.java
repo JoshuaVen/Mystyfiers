@@ -130,6 +130,6 @@ public class MainEscape extends JApplet {
 //			options(i);
 //			break;		
 //		}
-	}
+	} 
 	
 }
