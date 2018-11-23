@@ -351,6 +351,80 @@ public class PuzzleDesign {
 		
 		
 		addPuzzle(puzz2);
+		
+		Puzzle puzz3 = new Puzzle(15, 40);
+		
+		puzz3.addScript(1, "My mom is knocking on the door.", false);
+		puzz3.addScript(1, "(Door suddenly opens)", false);
+		puzz3.addScript(1, "\"Charley's mom called. She said to check your email as soon as possible. I should go to work, bye.\"", false);
+		puzz3.addScript(1, "(Mom leaves and closes the door)", false);
+		
+		puzz3.addScript(2, "Wait let me check my email...", false);
+		puzz3.addScript(2, "My mom was right!", false);
+		puzz3.addScript(2, "There's an email from Charley's mom!", false);
+		puzz3.addScript(2, "It says:", false);
+		puzz3.addScript(2, "\"I need your help. Do you know where Charley is?", false);
+		puzz3.addScript(2, "He said he will go camping with you in the woods.", false);
+		puzz3.addScript(2, "I'm worried for him. He has not texted or called me since yesterday.", false);
+		puzz3.addScript(2, "He just left this note by his bed. I dont know what he meant about this.", false);
+		puzz3.addScript(2, "Please come by our house once you read this!\"", false);
+		puzz3.addScript(2, "The note says:", false);
+		puzz3.addScript(2, "\"...\"", false);
+		
+		puzz3.addScript(3, "It feels so nice to be at my own bed.", false);
+		puzz3.addScript(3, "I wonder if there's a continuation to my dream earlier?", false);
+		
+		puzz3.addScript(4, "You're right, maybe I should go to Charley's house first.", false);
+		puzz3.addScript(4, "(At Charley's house)", false);
+		puzz3.addScript(4, "There's no answer when I ring the doorbell...", false);
+		puzz3.addScript(4, "The door is open so I'll just go in", false);
+		puzz3.addScript(4, "Ohh, there's a note here by the entrance: ", false);
+		puzz3.addScript(4, "\"Just check Charley's bedroom. - Charley's mom\"", false);
+		
+		puzz3.addScript(5, "There's nothing unusual in his room.", false);
+		puzz3.addScript(5, "Things are as I remember them...", false);
+		puzz3.addScript(5, "Except for the box in his bed!", false);
+		puzz3.addScript(5, "Oh! Something is needed to open this box.", false);
+		
+		puzz3.addScript(6, "Incorrect password...", false);
+		
+		puzz3.addScript(7, "Ahaahh!! It opened.", false);
+		puzz3.addScript(7, "There is a paper that has an address in it.", false);
+		puzz3.addScript(7, "Maybe this is were Charley is.", false);
+		puzz3.addScript(7, "ADDRESS: Paravinci's Italian Bistro, 2802 Colorado Avenue, Colorado Springs, CO 80904, United States", false);
+		puzz3.addScript(7, "It's not that far from here.", false);
+		puzz3.addScript(7, "I should head for it immediately.", false);
+		puzz3.addScript(7, "(Paravinci's Italian Bistro)", false);
+		puzz3.addScript(7, "I can't find him... Let me ask the waiter", false);
+		puzz3.addScript(7, "Hi! I'm looking for Charley. Is he here?", false);
+		puzz3.addScript(7, "Waiter: \"Hello! Sorry he's not here but he told me to give this if ever someone looks for him. Here you go\"", false);
+		puzz3.addScript(7, "The waiter handed me a suitcase with a lock and a note.", false);
+		
+		puzz3.addScript(8, "Incorrect password...", false);
+		
+		puzz3.addScript(9, "Wrong answer...", false);
+		
+		puzz3.addScript(10, "Finally it opened. ", false);
+		puzz3.addScript(10, "There is a piece of paper here that says \"Pikes Peak, High Point, El Paso County, Colorado, United States\"", false);
+		puzz3.addScript(10, "Is he playing games with me now? What is he up to? ", false);
+		puzz3.addScript(10, "I should go directly so that my questions would be answered.", false);
+		puzz3.addScript(10, "(Pikes Peak)", false);
+		puzz3.addScript(10, "\"Surprise!!!\"", false);
+		puzz3.addScript(10, "It's Charley.", false);
+		puzz3.addScript(10, "What is this all about Charley?", false);
+		puzz3.addScript(10, "We are worried sick about you. Don't you realize that?", false);
+		puzz3.addScript(10, "\"Oh I'm sorry. I just find this place as the perfect one to do this.\"", false);
+		puzz3.addScript(10, "To do what?!", false);
+		puzz3.addScript(10, "(Charley kneels down on one knee)", false);
+		puzz3.addScript(10, "\"I've known you my whole life. We experienced many things together. Even the challenges of life, we surpassed it together.\"", false);
+		puzz3.addScript(10, "\"You brought color in my darkest times. You gave meaning to my life.\"", false);
+		puzz3.addScript(10, "\"And now I know this is the right time for this.\"", false);
+		puzz3.addScript(10, "\"Demetria Devonne Jonas, will you spend the rest of your life with me? Will you marry me?\"", false);
+		puzz3.addScript(10, "Yess!! A hundred times yes!", false);
+		puzz3.addScript(10, "Why do I have to go through a lot of challenges and riddles just to be engaged to someone I love?", false);
+		puzz3.addScript(10, "\"HAHAHAHA! I bet  you'd say that :)\"", false);
+		
+		puzz3.addScript(11, "Congratulations!! You've finished the story.", false);
 	}
 	
 }
