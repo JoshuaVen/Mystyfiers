@@ -338,9 +338,12 @@ public class PuzzleDesign {
 		
 		puzz2.addScript(33, "It worked! The intercom responded: \"Yes! That's my name!\"", false);
 		puzz2.addScript(33, "The door is opening!", false);
-		puzz2.addScript(33, "Thank you! I don't know what I would have done without you!", false);
+		puzz2.addScript(33, "(A sudden sound caught you in surprise)", false);
+		puzz2.addScript(33, "(You hear someone knocking on the door)", false);
+		puzz2.addScript(33, "Wait what?! Was it just a dream?!", false);
+		puzz2.addScript(33, "Thank god, it was just a dream!!! ", false);
 		
-		puzz2.addScript(39, "Great job! You have completed the story and exited the room successfully!", false);
+		puzz2.addScript(39, "Great job! You have completed the first part of the story.", false);
 		
 		
 		puzz2.addProblem("isHoundChecked");
