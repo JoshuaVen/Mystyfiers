@@ -1,0 +1,111 @@
+// ROOM 2
+
+SCRIPT 1: 
+My mom is knocking on the door.
+(Door suddenly opens)
+"Charley's mom called. She said to check your email as soon as possible. I should go to work, bye."
+(Mom leaves and closes the door)
+Wait let me check my email...
+My mom was right!
+There's an email from Charley's mom!
+It says:
+"I need your help. Do you know where Charley is?
+He said he will go camping with you in the woods.
+I'm worried for him. He has not texted or called me since yesterday.
+He just left this note by his bed. I dont know what he meant about this. 
+Please come by our house once you read this!"
+
+
+//result of check email
+SCRIPT 2:
+The note attached in the email says:
+"CALCULATE CAREFULLY... 55-25-(5-95)=?
+YOU MAY NOT BELIEVEIT, BUT THIS EQUALS 5!"
+
+CHOICES: go to Charley's house, go back to bed
+
+//result of go back to bed
+SCRIPT 3:
+It feels so nice to be at my own bed
+I wonder if there's a continuation to my dream earlier?
+
+CHOICES: check email
+
+SCRIPT 4:
+You're right, maybe I should go to Charley's house first.
+(At Charley's house)
+There's no answer when I ring the doorbell...
+The door is open so I'll just go in
+Ohh, there's a note here by the entrance: 
+"Just check Charley's bedroom. - Charley's mom"
+
+CHOICES: examine the room, go back home
+
+SCRIPT 5:
+There's nothing unusual in his room.
+Things are as I remember them...
+Except for the box in his bed!
+Oh! Something is needed to open this box.
+It's looking for a code
+
+CHOICES: enter code, check email again, go back home
+
+SCRIPT6:
+I need a code to open the box
+I wonder what it is...
+
+//answer != 120
+SCRIPT 7:
+Incorrect password...
+
+CHOICES: enter the answer, check email by phone, go back home
+
+SCRIPT 8:
+Ahaahh!! It opened.
+There is a paper that has an address in it.
+Maybe this is were Charley is.
+ADDRESS: Paravinci's Italian Bistro, 2802 Colorado Avenue, Colorado Springs, CO 80904, United States
+It's not that far from here.
+I should head for it immediately.
+(Paravinci's Italian Bistro)
+I can't find him... Let me ask the waiter
+Hi! I'm looking for Charley. Is he here?
+Waiter: "Hello! Sorry he's not here but he told me to give this if ever someone looks for him. Here you go"
+The waiter handed me a suitcase with a lock and a note.
+The note says: "If Mercury=1167, Venus=2145, Earth=3165, Mars=4164, Saturn=6246, then Jupiter=?"
+
+CHOICES: type the answer
+
+SCRIPT 9:
+I got the suitcase with a lock.
+The note says: "If Mercury=1167, Venus=2145, Earth=3165, Mars=4164, Saturn=6246, then Jupiter=?"
+
+CHOICES: type the answer
+
+//answer != 5247
+SCRIPT 10:
+Wrong answer... 
+
+SCRIPT 11:
+Finally it opened. 
+There is a piece of paper here that says "Pikes Peak, High Point, El Paso County, Colorado, United States"
+Is he playing games with me now? What is he up to? 
+I should go directly so that my questions would be answered.
+(Pikes Peak)
+"Surprise!!!"
+It's Charley.
+What is this all about Charley?
+We are worried sick about you. Don't you realize that?
+"Oh I'm sorry. I just find this place as the perfect one to do this."
+To do what?!
+(Charley kneels down on one knee)
+"I've known you my whole life. We experienced many things together. Even the challenges of life, we surpassed it together."
+"You brought color in my darkest times. You gave meaning to my life."
+"And now I know this is the right time for this."
+"Demetria Devonne Jonas, will you spend the rest of your life with me? Will you marry me?"
+Yess!! A hundred times yes!
+Why do I have to go through a lot of challenges and riddles just to be engaged to someone I love?"
+"HAHAHAHA! I bet  you'd say that :)"
+
+SCRIPT 12:
+Congratulations!! You've finished the story.
