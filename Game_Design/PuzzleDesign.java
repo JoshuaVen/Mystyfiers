@@ -428,6 +428,7 @@ public class PuzzleDesign {
 		puzz3.addScript(10, "\"HAHAHAHA! I bet  you'd say that :)\"", false);
 		
 		puzz3.addScript(11, "Congratulations!! You've finished the story.", false);
+		
 	}
 	
 }
