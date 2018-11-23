@@ -276,7 +276,12 @@ CHOICES: say the name, go back to table
 SCRIPT33:
 It worked! The intercom responded: "Yes! That's my name!"
 The door is opening! 
-Thank you! I don't know what I would have done without you!
+(A sudden sound caught you in surprise)
+(You hear someone knocking on the door)
+Wait what?! Was it just a dream?!
+Thank god, it was just a dream!!! 
 
 SCRIPT39:
-Great job! You have completed the story and exited the room successfully!
+Great job! You have completed the first part of the story.
+
+CHOICES: continue to the next story
