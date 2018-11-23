@@ -8,7 +8,6 @@ import java.awt.ScrollPane;
 public class GUI {
 
 	private JFrame frame;
-	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -41,14 +40,5 @@ public class GUI {
 		frame.setBounds(100, 100, 684, 441);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
-		textField = new JTextField();
-		textField.setBounds(10, 365, 648, 26);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
-		
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(10, 11, 648, 343);
-		frame.getContentPane().add(textArea);
 	}
 }
