@@ -499,7 +499,6 @@ public class GameFlow {
 	
 	private void story2() {
 		display(41);
-		display(42);
 		System.out.println("(C - Go to Charley's house) (G - go back to bed)");
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
@@ -521,7 +520,7 @@ public class GameFlow {
 	
 	private void charleysHouse() {
 		display(44);
-		System.out.println("(E - examine his room) (go back home)");
+		System.out.println("(E - examine his room) (G - go back home)");
 		System.out.print("> ");
 		Scanner in = new Scanner(System.in);
 		String command = in.nextLine();
@@ -602,7 +601,7 @@ public class GameFlow {
 	}
 	
 	private void pass8() {
-		branchDisplay(48,49);
+		branchDisplay(48, 49);
 		System.out.println("Enter code: ");
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
@@ -621,7 +620,7 @@ public class GameFlow {
 	private void end() {
 		display(51);
 		display(52);
-		display(54);
+		display(53);
 		System.out.println("(P - play again) (Q - Quit the game)");
 		System.out.println("> ");
 		Scanner in = new Scanner(System.in);
