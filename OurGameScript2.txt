@@ -1,6 +1,6 @@
 // ROOM 2
 
-SCRIPT 1: 
+SCRIPT 41: 
 My mom is knocking on the door.
 (Door suddenly opens)
 "Charley's mom called. She said to check your email as soon as possible. I should go to work, bye."
@@ -17,7 +17,7 @@ Please come by our house once you read this!"
 
 
 //result of check email
-SCRIPT 2:
+SCRIPT 42:
 The note attached in the email says:
 "CALCULATE CAREFULLY... 55-25-(5-95)=?
 YOU MAY NOT BELIEVEIT, BUT THIS EQUALS 5!"
@@ -25,13 +25,13 @@ YOU MAY NOT BELIEVEIT, BUT THIS EQUALS 5!"
 CHOICES: go to Charley's house, go back to bed
 
 //result of go back to bed
-SCRIPT 3:
+SCRIPT 43:
 It feels so nice to be at my own bed
 I wonder if there's a continuation to my dream earlier?
 
 CHOICES: check email
 
-SCRIPT 4:
+SCRIPT 44:
 You're right, maybe I should go to Charley's house first.
 (At Charley's house)
 There's no answer when I ring the doorbell...
@@ -41,7 +41,7 @@ Ohh, there's a note here by the entrance:
 
 CHOICES: examine the room, go back home
 
-SCRIPT 5:
+SCRIPT 45:
 There's nothing unusual in his room.
 Things are as I remember them...
 Except for the box in his bed!
@@ -50,17 +50,17 @@ It's looking for a code
 
 CHOICES: enter code, check email again, go back home
 
-SCRIPT6:
+SCRIPT 46:
 I need a code to open the box
 I wonder what it is...
 
 //answer != 120
-SCRIPT 7:
+SCRIPT 47:
 Incorrect password...
 
 CHOICES: enter the answer, check email by phone, go back home
 
-SCRIPT 8:
+SCRIPT 48:
 Ahaahh!! It opened.
 There is a paper that has an address in it.
 Maybe this is were Charley is.
@@ -76,17 +76,17 @@ The note says: "If Mercury=1167, Venus=2145, Earth=3165, Mars=4164, Saturn=6246,
 
 CHOICES: type the answer
 
-SCRIPT 9:
+SCRIPT 49:
 I got the suitcase with a lock.
 The note says: "If Mercury=1167, Venus=2145, Earth=3165, Mars=4164, Saturn=6246, then Jupiter=?"
 
 CHOICES: type the answer
 
 //answer != 5247
-SCRIPT 10:
+SCRIPT 50:
 Wrong answer... 
 
-SCRIPT 11:
+SCRIPT 51:
 Finally it opened. 
 There is a piece of paper here that says "Pikes Peak, High Point, El Paso County, Colorado, United States"
 Is he playing games with me now? What is he up to? 
@@ -107,5 +107,5 @@ Yess!! A hundred times yes!
 Why do I have to go through a lot of challenges and riddles just to be engaged to someone I love?"
 "HAHAHAHA! I bet  you'd say that :)"
 
-SCRIPT 12:
+SCRIPT 52:
 Congratulations!! You've finished the story.

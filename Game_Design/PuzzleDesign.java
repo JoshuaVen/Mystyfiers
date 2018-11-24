@@ -357,15 +357,15 @@ public class PuzzleDesign {
 		puzz2.addScript(41, "\"Charley's mom called. She said to check your email as soon as possible. I should go to work, bye.\"", false);
 		puzz2.addScript(41, "(Mom leaves and closes the door)", false);
 		
-		puzz2.addScript(42, "Wait let me check my email...", false);
-		puzz2.addScript(42, "My mom was right!", false);
-		puzz2.addScript(42, "There's an email from Charley's mom!", false);
-		puzz2.addScript(42, "It says:", false);
-		puzz2.addScript(42, "\"I need your help. Do you know where Charley is?", false);
-		puzz2.addScript(42, "He said he will go camping with you in the woods.", false);
-		puzz2.addScript(42, "I'm worried for him. He has not texted or called me since yesterday.", false);
-		puzz2.addScript(42, "He just left this note by his bed. I dont know what he meant about this.", false);
-		puzz2.addScript(42, "Please come by our house once you read this!\"", false);
+		puzz2.addScript(41, "Wait let me check my email...", false);
+		puzz2.addScript(41, "My mom was right!", false);
+		puzz2.addScript(41, "There's an email from Charley's mom!", false);
+		puzz2.addScript(41, "It says:", false);
+		puzz2.addScript(41, "\"I need your help. Do you know where Charley is?", false);
+		puzz2.addScript(41, "He said he will go camping with you in the woods.", false);
+		puzz2.addScript(41, "I'm worried for him. He has not texted or called me since yesterday.", false);
+		puzz2.addScript(41, "He just left this note by his bed. I dont know what he meant about this.", false);
+		puzz2.addScript(41, "Please come by our house once you read this!\"", false);
 		
 		puzz2.addScript(42, "The note attached in the email says:", false);
 		puzz2.addScript(42, "\"CALCULATE CAREFULLY... 55-25-(5-95)=?", false);
