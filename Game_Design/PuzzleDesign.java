@@ -177,7 +177,7 @@ public class PuzzleDesign {
 		
 		addPuzzle(puzz1);
 		
-		Puzzle puzz2 = new Puzzle(15, 40);
+		Puzzle puzz2 = new Puzzle(20, 55);
 		
 		puzz2.addScript(1, "Hi", false);
 		puzz2.addScript(1, "I found this phone here with your number as the only contact", false);
@@ -352,90 +352,91 @@ public class PuzzleDesign {
 		puzz2.addProblem("isPortraitChecked");
 		//puzz2.addProblem("isDoorChecked");
 		
+		puzz2.addScript(41, "My mom is knocking on the door.", false);
+		puzz2.addScript(41, "(Door suddenly opens)", false);
+		puzz2.addScript(41, "\"Charley's mom called. She said to check your email as soon as possible. I should go to work, bye.\"", false);
+		puzz2.addScript(41, "(Mom leaves and closes the door)", false);
 		
-		addPuzzle(puzz2);
+		puzz2.addScript(42, "Wait let me check my email...", false);
+		puzz2.addScript(42, "My mom was right!", false);
+		puzz2.addScript(42, "There's an email from Charley's mom!", false);
+		puzz2.addScript(42, "It says:", false);
+		puzz2.addScript(42, "\"I need your help. Do you know where Charley is?", false);
+		puzz2.addScript(42, "He said he will go camping with you in the woods.", false);
+		puzz2.addScript(42, "I'm worried for him. He has not texted or called me since yesterday.", false);
+		puzz2.addScript(42, "He just left this note by his bed. I dont know what he meant about this.", false);
+		puzz2.addScript(42, "Please come by our house once you read this!\"", false);
 		
-		Puzzle puzz3 = new Puzzle(15, 12);
+		puzz2.addScript(42, "The note attached in the email says:", false);
+		puzz2.addScript(42, "\"CALCULATE CAREFULLY... 55-25-(5-95)=?", false);
+		puzz2.addScript(42, "YOU MAY NOT BELIEVEIT, BUT THIS EQUALS 5!\"", false);
 		
-		puzz3.addScript(41, "My mom is knocking on the door.", false);
-		puzz3.addScript(41, "(Door suddenly opens)", false);
-		puzz3.addScript(41, "\"Charley's mom called. She said to check your email as soon as possible. I should go to work, bye.\"", false);
-		puzz3.addScript(41, "(Mom leaves and closes the door)", false);
+		puzz2.addScript(43, "It feels so nice to be at my own bed.", false);
+		puzz2.addScript(43, "I wonder if there's a continuation to my dream earlier?", false);
 		
-		puzz3.addScript(42, "Wait let me check my email...", false);
-		puzz3.addScript(42, "My mom was right!", false);
-		puzz3.addScript(42, "There's an email from Charley's mom!", false);
-		puzz3.addScript(42, "It says:", false);
-		puzz3.addScript(42, "\"I need your help. Do you know where Charley is?", false);
-		puzz3.addScript(42, "He said he will go camping with you in the woods.", false);
-		puzz3.addScript(42, "I'm worried for him. He has not texted or called me since yesterday.", false);
-		puzz3.addScript(42, "He just left this note by his bed. I dont know what he meant about this.", false);
-		puzz3.addScript(42, "Please come by our house once you read this!\"", false);
+		puzz2.addScript(44, "You're right, maybe I should go to Charley's house first.", false);
+		puzz2.addScript(44, "(At Charley's house)", false);
+		puzz2.addScript(44, "There's no answer when I ring the doorbell...", false);
+		puzz2.addScript(44, "The door is open so I'll just go in", false);
+		puzz2.addScript(44, "Ohh, there's a note here by the entrance: ", false);
+		puzz2.addScript(44, "\"Just check Charley's bedroom. - Charley's mom\"", false);
+
+		puzz2.addScript(45, "There's nothing unusual in his room.", false);
+		puzz2.addScript(45, "Things are as I remember them...", false);
+		puzz2.addScript(45, "Except for the box in his bed!", false);
+		puzz2.addScript(45, "Oh! Something is needed to open this box.", false);
+		puzz2.addScript(45, "It's looking for a code", false);
 		
-		puzz3.addScript(42, "The note attached in the email says:", false);
-		puzz3.addScript(42, "\"CALCULATE CAREFULLY... 55-25-(5-95)=?", false);
-		puzz3.addScript(42, "YOU MAY NOT BELIEVEIT, BUT THIS EQUALS 5!\"", false);
+		puzz2.addScript(46, "I need a code to open the box", false);
+		puzz2.addScript(46, "I wonder what it is...", false);
 		
-		puzz3.addScript(43, "It feels so nice to be at my own bed.", false);
-		puzz3.addScript(43, "I wonder if there's a continuation to my dream earlier?", false);
+		puzz2.addScript(47, "Incorrect password...", false);
 		
-		puzz3.addScript(44, "You're right, maybe I should go to Charley's house first.", false);
-		puzz3.addScript(44, "(At Charley's house)", false);
-		puzz3.addScript(44, "There's no answer when I ring the doorbell...", false);
-		puzz3.addScript(44, "The door is open so I'll just go in", false);
-		puzz3.addScript(44, "Ohh, there's a note here by the entrance: ", false);
-		puzz3.addScript(44, "\"Just check Charley's bedroom. - Charley's mom\"", false);
+		puzz2.addScript(48, "Ahaahh!! It opened.", false);
+		puzz2.addScript(48, "There is a paper that has an address in it.", false);
+		puzz2.addScript(48, "Maybe this is were Charley is.", false);
+		puzz2.addScript(48, "ADDRESS: Paravinci's Italian Bistro, 2802 Colorado Avenue, Colorado Springs, CO 80904, United States", false);
+		puzz2.addScript(48, "It's not that far from here.", false);
+		puzz2.addScript(48, "I should head for it immediately.", false);
+		puzz2.addScript(48, "(Paravinci's Italian Bistro)", false);
+		puzz2.addScript(48, "I can't find him... Let me ask the waiter", false);
+		puzz2.addScript(48, "Hi! I'm looking for Charley. Is he here?", false);
+		puzz2.addScript(48, "Waiter: \"Hello! Sorry he's not here but he told me to give this if ever someone looks for him. Here you go\"", false);
+		puzz2.addScript(48, "The waiter handed me a suitcase with a lock and a note.", false);
+		puzz2.addScript(48, "The note says: \"If Mercury=1167, Venus=2145, Earth=3165, Mars=4164, Saturn=6246, then Jupiter=?\"", false);
 		
-		puzz3.addScript(45, "There's nothing unusual in his room.", false);
-		puzz3.addScript(45, "Things are as I remember them...", false);
-		puzz3.addScript(45, "Except for the box in his bed!", false);
-		puzz3.addScript(45, "Oh! Something is needed to open this box.", false);
-		puzz3.addScript(45, "It's looking for a code", false);
+		puzz2.addScript(49, "I got the suitcase with a lock.", false);
+		puzz2.addScript(49, "The note says: \"If Mercury=1167, Venus=2145, Earth=3165, Mars=4164, Saturn=6246, then Jupiter=?\"", false);
 		
-		puzz3.addScript(46, "I need a code to open the box", false);
-		puzz3.addScript(46, "I wonder what it is...", false);
+		puzz2.addScript(50, "Wrong answer... ", false);
 		
-		puzz3.addScript(47, "Incorrect password...", false);
+		puzz2.addScript(51, "Finally it opened. ", false);
+		puzz2.addScript(51, "There is a piece of paper here that says \"Pikes Peak, High Point, El Paso County, Colorado, United States\"", false);
+		puzz2.addScript(51, "Is he playing games with me now? What is he up to? ", false);
+		puzz2.addScript(51, "I should go directly so that my questions would be answered.", false);
+		puzz2.addScript(51, "(Pikes Peak)", false);
+		puzz2.addScript(51, "\"Surprise!!!\"", false);
+		puzz2.addScript(51, "It's Charley.", false);
+		puzz2.addScript(51, "What is this all about Charley?", false);
+		puzz2.addScript(51, "We are worried sick about you. Don't you realize that?", false);
+		puzz2.addScript(51, "\"Oh I'm sorry. I just find this place as the perfect one to do this.\"", false);
+		puzz2.addScript(51, "To do what?!", false);
+		puzz2.addScript(51, "(Charley kneels down on one knee)", false);
+		puzz2.addScript(51, "\"I've known you my whole life. We experienced many things together. Even the challenges of life, we surpassed it together.\"", false);
+		puzz2.addScript(51, "\"You brought color in my darkest times. You gave meaning to my life.\"", false);
+		puzz2.addScript(51, "\"And now I know this is the right time for this.\"", false);
+		puzz2.addScript(51, "\"Demetria Devonne Jonas, will you spend the rest of your life with me? Will you marry me?\"", false);
+		puzz2.addScript(51, "Yess!! A hundred times yes!", false);
+		puzz2.addScript(51, "Why do I have to go through a lot of challenges and riddles just to be engaged to someone I love?", false);
+		puzz2.addScript(51, "\"HAHAHAHA! I bet  you'd say that :)\"", false);
 		
-		puzz3.addScript(48, "Ahaahh!! It opened.", false);
-		puzz3.addScript(48, "There is a paper that has an address in it.", false);
-		puzz3.addScript(48, "Maybe this is were Charley is.", false);
-		puzz3.addScript(48, "ADDRESS: Paravinci's Italian Bistro, 2802 Colorado Avenue, Colorado Springs, CO 80904, United States", false);
-		puzz3.addScript(48, "It's not that far from here.", false);
-		puzz3.addScript(48, "I should head for it immediately.", false);
-		puzz3.addScript(48, "(Paravinci's Italian Bistro)", false);
-		puzz3.addScript(48, "I can't find him... Let me ask the waiter", false);
-		puzz3.addScript(48, "Hi! I'm looking for Charley. Is he here?", false);
-		puzz3.addScript(48, "Waiter: \"Hello! Sorry he's not here but he told me to give this if ever someone looks for him. Here you go\"", false);
-		puzz3.addScript(48, "The waiter handed me a suitcase with a lock and a note.", false);
-		puzz3.addScript(48, "The note says: \"If Mercury=1167, Venus=2145, Earth=3165, Mars=4164, Saturn=6246, then Jupiter=?\"", false);
-		
-		puzz3.addScript(49, "I got the suitcase with a lock.", false);
-		puzz3.addScript(49, "The note says: \"If Mercury=1167, Venus=2145, Earth=3165, Mars=4164, Saturn=6246, then Jupiter=?\"", false);
-		
-		puzz3.addScript(50, "Wrong answer... ", false);
-		
-		puzz3.addScript(51, "Finally it opened. ", false);
-		puzz3.addScript(51, "There is a piece of paper here that says \"Pikes Peak, High Point, El Paso County, Colorado, United States\"", false);
-		puzz3.addScript(51, "Is he playing games with me now? What is he up to? ", false);
-		puzz3.addScript(51, "I should go directly so that my questions would be answered.", false);
-		puzz3.addScript(51, "(Pikes Peak)", false);
-		puzz3.addScript(51, "\"Surprise!!!\"", false);
-		puzz3.addScript(51, "It's Charley.", false);
-		puzz3.addScript(51, "What is this all about Charley?", false);
-		puzz3.addScript(51, "We are worried sick about you. Don't you realize that?", false);
-		puzz3.addScript(51, "\"Oh I'm sorry. I just find this place as the perfect one to do this.\"", false);
-		puzz3.addScript(51, "To do what?!", false);
-		puzz3.addScript(51, "(Charley kneels down on one knee)", false);
-		puzz3.addScript(51, "\"I've known you my whole life. We experienced many things together. Even the challenges of life, we surpassed it together.\"", false);
-		puzz3.addScript(51, "\"You brought color in my darkest times. You gave meaning to my life.\"", false);
-		puzz3.addScript(51, "\"And now I know this is the right time for this.\"", false);
-		puzz3.addScript(51, "\"Demetria Devonne Jonas, will you spend the rest of your life with me? Will you marry me?\"", false);
-		puzz3.addScript(51, "Yess!! A hundred times yes!", false);
-		puzz3.addScript(51, "Why do I have to go through a lot of challenges and riddles just to be engaged to someone I love?", false);
-		puzz3.addScript(51, "\"HAHAHAHA! I bet  you'd say that :)\"", false);
-		
-		puzz3.addScript(52, "Congratulations!! You've finished the story.", false);
+		puzz2.addScript(52, "Congratulations!! You've finished the story.", false);
+
+	    puzz2.addScript(53, "Do you want to play again", false);
+	    
+	    puzz2.addScript(54, "Do you want to continue the story?", false);
+
+	    addPuzzle(puzz2);
 		
 	}
 	
