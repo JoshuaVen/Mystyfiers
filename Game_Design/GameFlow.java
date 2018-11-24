@@ -18,7 +18,7 @@ public class GameFlow {
 		}
 		System.out.println("Progress: " + puzzles.puzzDes[0].updateCounter());
 	}
-
+	
 	private void branchDisplay(int ifScript, int elseScript) {
 		if (puzzles.puzzDes[0].textSc[ifScript - 1][0].isRead == false) {
 			display(ifScript);
@@ -41,7 +41,7 @@ public class GameFlow {
 				&& puzzles.puzzDes[0].checkProblemIfSolved("isCoffeeChecked") && puzzles.puzzDes[0].checkProblemIfSolved("isPortraitChecked")) {
 			System.out.println("(P - go near the portrait) (B - go near the bookshelf) (C - check the plants) (T - go to coffee table) (D - come closer to the door)");
 		} else {
-			System.out.println("(P - go near the portrait) (B - go near the bookshelf) (C - check the plants) (T - go to coffee table)");
+			System.out.println("(B - go near the bookshelf) (C - check the plants) (T - go to coffee table) (P - go near the portrait)");
 		}
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
@@ -469,9 +469,195 @@ public class GameFlow {
 			display(33);
 			//puzzles.puzzDes[0].changeToSolved("isDoorChecked");
 			display(39);
-			System.exit(0);
+			bridge();
 		} else {
 			door2();
+		}
+		in.close();
+	}
+	
+	private void bridge() {
+		display(54);
+		System.out.println("(C - continue the story) (E - exit the game)");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toUpperCase()) {
+		case "C":
+			story2();
+			break;
+		case "E":
+			System.exit(0);
+			break;
+		default:
+			System.out.println("That's not a command I recognize.");
+			bridge();
+			break;		
+		}
+		in.close();
+	}
+	
+	private void story2() {
+		display(41);
+		display(42);
+		System.out.println("(C - Go to Charley's house) (G - go back to bed)");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		String command = in.nextLine();
+		switch (command.toUpperCase()) {
+		case "C":
+			charleysHouse();
+			break;
+		case "G":
+			goBack2();
+			break;
+		default:
+			System.out.println("That's not a command I recognize.");
+			story2();
+			break;		
+		}
+		in.close();
+	}
+	
+	private void charleysHouse() {
+		display(44);
+		System.out.println("(E - examine his room) (go back home)");
+		System.out.print("> ");
+		Scanner in = new Scanner(System.in);
+		String command = in.nextLine();
+		switch(command.toUpperCase()) {
+		case "E":
+			examine2();
+			break;
+		case "G":
+			goBack2();
+			break;
+		default:
+			System.out.println("That's not a command I recognize.");
+			charleysHouse();
+			break;
+		}
+		in.close();
+	}
+	
+	private void examine2() {
+		branchDisplay(45, 46);
+		System.out.println("(E -Enter code) (C - check email again) (G - go back home)");
+		System.out.print("> ");
+		Scanner in = new Scanner(System.in);
+		String command = in.nextLine();
+		switch (command.toUpperCase()) {
+		case "E":
+			pass7();
+			break;
+		case "C":
+			checkEmail();
+			break;
+		case "G":
+			goBack2();
+			break;
+		default:
+			System.out.println("That's not a command I recognize.");
+			examine2();
+			break;
+		}
+		in.close();
+	}
+	
+	private void checkEmail() {
+		display(42);
+		System.out.println("(C - go to Charley's house) (G - go back to bed)");
+		System.out.print("> ");
+		Scanner in = new Scanner(System.in);
+		String command = in.nextLine();
+		switch (command.toUpperCase()) {
+		case "C":
+			charleysHouse();
+			break;
+		case "G":
+			goBack2();
+			break;
+		default:
+			System.out.println("That's not a command I recognize.");
+			checkEmail();
+			break;
+		}
+		in.close();
+	}
+	
+	private void pass7() {
+		System.out.println("Enter code: ");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		int code = in.nextInt();
+		if (code == 120) {
+			pass8();
+		} else if (code != 120) {
+			display(47);
+			examine2();
+		} else {      //expected for no input, not yet working
+			charleysHouse();
+		}
+		in.close();
+	}
+	
+	private void pass8() {
+		branchDisplay(48,49);
+		System.out.println("Enter code: ");
+		Scanner in = new Scanner(System.in);
+		System.out.print("> ");
+		int code = in.nextInt();
+		if (code == 5247) {
+			end();
+		} else if (code != 5247) {
+			display(50);
+			pass8();
+		} else {      //expected for no input, not yet working
+			charleysHouse();
+		}
+		in.close();
+	}
+	
+	private void end() {
+		display(51);
+		display(52);
+		display(54);
+		System.out.println("(P - play again) (Q - Quit the game)");
+		System.out.println("> ");
+		Scanner in = new Scanner(System.in);
+		String command = in.nextLine();
+		switch (command.toUpperCase()) {
+		case "P":
+			start2();
+			break;
+		case "Q":
+			System.exit(0);
+			break;
+		default:
+			System.out.println("That's not a command I recognize.");
+			end();
+			break;
+		}
+		in.close();
+	}
+
+	private void goBack2() {
+		display(43);
+		System.out.println("(C - check email) (G - go to Charley's house)");
+		System.out.print("> ");
+		Scanner in = new Scanner(System.in);
+		String command = in.nextLine();
+		switch (command.toUpperCase()) {
+		case "C":
+			checkEmail();
+			break;
+		case "G":
+			charleysHouse();
+			break;
+		default:
+			System.out.println("That's not a command I recognize.");
+			goBack2();
+			break;		
 		}
 		in.close();
 	}
