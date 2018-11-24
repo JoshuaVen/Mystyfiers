@@ -622,7 +622,7 @@ public class GameFlow {
 		display(52);
 		display(53);
 		System.out.println("(P - play again) (Q - Quit the game)");
-		System.out.println("> ");
+		System.out.print("> ");
 		Scanner in = new Scanner(System.in);
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
