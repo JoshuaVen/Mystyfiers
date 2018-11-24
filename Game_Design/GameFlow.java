@@ -498,7 +498,7 @@ public class GameFlow {
 	}
 	
 	private void story2() {
-		display(41);
+		branchDisplay(41, 42);
 		System.out.println("(C - Go to Charley's house) (G - go back to bed)");
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");

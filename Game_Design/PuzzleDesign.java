@@ -369,7 +369,7 @@ public class PuzzleDesign {
 		
 		puzz2.addScript(42, "The note attached in the email says:", false);
 		puzz2.addScript(42, "\"CALCULATE CAREFULLY... 55-25-(5-95)=?", false);
-		puzz2.addScript(42, "YOU MAY NOT BELIEVEIT, BUT THIS EQUALS 5!\"", false);
+		puzz2.addScript(42, "YOU MAY NOT BELIEVE IT, BUT THIS EQUALS 5!\"", false);
 		
 		puzz2.addScript(43, "It feels so nice to be at my own bed.", false);
 		puzz2.addScript(43, "I wonder if there's a continuation to my dream earlier?", false);
