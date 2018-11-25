@@ -30,6 +30,8 @@ public class MainEscape {
 	
 	String printScr;
 	String scr;
+	
+	String updateField;
 
 	/**
 	 * Launch the application.
@@ -104,7 +106,7 @@ public class MainEscape {
 			public void actionPerformed(ActionEvent arg0) {
 				startbutton.setText("ENTER");
 				scr = "";
-				printToTextArea();	// TODO make a function for strings to just be prepared to be printed
+				printToTextArea();	// TODO make a function for strings to just be prepared to be printed or murag sakto na ni siya adto lang pag edit sa functions
 				textArea.append(scr);
 				getTextFieldInput();
 			}
@@ -136,7 +138,7 @@ public class MainEscape {
 	}
 	
 	public String getTextFieldInput() {
-		String updateField = textField.getText();
+		updateField = textField.getText();
 		textField.setText("");
 		return updateField;
 	}
@@ -173,74 +175,107 @@ public class MainEscape {
 		String com = getTextFieldInput(); // get the textField input from this function
 		switch (com.toUpperCase()) {
 		case "P":
+			scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
 			portrait();
 			break;
 		case "B":
+			scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
 			bookshelf();
 			break;
 		case "C":
+			scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
 			plants();
 			break;
 		case "T":
+			scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
 			coffee();
 			break;
 		case "D":
+			scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
 			door2();
 			break;
 		default:
+			if(!com.equals("")) {
+				scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
 			scr += "That's not a command I recognize." + "\n"; // changed
+			} else {
+				scr += "\n";
+			}
 //			options(i);
 			break;		
 		}
 		printScr += scr;
+		
 	} 
 	
 	private void bookshelf() {
-		Scanner in = new Scanner(System.in);
+//		Scanner in = new Scanner(System.in);
 		branchDisplay(2, 40);
-		System.out.println("(S - check 'A Study in Scarlet') (B- check 'The Hound of Baskervilles') (H - check 'Hamlet') (G - go back to table)");
-		System.out.print("> ");
-		String command = in.nextLine();
+		scr += "(S - check 'A Study in Scarlet') (B- check 'The Hound of Baskervilles') (H - check 'Hamlet') (G - go back to table)" + "\n";
+//		System.out.print("> ");
+		
+		String command = getTextFieldInput();
 		switch (command.toUpperCase()) {
 		case "S":
+			scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
 			scarlet();
 			break;
 		case "B":
+			scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
 			basker();
 			break;
 		case "H":
+			scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
 			hamlet();
 			break;
 		case "G":
+			scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
 			goBack();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			bookshelf();
+//			System.out.println("That's not a command I recognize.");
+//			bookshelf();
+			if(!command.equals("")) {
+				scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
+				scr += "That's not a command I recognize." + "\n"; // changed
+				} else {
+					scr += "\n";
+				}
 			break;		
 		}
-		in.close();
 	}
 	
+	
+	// TODO: DO THE SAME AS BOOKSHELF:
 	private void scarlet() {
-		Scanner in = new Scanner(System.in);
+//		Scanner in = new Scanner(System.in);
 		display(6);
-		System.out.println("(C - continue searching bookshelf) (G - go back to table)");
-		System.out.print("> ");
-		String command = in.nextLine();
+		scr += "(C - continue searching bookshelf) (G - go back to table)";
+//		System.out.print("> ");
+//		String command = in.nextLine();
+		updateField = "";
+		String command = getTextFieldInput();
 		switch (command.toUpperCase()) {
 		case "C":
+			scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
 			bookshelf();
 			break;
 		case "G":
+			scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
 			goBack();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
+//			System.out.println("That's not a command I recognize.");
+			if(!command.equals("")) {
+				scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
+				scr += "That's not a command I recognize." + "\n"; // changed
+				} else {
+					scr += "\n";
+				}
 			bookshelf();
 			break;		
 		}
-		in.close();
+//		in.close();
 	}
 	
 	private void basker() {
