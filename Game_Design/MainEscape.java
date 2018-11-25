@@ -96,7 +96,7 @@ public class MainEscape {
 		textField.setBounds(10, 605, 916, 53);
 		panel_1.add(textField);
 		textField.setColumns(10);
-		textField.setEditable(false);
+//		textField.setEditable(false);
 		
 		
 		JButton startbutton = new JButton("START");
@@ -104,8 +104,9 @@ public class MainEscape {
 			public void actionPerformed(ActionEvent arg0) {
 				startbutton.setText("ENTER");
 				scr = "";
-				printToTextArea();
+				printToTextArea();	// TODO make a function for strings to just be prepared to be printed
 				textArea.append(scr);
+				getTextFieldInput();
 			}
 		});
 		startbutton.setBackground(Color.BLACK);
@@ -134,6 +135,13 @@ public class MainEscape {
 		options(1);
 	}
 	
+	public String getTextFieldInput() {
+		String updateField = textField.getText();
+		textField.setText("");
+		return updateField;
+	}
+	
+	// 
 	public void display(int scriptNum) {
 		for (int i = 0; i < puzzles.puzzDes[0].actualSizeOfSc(scriptNum); i++) {
 			scr = scr + puzzles.puzzDes[0].textSc[scriptNum - 1][i].read()  + "\n" ;
@@ -142,6 +150,7 @@ public class MainEscape {
 		printScr = scr;
 	}
 	
+	// CAN YOU EXPLAIN THIS??
 	public  void branchDisplay(int ifScript, int elseScript) {
 		if (puzzles.puzzDes[0].textSc[ifScript - 1][0].isRead == false) {
 			display(ifScript);
@@ -158,6 +167,32 @@ public class MainEscape {
 			scr += "(B - go near the bookshelf) (C - check the plants) (T - go to coffee table) (P - go near the portrait)"  + "\n";
 		}
 		printScr = scr;
+		
+//		Scanner in = new Scanner(System.in);
+		
+		String com = getTextFieldInput(); // get the textField input from this function
+		switch (com.toUpperCase()) {
+		case "P":
+			portrait();
+			break;
+		case "B":
+			bookshelf();
+			break;
+		case "C":
+			plants();
+			break;
+		case "T":
+			coffee();
+			break;
+		case "D":
+			door2();
+			break;
+		default:
+			scr += "That's not a command I recognize." + "\n"; // changed
+//			options(i);
+			break;		
+		}
+		printScr += scr;
 	} 
 	
 	private void bookshelf() {
