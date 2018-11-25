@@ -1,25 +1,157 @@
+package com.escaperoom;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Insets;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import java.awt.event.ActionListener;
 import java.util.Scanner;
-// a class that contains the choices and how the game progresses
-public class GameFlow {
+import java.awt.event.ActionEvent;
+
+/**
+ * @author angelorey
+ *
+ */
+public class MainEscape {
+
+	private JFrame frame;
+	private JTextField textField;
+	static String strLine;
+	
 	PuzzleDesign puzzles;
 	int current;
+	
+	String printScr;
+	String scr;
 
-	GameFlow() {
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainEscape window = new MainEscape();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public MainEscape() {
+		initialize();
 		this.puzzles = new PuzzleDesign();
 		this.current = 1;
-		start2();
+		
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 1280, 720);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
+		frame.setLocationRelativeTo(null);	// TO MAKE WINDOW START IN THE MIDDLE
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.BLACK);
+		panel.setBounds(0, 0, 1274, 691);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(10, 11, 1254, 669);
+		panel.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setFont(new Font("Open Sans", Font.PLAIN, 15));
+		textArea.setBounds(10, 11, 1234, 583);
+		textArea.setWrapStyleWord(true);
+		textArea.setMargin(new Insets(10, 10, 10, 10));
+		
+		JScrollPane scroll = new JScrollPane(textArea);
+		scroll.setBounds(10, 11, 1234, 583);
+		panel_1.add(scroll);
+		
+		textField = new JTextField();
+		textField.setForeground(new Color(0, 0, 128));
+		textField.setFont(new Font("Open Sans", Font.PLAIN, 14));
+		textField.setBounds(10, 605, 916, 53);
+		panel_1.add(textField);
+		textField.setColumns(10);
+//		textField.setEditable(false);
+		
+		
+		JButton startbutton = new JButton("START");
+		startbutton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				startbutton.setText("ENTER");
+				scr = "";
+				printToTextArea();	// TODO make a function for strings to just be prepared to be printed
+				textArea.append(scr);
+				getTextFieldInput();
+			}
+		});
+		startbutton.setBackground(Color.BLACK);
+		startbutton.setForeground(Color.WHITE);
+		startbutton.setFont(new Font("Open Sans", Font.PLAIN, 12));
+		startbutton.setBounds(936, 605, 149, 53);
+		panel_1.add(startbutton);
+		
+		JButton exitbutton = new JButton("MAIN MENU");
+		exitbutton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				exitbutton.setText("Really?");
+				exitbutton.setBackground(Color.red);
+			}
+		});
+		exitbutton.setBackground(Color.BLACK);
+		exitbutton.setForeground(Color.WHITE);
+		exitbutton.setFont(new Font("Open Sans", Font.PLAIN, 12));
+		exitbutton.setBounds(1095, 605, 149, 53);
+		panel_1.add(exitbutton);
+		
 	}
 	
-	private void display(int scriptNum) {
-		Scanner in = new Scanner(System.in);
+	public void printToTextArea() {
+		display(1);
+		options(1);
+	}
+	
+	public String getTextFieldInput() {
+		String updateField = textField.getText();
+		textField.setText("");
+		return updateField;
+	}
+	
+	// 
+	public void display(int scriptNum) {
 		for (int i = 0; i < puzzles.puzzDes[0].actualSizeOfSc(scriptNum); i++) {
-			System.out.print(puzzles.puzzDes[0].textSc[scriptNum - 1][i].read());
-			in.nextLine();
+			scr = scr + puzzles.puzzDes[0].textSc[scriptNum - 1][i].read()  + "\n" ;
+//			System.out.println( puzzles.puzzDes[0].textSc[scriptNum - 1][i].read());
 		}
-		System.out.println("Progress: " + puzzles.puzzDes[0].updateCounter());
+		printScr = scr;
 	}
 	
-	private void branchDisplay(int ifScript, int elseScript) {
+	// CAN YOU EXPLAIN THIS??
+	public  void branchDisplay(int ifScript, int elseScript) {
 		if (puzzles.puzzDes[0].textSc[ifScript - 1][0].isRead == false) {
 			display(ifScript);
 		} else {
@@ -27,31 +159,26 @@ public class GameFlow {
 		}
 	}
 	
-	private void start2() {
-		Scanner in = new Scanner(System.in);
-		
-		display(1);
-		options(1);
-		
-		in.close();
-	}
-	
-	private void options(int i) {
+	public void options(int i) {
 		if (puzzles.puzzDes[0].checkProblemIfSolved("isHoundChecked") && puzzles.puzzDes[0].checkProblemIfSolved("isPlantsChecked")
 				&& puzzles.puzzDes[0].checkProblemIfSolved("isCoffeeChecked") && puzzles.puzzDes[0].checkProblemIfSolved("isPortraitChecked")) {
-			System.out.println("(P - go near the portrait) (B - go near the bookshelf) (C - check the plants) (T - go to coffee table) (D - come closer to the door)");
+			scr += "(P - go near the portrait) (B - go near the bookshelf) (C - check the plants) (T - go to coffee table) (D - come closer to the door)"  + "\n";
 		} else {
-			System.out.println("(B - go near the bookshelf) (C - check the plants) (T - go to coffee table) (P - go near the portrait)");
+			scr += "(B - go near the bookshelf) (C - check the plants) (T - go to coffee table) (P - go near the portrait)"  + "\n";
 		}
-		Scanner in = new Scanner(System.in);
-		System.out.print("> ");
-		String com = in.nextLine();
+		printScr = scr;
+		
+//		Scanner in = new Scanner(System.in);
+		
+		String com = getTextFieldInput(); // get the textField input from this function
 		switch (com.toUpperCase()) {
 		case "P":
 			portrait();
 			break;
 		case "B":
+			scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
 			bookshelf();
+			
 			break;
 		case "C":
 			plants();
@@ -63,19 +190,24 @@ public class GameFlow {
 			door2();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			options(i);
+			if(!com.equals("")) {
+			scr += "That's not a command I recognize." + "\n"; // changed
+			} else {
+				scr += "\n";
+			}
+//			options(i);
 			break;		
 		}
-		in.close();
+		printScr += scr;
+		
 	} 
 	
 	private void bookshelf() {
-		Scanner in = new Scanner(System.in);
+//		Scanner in = new Scanner(System.in);
 		branchDisplay(2, 40);
-		System.out.println("(S - check 'A Study in Scarlet') (B- check 'The Hound of Baskervilles') (H - check 'Hamlet') (G - go back to table)");
-		System.out.print("> ");
-		String command = in.nextLine();
+		scr += "(S - check 'A Study in Scarlet') (B- check 'The Hound of Baskervilles') (H - check 'Hamlet') (G - go back to table)" + "\n";
+//		System.out.print("> ");
+		String command = getTextFieldInput();
 		switch (command.toUpperCase()) {
 		case "S":
 			scarlet();
@@ -90,13 +222,19 @@ public class GameFlow {
 			goBack();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			bookshelf();
+//			System.out.println("That's not a command I recognize.");
+//			bookshelf();
+			if(!command.equals("")) {
+				scr += "That's not a command I recognize." + "\n"; // changed
+				} else {
+					scr += "\n";
+				}
 			break;		
 		}
-		in.close();
 	}
 	
+	
+	// TODO: DO THE SAME AS BOOKSHELF:
 	private void scarlet() {
 		Scanner in = new Scanner(System.in);
 		display(6);
@@ -498,7 +636,8 @@ public class GameFlow {
 	}
 	
 	private void story2() {
-		branchDisplay(41, 42);
+		display(41);
+		display(42);
 		System.out.println("(C - Go to Charley's house) (G - go back to bed)");
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
@@ -520,7 +659,7 @@ public class GameFlow {
 	
 	private void charleysHouse() {
 		display(44);
-		System.out.println("(E - examine his room) (G - go back home)");
+		System.out.println("(E - examine his room) (go back home)");
 		System.out.print("> ");
 		Scanner in = new Scanner(System.in);
 		String command = in.nextLine();
@@ -601,7 +740,7 @@ public class GameFlow {
 	}
 	
 	private void pass8() {
-		branchDisplay(48, 49);
+		branchDisplay(48,49);
 		System.out.println("Enter code: ");
 		Scanner in = new Scanner(System.in);
 		System.out.print("> ");
@@ -620,14 +759,14 @@ public class GameFlow {
 	private void end() {
 		display(51);
 		display(52);
-		display(53);
+		display(54);
 		System.out.println("(P - play again) (Q - Quit the game)");
-		System.out.print("> ");
+		System.out.println("> ");
 		Scanner in = new Scanner(System.in);
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
 		case "P":
-			start2();
+		printToTextArea();
 			break;
 		case "Q":
 			System.exit(0);
@@ -1011,9 +1150,5 @@ public class GameFlow {
 			break;		
 		}
 		in.close();
-	}
-
-	public static void main(String[] args) {
-		new GameFlow();	
 	}
 }
