@@ -143,16 +143,23 @@ public class MainEscape {
 	
 	// 
 	public void display(int scriptNum) {
+		int toMatchTheArray = 1; // removed the magic number
 		for (int i = 0; i < puzzles.puzzDes[0].actualSizeOfSc(scriptNum); i++) {
-			scr = scr + puzzles.puzzDes[0].textSc[scriptNum - 1][i].read()  + "\n" ;
+			scr = scr + puzzles.puzzDes[0].textSc[scriptNum - toMatchTheArray][i].read()  + "\n" ;
 //			System.out.println( puzzles.puzzDes[0].textSc[scriptNum - 1][i].read());
 		}
 		printScr = scr;
 	}
 	
 	// CAN YOU EXPLAIN THIS??
+	//Since script is stored in an array, and the script numbering start at 1, we have to subtract 1 from the script numbering so that it will match
+	//to what is stored in the array
+	//Another puzzDes[0] input zero since from the start, we thought that there would be many puzzles in this game, unfortunately, we only have one or two, which is stored in
+	//an array hence, we placed it immediately instead of having some variable
 	public  void branchDisplay(int ifScript, int elseScript) {
-		if (puzzles.puzzDes[0].textSc[ifScript - 1][0].isRead == false) {
+		int toMatchTheArray = 1; // removed the magic number
+		int firstLineOfTheScript = 0;
+		if (puzzles.puzzDes[0].textSc[ifScript - toMatchTheArray][firstLineOfTheScript].isRead == false) {
 			display(ifScript);
 		} else {
 			display(elseScript);
