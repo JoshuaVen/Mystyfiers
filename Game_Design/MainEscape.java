@@ -98,13 +98,14 @@ public class MainEscape {
 		textField.setBounds(10, 605, 916, 53);
 		panel_1.add(textField);
 		textField.setColumns(10);
-//		textField.setEditable(false);
+		textField.setEditable(false);
 		
 		
 		JButton startbutton = new JButton("START");
 		startbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				startbutton.setText("ENTER");
+				textField.setEditable(true);
 				scr = "";
 				printToTextArea();	// TODO make a function for strings to just be prepared to be printed or murag sakto na ni siya adto lang pag edit sa functions
 				textArea.append(scr);
@@ -254,8 +255,8 @@ public class MainEscape {
 //		System.out.print("> ");
 //		String command = in.nextLine();
 		updateField = "";
-		String command = getTextFieldInput();
-		switch (command.toUpperCase()) {
+		String command1 = getTextFieldInput();
+		switch (command1.toUpperCase()) {
 		case "C":
 			scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
 			bookshelf();
@@ -266,7 +267,7 @@ public class MainEscape {
 			break;
 		default:
 //			System.out.println("That's not a command I recognize.");
-			if(!command.equals("")) {
+			if(!command1.equals("")) {
 				scr = ""; // do not forget to set this string to empty otherwise it will print everything from the start till the latest output
 				scr += "That's not a command I recognize." + "\n"; // changed
 				} else {
