@@ -142,13 +142,13 @@ public class MainEscape {
 	}
 	
 	// 
-	public void display(int scriptNum) {
+	public String display(int scriptNum) {
+		String text = "";
 		int toMatchTheArray = 1; // removed the magic number
 		for (int i = 0; i < puzzles.puzzDes[0].actualSizeOfSc(scriptNum); i++) {
-			scr = scr + puzzles.puzzDes[0].textSc[scriptNum - toMatchTheArray][i].read()  + "\n" ;
-//			System.out.println( puzzles.puzzDes[0].textSc[scriptNum - 1][i].read());
+			text = text + puzzles.puzzDes[0].textSc[scriptNum - toMatchTheArray][i].read()  + "\n" ;
 		}
-		printScr = scr;
+		return text;
 	}
 	
 	// CAN YOU EXPLAIN THIS??
@@ -156,7 +156,7 @@ public class MainEscape {
 	//to what is stored in the array
 	//Another puzzDes[0] input zero since from the start, we thought that there would be many puzzles in this game, unfortunately, we only have one or two, which is stored in
 	//an array hence, we placed it immediately instead of having some variable
-	public  void branchDisplay(int ifScript, int elseScript) {
+	public  String branchDisplay(int ifScript, int elseScript) {
 		int toMatchTheArray = 1; // removed the magic number
 		int firstLineOfTheScript = 0;
 		if (puzzles.puzzDes[0].textSc[ifScript - toMatchTheArray][firstLineOfTheScript].isRead == false) {
@@ -166,7 +166,7 @@ public class MainEscape {
 		}
 	}
 	
-	public void options(int i) {
+	public String options(int i) {
 		if (puzzles.puzzDes[0].checkProblemIfSolved("isHoundChecked") && puzzles.puzzDes[0].checkProblemIfSolved("isPlantsChecked")
 				&& puzzles.puzzDes[0].checkProblemIfSolved("isCoffeeChecked") && puzzles.puzzDes[0].checkProblemIfSolved("isPortraitChecked")) {
 			scr += "(P - go near the portrait) (B - go near the bookshelf) (C - check the plants) (T - go to coffee table) (D - come closer to the door)"  + "\n";
@@ -611,7 +611,7 @@ public class MainEscape {
 			display(32);
 			door2();
 		} else if (command.matches(pass)) {
-			display(33);
+i			display(33);
 			//puzzles.puzzDes[0].changeToSolved("isDoorChecked");
 			display(39);
 			bridge();
@@ -686,8 +686,9 @@ public class MainEscape {
 	}
 	
 	private void examine2() {
+		String text = "";
 		branchDisplay(45, 46);
-		System.out.println("(E -Enter code) (C - check email again) (G - go back home)");
+		text = text + "(E -Enter code) (C - check email again) (G - go back home)" + "\n";
 		System.out.print("> ");
 		Scanner in = new Scanner(System.in);
 		String command = in.nextLine();
@@ -702,11 +703,11 @@ public class MainEscape {
 			goBack2();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
+			text = text + "That's not a command I recognize.") + "\n";
+			
+			//slick.display(text);
 			examine2();
-			break;
 		}
-		in.close();
 	}
 	
 	private void checkEmail() {
