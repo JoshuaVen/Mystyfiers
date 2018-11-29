@@ -166,6 +166,8 @@ public class MainEscape {
 		}
 	}
 	
+	
+	//not sure if this needs fixing 
 	public String options(int i) {
 		if (puzzles.puzzDes[0].checkProblemIfSolved("isHoundChecked") && puzzles.puzzDes[0].checkProblemIfSolved("isPlantsChecked")
 				&& puzzles.puzzDes[0].checkProblemIfSolved("isCoffeeChecked") && puzzles.puzzDes[0].checkProblemIfSolved("isPortraitChecked")) {
@@ -209,11 +211,13 @@ public class MainEscape {
 		
 	} 
 	
+	//following examine2 format for the succeeding methods
 	private void bookshelf() {
-//		Scanner in = new Scanner(System.in);
+		String text = ""; 
 		branchDisplay(2, 40);
-		scr += "(S - check 'A Study in Scarlet') (B- check 'The Hound of Baskervilles') (H - check 'Hamlet') (G - go back to table)" + "\n";
+		text = text + "(S - check 'A Study in Scarlet') (B- check 'The Hound of Baskervilles') (H - check 'Hamlet') (G - go back to table)" + "\n";
 //		System.out.print("> ");
+		Scanner in = new Scanner(System.in);
 		String command = getTextFieldInput();
 		switch (command.toUpperCase()) {
 		case "S":
@@ -231,22 +235,25 @@ public class MainEscape {
 		default:
 //			System.out.println("That's not a command I recognize.");
 //			bookshelf();
-			if(!command.equals("")) {
+			/*if(!command.equals("")) {
 				scr += "That's not a command I recognize." + "\n"; // changed
 				} else {
 					scr += "\n";
-				}
-			break;		
+				}*/
+			text = text + "That's not a command I recognize." + "\n";
+			//slick.display(text);
+			bookshelf();
 		}
 	}
 	
 	
 	// TODO: DO THE SAME AS BOOKSHELF:
 	private void scarlet() {
-		Scanner in = new Scanner(System.in);
+		String text = "";
 		display(6);
-		System.out.println("(C - continue searching bookshelf) (G - go back to table)");
-		System.out.print("> ");
+		text = text + "(C - continue searching bookshelf) (G - go back to table)" + "\n";
+		Scanner in = new Scanner(System.in);
+//		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
 		case "C":
@@ -256,14 +263,15 @@ public class MainEscape {
 			goBack();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			bookshelf();
-			break;		
+			//System.out.println("That's not a command I recognize.");
+			text = text + "That's not a command I recognize." + "\n";
+			//slick.display(text);
+			scarlet();	
 		}
-		in.close();
 	}
 	
 	private void basker() {
+		String text = "";
 		if (puzzles.puzzDes[0].checkProblemIfSolved("isHoundChecked") == false) {
 			branchDisplay(3, 34);
 		} else {
@@ -271,8 +279,8 @@ public class MainEscape {
 			goBack();
 		}
 		Scanner in = new Scanner(System.in);
-		System.out.println("(C - continue searching bookshelf) (E - enter solution) (G - go back to table)");
-		System.out.print("> ");
+		text = text + "(C - continue searching bookshelf) (E - enter solution) (G - go back to table)" + "\n";
+//		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
 		case "C":
@@ -285,17 +293,17 @@ public class MainEscape {
 			goBack();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			bookshelf();
-			break;		
+			text = text + "That's not a command I recognize." + "\n";
+			//slick.display(text);
+			basker();		
 		}
-		in.close();
 	}
 	
 	private void pass1() {
-		System.out.println("Enter text message: ");
+		String text = "";
+		text = text + "Enter text message: " + "\n";
 		Scanner in = new Scanner(System.in);
-		System.out.print("> ");
+//		System.out.print("> ");
 		String command = in.nextLine();
 		String pass = new String("man");
 		command = command.toLowerCase();
@@ -309,14 +317,14 @@ public class MainEscape {
 		} else {
 			basker();
 		}
-		in.close();
 	}
 	
 	private void hamlet() {
+		String text = "";
 		Scanner in = new Scanner(System.in);
 		display(7);
-		System.out.println("(C - continue searching bookshelf) (G - go back to table)");
-		System.out.print("> ");
+		text = text + "(C - continue searching bookshelf) (G - go back to table)" + "\n";
+//		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
 		case "C":
@@ -326,14 +334,14 @@ public class MainEscape {
 			goBack();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			bookshelf();
-			break;		
+			text = text + "That's not a command I recognize." + "\n";
+			//slick.display(text);
+			hamlet();	
 		}
-		in.close();
 	}
 	
 	private void plants() {
+		String text = "";
 		if (puzzles.puzzDes[0].checkProblemIfSolved("isPlantsChecked") == false) {
 			branchDisplay(8, 9);
 		} else {
@@ -341,8 +349,8 @@ public class MainEscape {
 			goBack();
 		}
 		Scanner in = new Scanner(System.in);
-		System.out.println("(C - check bottom of pots) (G - go back to table)");
-		System.out.print("> ");
+		text = text + "(C - check bottom of pots) (G - go back to table)" "\n";
+//		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
 		case "C":
@@ -352,18 +360,18 @@ public class MainEscape {
 			goBack();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			plants();
-			break;		
+			text = text + "That's not a command I recognize." + "\n";
+			//slick.display(text);
+			plants();	
 		}
-		in.close();
 	}
 	
 	private void bottom() {
+		String text = "";
 		branchDisplay(10, 35);
 		Scanner in = new Scanner(System.in);
-		System.out.println("(E - enter solution) (G - go back to table)");
-		System.out.print("> ");
+		text = text + "(E - enter solution) (G - go back to table)" + "\n";
+//		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
 		case "E":
@@ -373,17 +381,20 @@ public class MainEscape {
 			goBack();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			bottom();
-			break;		
+			text = text + "That's not a command I recognize." + "\n";
+			//slick.display(text);
+			bottom();		
 		}
-		in.close();
 	}
 
+	//should this be in string?
+	//needs converting if yes
+	//also needs error handling if user inputs string instead of int
 	private void pass2() {
-		System.out.println("Enter code: ");
+		String text = "";
+		text = text + "Enter code: " + "\n";
 		Scanner in = new Scanner(System.in);
-		System.out.print("> ");
+//		System.out.print("> ");
 		int code = in.nextInt();
 		if (code == 10) {
 			display(11);
@@ -394,17 +405,17 @@ public class MainEscape {
 		} else {      //expected for no input, not yet working
 			goBack();
 		}
-		in.close();
 	}
 	
 	private void key() {
+		String text = "";
 		if (puzzles.puzzDes[0].checkProblemIfSolved("isHoundChecked")) {
-			System.out.println("(U - use key) (G - go back to table)");
+			text = text + "(U - use key) (G - go back to table)" + "\n";
 		} else {
-			System.out.println("(G - go back to table)");
+			text = text + "(G - go back to table)" + "\n";
 		}
 		Scanner in = new Scanner(System.in);
-		System.out.print("> ");
+//		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
 		case "U":
@@ -416,14 +427,14 @@ public class MainEscape {
 			goBack();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			key();
-			break;		
+			text = text + "That's not a command I recognize." + "\n";
+			//slick.display(text);
+			key();	
 		}
-		in.close();
 	}
 	
 	private void coffee() {
+		String text = "";
 		if (puzzles.puzzDes[0].checkProblemIfSolved("isCoffeeChecked") == false) {
 			branchDisplay(16, 17);
 		} else {
@@ -431,8 +442,8 @@ public class MainEscape {
 			goBack();
 		}
 		Scanner in = new Scanner(System.in);
-		System.out.println("(R - recline the chair)(G - go back to table)");
-		System.out.print("> ");
+		text = text + "(R - recline the chair)(G - go back to table)"+ "\n";
+//		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
 		case "R":
@@ -442,18 +453,18 @@ public class MainEscape {
 			goBack();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			coffee();
-			break;		
+			text = text + "That's not a command I recognize." + "\n";
+			//slick.display(text);
+			coffee();	
 		}
-		in.close();
 	}
 	
 	private void recline() {
+		String text = "";
 		branchDisplay(18, 36);
 		Scanner in = new Scanner(System.in);
-		System.out.println("(T - type password) (G - go back to table)");
-		System.out.print("> ");
+		text = text + "(T - type password) (G - go back to table)" + "\n";
+//		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
 		case "T":
@@ -463,17 +474,17 @@ public class MainEscape {
 			goBack();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			recline();
-			break;		
+			text = text + "That's not a command I recognize." + "\n";
+			//slick.display(text);
+			recline();	
 		}
-		in.close();
 	}
 	
 	private void pass4() {
-		System.out.println("Enter the answer: ");
+		String text = "";
+		text = text + "Enter the answer: " + "\n";
 		Scanner in = new Scanner(System.in);
-		System.out.print("> ");
+//		System.out.print("> ");
 		String command = in.nextLine();
 		String pass = new String("chicago");
 		command = command.toLowerCase();
@@ -487,10 +498,10 @@ public class MainEscape {
 		} else {
 			coffee();
 		}
-		in.close();
 	}
 	
 	private void portrait() {
+		String text = "";
 		if (puzzles.puzzDes[0].checkProblemIfSolved("isPortraitChecked") == false) {
 			branchDisplay(22, 23);
 		} else {
@@ -498,8 +509,8 @@ public class MainEscape {
 			goBack();
 		}
 		Scanner in = new Scanner(System.in);
-		System.out.println("(T - try to take it off)(G - go back to table)(C - Check broken tile)");
-		System.out.print("> ");
+		text = text + "(T - try to take it off)(G - go back to table)(C - Check broken tile)" + "\n";
+//		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
 		case "T":
@@ -512,18 +523,18 @@ public class MainEscape {
 			brokenTile();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			portrait();
-			break;		
+			text = text + "That's not a command I recognize." + "\n";
+			//slick.display(text);
+			portrait();		
 		}
-		in.close();
 	}
 	
 	private void take() {
+		String text = "";
 		branchDisplay(25, 26);
 		Scanner in = new Scanner(System.in);
-		System.out.println("(E - enter code) (G - go back to table)");
-		System.out.print("> ");
+		text = text + "(E - enter code) (G - go back to table)" + "\n";
+//		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
 		case "E":
@@ -533,17 +544,19 @@ public class MainEscape {
 			goBack();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			take();
-			break;		
+			text = text + "That's not a command I recognize." + "\n";
+			//slick.display(text);
+			take();		
 		}
-		in.close();
 	}
 	
+	//might need fixing since input should be int
+	//also needs error handling if user inputs string instead of int
 	private void pass5() {
-		System.out.println("Enter code: ");
+		String text = "";
+		text = text + "Enter code: " + "\n";
 		Scanner in = new Scanner(System.in);
-		System.out.print("> ");
+//		System.out.print("> ");
 		int code = in.nextInt();
 		if (code == 41) {
 			display(28);
@@ -559,10 +572,11 @@ public class MainEscape {
 	}
 	
 	private void brokenTile() {
+		String text = "";
 		branchDisplay(24, 37);
 		Scanner in = new Scanner(System.in);
-		System.out.println("(C - Continue cheking the portrait) (G - go back to table)");
-		System.out.print("> ");
+		text = text + "(C - Continue cheking the portrait) (G - go back to table)" + "\n";
+//		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
 		case "C":
@@ -572,18 +586,18 @@ public class MainEscape {
 			goBack();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			brokenTile();
-			break;		
+			text = text + "That's not a command I recognize." + "\n";
+			//slick.display(text);
+			brokenTile();	
 		}
-		in.close();
 	}
 	
 	private void door2() {
+		String text = "";
 		branchDisplay(31, 38);
 		Scanner in = new Scanner(System.in);
-		System.out.println("(S - Say the name) (G - go back to table)");
-		System.out.print("> ");
+		text = text + "(S - Say the name) (G - go back to table)" + "\n";
+//		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
 		case "S":
@@ -593,17 +607,17 @@ public class MainEscape {
 			goBack();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			door2();
-			break;		
+			text = text + "That's not a command I recognize." + "\n";
+			//slick.display(text);
+			door2();		
 		}
-		in.close();
 	}
 	
 	private void pass6() {
-		System.out.println("Enter the answer: ");
+		String text = "";
+		text = text + "Enter the answer: " + "\n";
 		Scanner in = new Scanner(System.in);
-		System.out.print("> ");
+//		System.out.print("> ");
 		String command = in.nextLine();
 		String pass = new String("charley");
 		command = command.toLowerCase();
@@ -621,11 +635,17 @@ i			display(33);
 		in.close();
 	}
 	
+	private void goBack() {
+		display(30);
+		options(1);
+	}
+	
 	private void bridge() {
+		String text = "";
 		display(54);
-		System.out.println("(C - continue the story) (E - exit the game)");
+		text = text + "(C - continue the story) (E - exit the game)" + "\n";
 		Scanner in = new Scanner(System.in);
-		System.out.print("> ");
+//		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
 		case "C":
@@ -635,19 +655,19 @@ i			display(33);
 			System.exit(0);
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			bridge();
-			break;		
+			text = text + "That's not a command I recognize." + "\n";
+			//slick.display(text);
+			bridge();	
 		}
-		in.close();
 	}
 	
 	private void story2() {
+		String text = "";
 		display(41);
 		display(42);
-		System.out.println("(C - Go to Charley's house) (G - go back to bed)");
+		text = text + "(C - Go to Charley's house) (G - go back to bed)" + "\n";
 		Scanner in = new Scanner(System.in);
-		System.out.print("> ");
+//		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
 		case "C":
@@ -657,17 +677,17 @@ i			display(33);
 			goBack2();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			story2();
-			break;		
+			text = text + "That's not a command I recognize." + "\n";
+			//slick.display(text);
+			story2();		
 		}
-		in.close();
 	}
 	
 	private void charleysHouse() {
+		String text = "";
 		display(44);
-		System.out.println("(E - examine his room) (go back home)");
-		System.out.print("> ");
+		text = text + "(E - examine his room) (go back home)" + "\n";
+//		System.out.print("> ");
 		Scanner in = new Scanner(System.in);
 		String command = in.nextLine();
 		switch(command.toUpperCase()) {
@@ -678,18 +698,17 @@ i			display(33);
 			goBack2();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
+			text = text + "That's not a command I recognize." + "\n";
+			//slick.display(text);
 			charleysHouse();
-			break;
 		}
-		in.close();
 	}
 	
 	private void examine2() {
 		String text = "";
 		branchDisplay(45, 46);
 		text = text + "(E -Enter code) (C - check email again) (G - go back home)" + "\n";
-		System.out.print("> ");
+//		System.out.print("> ");
 		Scanner in = new Scanner(System.in);
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
@@ -711,9 +730,10 @@ i			display(33);
 	}
 	
 	private void checkEmail() {
+		String text = "";
 		display(42);
-		System.out.println("(C - go to Charley's house) (G - go back to bed)");
-		System.out.print("> ");
+		text = text + "(C - go to Charley's house) (G - go back to bed)" + "\n";
+//		System.out.print("> ");
 		Scanner in = new Scanner(System.in);
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
@@ -724,17 +744,20 @@ i			display(33);
 			goBack2();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
+			text = text + "That's not a command I recognize.") + "\n";
+			//slick.display(text);
 			checkEmail();
-			break;
 		}
-		in.close();
 	}
 	
+	//might need fixing
+	//accepts int again
+	//also needs error handling if user inputs string instead of int
 	private void pass7() {
-		System.out.println("Enter code: ");
+		String text = "";
+		text = text + "Enter code: " + "\n";
 		Scanner in = new Scanner(System.in);
-		System.out.print("> ");
+//		System.out.print("> ");
 		int code = in.nextInt();
 		if (code == 120) {
 			pass8();
@@ -747,11 +770,15 @@ i			display(33);
 		in.close();
 	}
 	
+	//might need fixing
+	//accepts int again
+	//also needs error handling if user inputs string instead of int
 	private void pass8() {
+		String text = "";
 		branchDisplay(48,49);
-		System.out.println("Enter code: ");
+		text = text + "Enter code: " + "\n";
 		Scanner in = new Scanner(System.in);
-		System.out.print("> ");
+//		System.out.print("> ");
 		int code = in.nextInt();
 		if (code == 5247) {
 			end();
@@ -764,33 +791,11 @@ i			display(33);
 		in.close();
 	}
 	
-	private void end() {
-		display(51);
-		display(52);
-		display(54);
-		System.out.println("(P - play again) (Q - Quit the game)");
-		System.out.println("> ");
-		Scanner in = new Scanner(System.in);
-		String command = in.nextLine();
-		switch (command.toUpperCase()) {
-		case "P":
-		printToTextArea();
-			break;
-		case "Q":
-			System.exit(0);
-			break;
-		default:
-			System.out.println("That's not a command I recognize.");
-			end();
-			break;
-		}
-		in.close();
-	}
-
 	private void goBack2() {
+		String text = "";
 		display(43);
-		System.out.println("(C - check email) (G - go to Charley's house)");
-		System.out.print("> ");
+		text = text + "(C - check email) (G - go to Charley's house)" + "\n";
+//		System.out.print("> ");
 		Scanner in = new Scanner(System.in);
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
@@ -801,15 +806,34 @@ i			display(33);
 			charleysHouse();
 			break;
 		default:
-			System.out.println("That's not a command I recognize.");
-			goBack2();
-			break;		
+			text = text + "That's not a command I recognize.") + "\n";
+			//slick.display(text);
+			goBack2();	
 		}
-		in.close();
 	}
 	
-	private void goBack() {
-		display(30);
-		options(1);
+	//needs implementation for restarting game?
+	private void end() {
+		String text = "";
+		display(51);
+		display(52);
+		display(54);
+		text = text + "(P - play again) (Q - Quit the game)" + "\n";
+//		System.out.println("> ");
+		Scanner in = new Scanner(System.in);
+		String command = in.nextLine();
+		switch (command.toUpperCase()) {
+		case "P":
+		printToTextArea();
+			break;
+		case "Q":
+			System.exit(0);
+			break;
+		default:
+			text = text + "That's not a command I recognize.") + "\n";
+			//slick.display(text);
+			end();
+		}
 	}
+
 }
