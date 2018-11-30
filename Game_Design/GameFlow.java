@@ -1,4 +1,4 @@
-package com.escaperoom;
+
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -19,7 +19,7 @@ import java.awt.event.ActionEvent;
  * @author angelorey
  *
  */
-public class MainEscape {
+public class GameFlow {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -38,7 +38,7 @@ public class MainEscape {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MainEscape window = new MainEscape();
+					GameFlow window = new GameFlow();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -51,7 +51,7 @@ public class MainEscape {
 	/**
 	 * Create the application.
 	 */
-	public MainEscape() {
+	public GameFlow() {
 		initialize();
 		this.puzzles = new PuzzleDesign();
 		this.current = 1;
@@ -160,15 +160,15 @@ public class MainEscape {
 		int toMatchTheArray = 1; // removed the magic number
 		int firstLineOfTheScript = 0;
 		if (puzzles.puzzDes[0].textSc[ifScript - toMatchTheArray][firstLineOfTheScript].isRead == false) {
-			display(ifScript);
+			return display(ifScript);
 		} else {
-			display(elseScript);
+			return display(elseScript);
 		}
 	}
 	
 	
 	//not sure if this needs fixing 
-	public String options(int i) {
+	public void options(int i) {
 		if (puzzles.puzzDes[0].checkProblemIfSolved("isHoundChecked") && puzzles.puzzDes[0].checkProblemIfSolved("isPlantsChecked")
 				&& puzzles.puzzDes[0].checkProblemIfSolved("isCoffeeChecked") && puzzles.puzzDes[0].checkProblemIfSolved("isPortraitChecked")) {
 			scr += "(P - go near the portrait) (B - go near the bookshelf) (C - check the plants) (T - go to coffee table) (D - come closer to the door)"  + "\n";
@@ -349,7 +349,7 @@ public class MainEscape {
 			goBack();
 		}
 		Scanner in = new Scanner(System.in);
-		text = text + "(C - check bottom of pots) (G - go back to table)" "\n";
+		text = text + "(C - check bottom of pots) (G - go back to table)" + "\n";
 //		System.out.print("> ");
 		String command = in.nextLine();
 		switch (command.toUpperCase()) {
@@ -625,7 +625,7 @@ public class MainEscape {
 			display(32);
 			door2();
 		} else if (command.matches(pass)) {
-i			display(33);
+			display(33);
 			//puzzles.puzzDes[0].changeToSolved("isDoorChecked");
 			display(39);
 			bridge();
@@ -722,7 +722,7 @@ i			display(33);
 			goBack2();
 			break;
 		default:
-			text = text + "That's not a command I recognize.") + "\n";
+			text = text + "That's not a command I recognize." + "\n";
 			
 			//slick.display(text);
 			examine2();
@@ -744,7 +744,7 @@ i			display(33);
 			goBack2();
 			break;
 		default:
-			text = text + "That's not a command I recognize.") + "\n";
+			text = text + "That's not a command I recognize." + "\n";
 			//slick.display(text);
 			checkEmail();
 		}
@@ -806,7 +806,7 @@ i			display(33);
 			charleysHouse();
 			break;
 		default:
-			text = text + "That's not a command I recognize.") + "\n";
+			text = text + "That's not a command I recognize." + "\n";
 			//slick.display(text);
 			goBack2();	
 		}
@@ -830,7 +830,7 @@ i			display(33);
 			System.exit(0);
 			break;
 		default:
-			text = text + "That's not a command I recognize.") + "\n";
+			text = text + "That's not a command I recognize." + "\n";
 			//slick.display(text);
 			end();
 		}
