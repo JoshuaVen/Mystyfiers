@@ -90,26 +90,38 @@ public class MainGui extends JFrame {
 		btnMenu.setBounds(559, 384, 89, 23);
 		contentPane.add(btnMenu);
 
-		start();
+		intro();
 	}
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public void start() {
+	public void intro() {
 		display(1);
 		displayText.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				optionsDisplay(1);
+				display(2);
+				displayText.addMouseListener(new MouseAdapter() {
+					public void mouseClicked(MouseEvent e) {
+						optionsDisplay();
+					}
+				});
 			}
 		});
+		
 	}
 
+	
 	public void display(int scriptNum) {
-		String text = "";
-		int toMatchTheArray = 1; // removed the magic number
-		for (int i = 0; i < puzzles.puzzDes[0].actualSizeOfSc(scriptNum); i++) {
-			text = text + puzzles.puzzDes[0].textSc[scriptNum - toMatchTheArray][i].read()  + "\n" ;
-		}
-		displayText.setText(text);
-		System.out.print(text);
+		displayText.addMouseListener(new MouseAdapter() {
+			String text = "";
+			public void mouseClicked(MouseEvent e) {
+				
+				int toMatchTheArray = 1; // removed the magic number
+				for (int i = 0; i < puzzles.puzzDes[0].actualSizeOfSc(scriptNum); i++) {
+					text = text + puzzles.puzzDes[0].textSc[scriptNum - toMatchTheArray][i].read()  + "\n" ;
+				}
+				displayText.setText(text);
+			}
+			
+		});
 	}
 
 
@@ -125,7 +137,7 @@ public class MainGui extends JFrame {
 
 
 	//not sure if this needs fixing 
-	public void optionsDisplay(int i) {
+	public void optionsDisplay() {
 		displayText.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				String text = "";
@@ -175,7 +187,12 @@ public class MainGui extends JFrame {
 		displayText.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				String text = ""; 
-				branchDisplay(2, 40);
+				displayText.addMouseListener(new MouseAdapter() {
+					public void mouseClicked(MouseEvent e) {
+						branchDisplay(2, 40);
+					}
+				});
+				
 				text = "(S - check 'A Study in Scarlet') (B- check 'The Hound of Baskervilles') (H - check 'Hamlet') (G - go back to table)" + "\n";
 				displayText.setText(text);
 				bookshelfOptions();
@@ -888,7 +905,7 @@ public class MainGui extends JFrame {
 
 	private void goBack() {
 		display(30);
-		optionsDisplay(1);
+		optionsDisplay();
 	}
 
 	private void bridge() {
