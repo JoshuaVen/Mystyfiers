@@ -17,6 +17,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.Font;
 
+@SuppressWarnings({ "unused", "serial" })
 public class MainGui extends JFrame {
 
 	private JPanel contentPane;
@@ -48,7 +49,7 @@ public class MainGui extends JFrame {
 	public MainGui() {
 		this.puzzles = new PuzzleDesign();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 666, 459);
+		setBounds(100, 100, 777, 459);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -58,7 +59,7 @@ public class MainGui extends JFrame {
 		displayText.setLineWrap(true);
 		displayText.setFont(new Font("Monospaced", Font.PLAIN, 13));
 		displayText.setEditable(false);
-		displayText.setBounds(10, 11, 630, 359);
+		displayText.setBounds(10, 11, 741, 359);
 		contentPane.add(displayText);
 
 		textInput = new JTextField();
@@ -71,7 +72,7 @@ public class MainGui extends JFrame {
 		contentPane.add(progressCounter);
 
 		JLabel lblProgress = new JLabel("Progress");
-		lblProgress.setBounds(503, 388, 46, 14);
+		lblProgress.setBounds(503, 388, 89, 14);
 		contentPane.add(lblProgress);
 
 		btnEnter = new JButton("Enter");
@@ -87,7 +88,7 @@ public class MainGui extends JFrame {
 				quit.setAlwaysOnTop(true);
 			}
 		});
-		btnMenu.setBounds(559, 384, 89, 23);
+		btnMenu.setBounds(662, 384, 89, 23);
 		contentPane.add(btnMenu);
 
 		intro();
@@ -227,23 +228,23 @@ public class MainGui extends JFrame {
 	}
 
 	private void scarlet() {
+		display(6);
 		displayText.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				display(6);
 				scarletOptions();
 			}
 		});
 		
 	}
+	
 	private void scarletOptions() {
 		displayText.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				String text = "(C - continue searching bookshelf) (G - go back to table)" + "\n";
 				displayText.setText(text);
-				scarletChoice();
 			}
 		});
-		
+		scarletChoice();
 	}
 
 	private void scarletChoice() {
@@ -267,17 +268,23 @@ public class MainGui extends JFrame {
 	}
 
 	private void basker() {
-		displayText.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
-				if (puzzles.puzzDes[0].checkProblemIfSolved("isHoundChecked") == false) {
-					branchDisplay(3, 34);
-				} else {
-					display(14);
-					goBack();
+		
+		if (puzzles.puzzDes[0].checkProblemIfSolved("isHoundChecked") == false) {
+			branchDisplay(3, 34);
+			displayText.addMouseListener(new MouseAdapter() {
+				public void mouseClicked(MouseEvent e) {
+					baskerOptions();
 				}
-				baskerOptions();
-			}
-		});
+			});
+		} else {
+			display(14);
+//			displayText.addMouseListener(new MouseAdapter() {
+//				public void mouseClicked(MouseEvent e) {
+//					
+//				}
+//			});
+			goBack();
+		}
 		
 	}
 
@@ -286,10 +293,9 @@ public class MainGui extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				String text = "(C - continue searching bookshelf) (E - enter solution) (G - go back to table)" + "\n";
 				displayText.setText(text);
-				baskerChoice();
 			}
 		});
-		
+		baskerChoice();
 	}
 
 	private void baskerChoice() {
@@ -330,27 +336,33 @@ public class MainGui extends JFrame {
 		btnEnter.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				String input = textInput.getText();
-				String pass = new String("man");
-				input = input.toLowerCase();
-				if (!input.matches(pass) ) {
-					display(5);
-					basker();
-				} else if (input.matches(pass)) {
-					display(4);
-					puzzles.puzzDes[0].changeToSolved("isHoundChecked");
-					goBack();
-				} else {
-					basker();
+				switch (input.toLowerCase()) {
+				case "man":
+					passed1();
+					break;
+				default:
+					failed1();
+					break;
 				}
 			}
 		});
 		
+		goBack();
+	}
+	
+	private void failed1() {
+		display(5);
+	}
+	
+	private void passed1() {
+		display(4);
+		puzzles.puzzDes[0].changeToSolved("isHoundChecked");
 	}
 
 	private void hamlet() {
+		display(7);
 		displayText.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				display(7);
 				hamletOptions();
 			}
 		});
@@ -362,10 +374,9 @@ public class MainGui extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				String text = "(C - continue searching bookshelf) (G - go back to table)" + "\n";
 				displayText.setText(text);
-				hamletChoice();
 			}
 		});
-		
+		hamletChoice();
 	}
 
 	private void hamletChoice() {
@@ -380,7 +391,6 @@ public class MainGui extends JFrame {
 					goBack();
 					break;
 				default:
-					
 					hamlet();	
 				}
 			}
