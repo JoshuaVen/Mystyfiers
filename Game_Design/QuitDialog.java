@@ -8,6 +8,9 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import java.awt.Color;
 
 public class QuitDialog extends JFrame {
 
@@ -34,14 +37,18 @@ public class QuitDialog extends JFrame {
 	 */
 	public QuitDialog() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 572, 374);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblConfirmExit = new JLabel("Confirm exit?");
-		lblConfirmExit.setBounds(165, 41, 130, 23);
+		lblConfirmExit.setForeground(Color.RED);
+		lblConfirmExit.setHorizontalAlignment(SwingConstants.CENTER);
+		lblConfirmExit.setFont(new Font("Chiller", Font.BOLD, 95));
+		lblConfirmExit.setBounds(10, 41, 536, 72);
 		contentPane.add(lblConfirmExit);
 		
 		JButton btnConfirm = new JButton("Confirm");
@@ -50,7 +57,7 @@ public class QuitDialog extends JFrame {
 				System.exit(0);
 			}
 		});
-		btnConfirm.setBounds(65, 124, 89, 23);
+		btnConfirm.setBounds(65, 205, 89, 23);
 		contentPane.add(btnConfirm);
 		
 		JButton btnCancel = new JButton("Cancel");
@@ -59,7 +66,7 @@ public class QuitDialog extends JFrame {
 				dispose();
 			}
 		});
-		btnCancel.setBounds(241, 124, 89, 23);
+		btnCancel.setBounds(370, 205, 89, 23);
 		contentPane.add(btnCancel);
 	}
 

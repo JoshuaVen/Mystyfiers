@@ -7,6 +7,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Color;
 
 public class GameGui {
 
@@ -43,14 +44,16 @@ public class GameGui {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.BLACK);
 		frame.setBounds(100, 100, 707, 459);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblTitleHere = new JLabel("title here");
+		JLabel lblTitleHere = new JLabel("Escape D' Room");
+		lblTitleHere.setForeground(Color.RED);
 		lblTitleHere.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTitleHere.setFont(new Font("Serif", Font.PLAIN, 31));
-		lblTitleHere.setBounds(135, 38, 433, 73);
+		lblTitleHere.setFont(new Font("Chiller", Font.BOLD, 99));
+		lblTitleHere.setBounds(78, 39, 534, 111);
 		frame.getContentPane().add(lblTitleHere);
 		
 		JButton btnStart = new JButton("Start");
@@ -62,7 +65,7 @@ public class GameGui {
 				frame.dispose();
 			}
 		});
-		btnStart.setBounds(304, 209, 89, 23);
+		btnStart.setBounds(111, 283, 89, 23);
 		frame.getContentPane().add(btnStart);
 		
 		JButton btnQuit = new JButton("Quit");
@@ -73,7 +76,7 @@ public class GameGui {
 				quit.setAlwaysOnTop(true);
 			}
 		});
-		btnQuit.setBounds(304, 283, 89, 23);
+		btnQuit.setBounds(453, 283, 89, 23);
 		frame.getContentPane().add(btnQuit);
 	}
 }

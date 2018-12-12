@@ -16,6 +16,8 @@ import java.util.Scanner;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.Font;
+import java.awt.Color;
+import java.awt.SystemColor;
 
 @SuppressWarnings({ "unused", "serial" })
 public class MainGui extends JFrame {
@@ -23,7 +25,6 @@ public class MainGui extends JFrame {
 	private JPanel contentPane;
 	private JTextField textInput;
 	JTextArea displayText;
-	JTextPane progressCounter;
 	PuzzleDesign puzzles;
 	JButton btnEnter;
 
@@ -51,35 +52,35 @@ public class MainGui extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 777, 459);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setForeground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		displayText = new JTextArea();
+		displayText.setForeground(Color.RED);
+		displayText.setBackground(SystemColor.desktop);
 		displayText.setLineWrap(true);
-		displayText.setFont(new Font("Monospaced", Font.PLAIN, 13));
+		displayText.setFont(new Font("Chiller", Font.BOLD, 22));
 		displayText.setEditable(false);
 		displayText.setBounds(10, 11, 741, 359);
 		contentPane.add(displayText);
 
 		textInput = new JTextField();
+		textInput.setFont(new Font("Chiller", Font.PLAIN, 20));
+		textInput.setBackground(Color.LIGHT_GRAY);
 		textInput.setBounds(10, 381, 270, 28);
 		contentPane.add(textInput);
 		textInput.setColumns(10);
 
-		progressCounter = new JTextPane();
-		progressCounter.setBounds(389, 386, 104, 20);
-		contentPane.add(progressCounter);
-
-		JLabel lblProgress = new JLabel("Progress");
-		lblProgress.setBounds(503, 388, 89, 14);
-		contentPane.add(lblProgress);
-
 		btnEnter = new JButton("Enter");
+		btnEnter.setFont(new Font("Chiller", Font.PLAIN, 16));
 		btnEnter.setBounds(290, 384, 89, 23);
 		contentPane.add(btnEnter);
 
-		JButton btnMenu = new JButton("Menu");
+		JButton btnMenu = new JButton("Quit");
+		btnMenu.setFont(new Font("Chiller", Font.PLAIN, 17));
 		btnMenu.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
